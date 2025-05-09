@@ -1,8 +1,8 @@
 import os
 
 ## Data paths
-SOURCE_DATA_PATH = os.path.join("data", "er_alpha.csv")   # Source dataset (ER alpha)
-TARGET_DATA_PATH = os.path.join("data", "er_beta.csv")    # Target dataset (ER beta)
+SOURCE_DATA_PATH = os.path.join("data", "sample", "era_pretraining.csv")   # Source dataset
+TARGET_DATA_PATH = os.path.join("data", "sample", "era_finetuning.csv")    # Target dataset
 
 ## Data split ratios
 TRAIN_RATIO = 0.8
@@ -27,6 +27,11 @@ MODEL_TYPE = "GIN"           # default model type ("GIN", "GCN", or "GAT")
 NUM_CLASSES = 1              # output classes (1 for binary classification)
 NUM_HEADS = 4               # number of heads for GAT (if applicable)
 
-# File paths for saving models
-PRETRAINED_MODEL_PATH = "pretrained_model.pth"
-FINETUNED_MODEL_PATH = "finetuned_model.pth"
+# 모델 체크포인트를 저장할 디렉토리
+CHECKPOINT_DIR = "checkpoints"
+
+# 사전학습된 모델 가중치
+PRETRAINED_MODEL_PATH = os.path.join(CHECKPOINT_DIR, "pretrained_{}.pth".format(MODEL_TYPE.lower()))
+
+# 파인튜닝된 모델 가중치
+FINETUNED_MODEL_PATH  = os.path.join(CHECKPOINT_DIR, "finetuned_{}.pth".format(MODEL_TYPE.lower()))

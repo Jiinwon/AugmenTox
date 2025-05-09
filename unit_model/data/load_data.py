@@ -20,6 +20,12 @@ def load_data(csv_path, smiles_col='smiles', label_col='label',
     data_list = []
     for smi, label in zip(smiles_list, labels_list):
         data = smiles_to_graph(smi)
+        # 1) smiles_to_graph가 None을 반환했다면 스킵
+        if data is None:
+            continue
+        # 2) x 속성이 없거나 노드가 하나도 없다면 스킵
+        if not hasattr(data, 'x') or data.x is None or data.x.size(0) == 0:
+            continue
         # Attach label (binary classification) to Data object
         data.y = torch.tensor([float(label)], dtype=torch.float)
         data_list.append(data)
