@@ -30,6 +30,9 @@ NUM_HEADS = 4               # number of heads for GAT (if applicable)
 # 모델 체크포인트를 저장할 디렉토리
 CHECKPOINT_DIR = "checkpoints"
 
+# 체크포인트 디렉토리가 없으면 자동 생성
+os.makedirs(CHECKPOINT_DIR, exist_ok=True)
+
 # 사전학습된 모델 가중치
 PRETRAINED_MODEL_PATH = os.path.join(CHECKPOINT_DIR, "pretrained_{}.pth".format(MODEL_TYPE.lower()))
 

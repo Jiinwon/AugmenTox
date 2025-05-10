@@ -50,22 +50,9 @@ def evaluate(model, data_loader, device):
     }
     return results
 
-# unit_model/train/utils.py
-
-import os
-import torch
-
 def save_model(model, path):
-    """Save the model weights to the given file path, creating parent dirs if needed."""
-    # 1) 부모 디렉터리 경로 추출
-    dirpath = os.path.dirname(path)
-    # 2) 디렉터리가 없으면 생성
-    if dirpath and not os.path.exists(dirpath):
-        os.makedirs(dirpath, exist_ok=True)
-    # 3) 모델 저장
+    """Save the model weights to the given file path."""
     torch.save(model.state_dict(), path)
-    print(f"Model saved to {path}")
-
 
 def load_model(model, path, device):
     """Load model weights from the given file path."""
