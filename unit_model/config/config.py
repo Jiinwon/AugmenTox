@@ -14,14 +14,14 @@ RANDOM_SEED = 42
 ## Training hyperparameters
 BATCH_SIZE = 32
 NUM_EPOCHS_PRETRAIN = 50
-NUM_EPOCHS_FINETUNE = 30
+NUM_EPOCHS_FINETUNE = 50  # 원래는 30
 LEARNING_RATE = 0.001
 LR_STEP_SIZE = 10            # StepLR scheduler step
 LR_GAMMA = 0.5               # Learning rate decay factor
 
 ## Model hyperparameters
-HIDDEN_DIM = 64
-NUM_LAYERS = 3
+HIDDEN_DIM = 1024  # 원래는 64
+NUM_LAYERS = 2  # 원래는 3 
 DROPOUT = 0.5
 MODEL_TYPE = "GIN"           # default model type ("GIN", "GCN", or "GAT")
 NUM_CLASSES = 1              # output classes (1 for binary classification)
