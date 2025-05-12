@@ -5,7 +5,20 @@ def load_data(csv_path, smiles_col='smiles', label_col='label',
     from sklearn.model_selection import train_test_split
     from collections import Counter
     from data.smiles_to_graph import smiles_to_graph
-
+    
+    # if someone wants 100% as test, just return everything as test
+    if train_ratio == 0 and val_ratio == 0 and test_ratio == 1:
+        df = pd.read_excel(file_path) if file_path.endswith(('.xls','xlsx')) else pd.read_csv(file_path)
+        df = df.dropna(subset=[smiles_col, label_col])
+        data_list = []
+        for smi, lbl in zip(df[smiles_col].astype(str), df[label_col]):
+            data = smiles_to_graph(smi)
+            if data is None or not hasattr(data,'x') or data.x.size(0)==0:
+                continue
+            data.y = torch.tensor([float(lbl)], dtype=torch.float)
+            data_list.append(data)
+        return [], [], data_list
+    
     df = pd.read_csv(csv_path)
     if smiles_col not in df.columns or label_col not in df.columns:
         raise ValueError(f"CSV must contain columns '{smiles_col}' and '{label_col}'.")
