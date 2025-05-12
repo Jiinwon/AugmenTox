@@ -3,19 +3,19 @@ import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 import torch
 
-def visualize_embeddings(model, data_list, device=torch.device('cpu'), save_path=None):
+def visualize_embeddings(model, data_list, device, save_path=None):
     """
     Compute graph embeddings for each graph in data_list using the model, 
     reduce to 2D with t-SNE, and plot a scatter of the embeddings colored by their labels.
     """
     model.eval()
-    model.to(device)
+    model.to(device, non_blocking=True)
     embeddings = []
     labels = []
     # Compute embeddings
     with torch.no_grad():
         for data in data_list:
-            data = data.to(device)
+            data = data.to(device, non_blocking=True)
             emb = model.get_graph_embedding(data)
             # emb is shape [hidden_dim] for one graph
             embeddings.append(emb.cpu().numpy())

@@ -4,8 +4,11 @@ import os
 SOURCE_DATA_PATH = os.path.join("data", "sample", "era_pretraining.csv")   # Source dataset
 TARGET_DATA_PATH = os.path.join("data", "sample", "era_finetuning.csv")    # Target dataset
 
+## Device
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+
 ## Data split ratios
-TRAIN_RATIO = 0.8
+TRAIN_RATIO = 0
 VAL_RATIO = 0.1
 TEST_RATIO = 0.1
 
