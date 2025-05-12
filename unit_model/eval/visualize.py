@@ -15,7 +15,11 @@ def visualize_embeddings(model, data_list, device, save_path=None):
     # Compute embeddings
     with torch.no_grad():
         for data in data_list:
-            data = data.to(device, non_blocking=True)
+            # batch 정보가 없으면 모든 노드를 그래프 0번으로 처리
+            if not hasattr(data, 'batch') or data.batch is None:
+                num_nodes = data.x.size(0)
+                data.batch = torch.zeros(num_nodes, dtype=torch.long)
+            data = data.to(device)
             emb = model.get_graph_embedding(data)
             # emb is shape [hidden_dim] for one graph
             embeddings.append(emb.cpu().numpy())
@@ -23,12 +27,15 @@ def visualize_embeddings(model, data_list, device, save_path=None):
             label = int(data.y.item()) if data.y.dim() == 1 else int(data.y.argmax().item())
             labels.append(label)
     embeddings = np.array(embeddings)
+    embeddings = embeddings.reshape(embeddings.shape[0], -1)
+
     # 임베딩 차원이 2가 아니면 TSNE로 2차원으로 변환
     if embeddings.shape[1] != 2:
         tsne = TSNE(n_components=2, random_state=42)
         embeddings_2d = tsne.fit_transform(embeddings)
     else:
         embeddings_2d = embeddings  # 이미 2차원인 경우는 그대로 사용
+
     # Plot the embeddings
     plt.figure(figsize=(6,5))
     labels = np.array(labels)
