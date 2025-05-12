@@ -1,0 +1,14 @@
+[1/4] Converting Excel to CSV...
+→ 변환 스킵: SOURCE_DATA_PATH와 TARGET_DATA_PATH가 모두 존재합니다.
+[2/4] Pre-training on TOX21_ERa_BLA_Antagonist_ratio...
+Epoch 1/50 - Loss: 0.6384 - Val F1: 0.1154 - Val ROC-AUC: 0.6757 - Val PR-AUC: 0.1992
+Epoch 2/50 - Loss: 0.6071 - Val F1: 0.3242 - Val ROC-AUC: 0.7013 - Val PR-AUC: 0.2631
+Epoch 3/50 - Loss: 0.5842 - Val F1: 0.3359 - Val ROC-AUC: 0.7182 - Val PR-AUC: 0.2433
+Epoch 4/50 - Loss: 0.5596 - Val F1: 0.3377 - Val ROC-AUC: 0.7433 - Val PR-AUC: 0.2595
+Epoch 5/50 - Loss: 0.5557 - Val F1: 0.3255 - Val ROC-AUC: 0.7567 - Val PR-AUC: 0.2937
+Epoch 6/50 - Loss: 0.5430 - Val F1: 0.3503 - Val ROC-AUC: 0.7534 - Val PR-AUC: 0.2909
+Epoch 7/50 - Loss: 0.5292 - Val F1: 0.3313 - Val ROC-AUC: 0.7719 - Val PR-AUC: 0.3058
+Epoch 8/50 - Loss: 0.5180 - Val F1: 0.3462 - Val ROC-AUC: 0.7567 - Val PR-AUC: 0.3022
+Epoch 9/50 - Loss: 0.5186 - Val F1: 0.3510 - Val ROC-AUC: 0.7668 - Val PR-AUC: 0.3168
+Epoch 10/50 - Loss: 0.4998 - Val F1: 0.3395 - Val ROC-AUC: 0.7386 - Val PR-AUC: 0.2529
+Epoch 11/50 - Loss: 0.4863 - Val F1: 0.3839 - Val ROC-AUC: 0.7699 - Val PR-AUC: 0.2988

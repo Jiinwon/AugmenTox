@@ -1,0 +1,72 @@
+[17:48:57] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:48:57] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:48:58] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:48:59] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:48:59] WARNING: not removing hydrogen atom without neighbors
+[17:49:01] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[17:49:01] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:01] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:49:02] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:02] WARNING: not removing hydrogen atom without neighbors
+[17:49:02] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:02] Explicit valence for atom # 6 O, 3, is greater than permitted
+[17:49:02] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[17:49:03] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:49:25] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:26] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:49:27] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:49:27] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:49:29] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:29] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:49:30] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:30] WARNING: not removing hydrogen atom without neighbors
+[17:49:30] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:30] Explicit valence for atom # 6 O, 3, is greater than permitted
+[17:49:30] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[17:49:31] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:49:51] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:51] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:49:52] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:49:52] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:49:55] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:55] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:49:55] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:55] WARNING: not removing hydrogen atom without neighbors
+[17:49:56] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:49:56] Explicit valence for atom # 6 O, 3, is greater than permitted
+[17:49:56] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[17:49:56] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+[17:50:14] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:50:14] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:50:15] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:50:15] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:50:17] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:50:17] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:50:18] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:50:18] WARNING: not removing hydrogen atom without neighbors
+[17:50:19] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:50:19] Explicit valence for atom # 6 O, 3, is greater than permitted
+[17:50:19] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[17:50:19] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:50:19] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:50:20] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:50:20] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:50:21] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:50:23] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:50:23] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:50:24] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:50:24] WARNING: not removing hydrogen atom without neighbors
+[17:50:24] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:50:24] Explicit valence for atom # 6 O, 3, is greater than permitted
+[17:50:24] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[17:50:24] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+Traceback (most recent call last):
+  File "<stdin>", line 41, in <module>
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/eval/visualize.py", line 37, in visualize_embeddings
+    plt.scatter(embeddings_2d[labels==0, 0], embeddings_2d[labels==0, 1], c='tab:blue', label='Class 0', alpha=0.7)
+                                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+IndexError: index 1 is out of bounds for axis 1 with size 1

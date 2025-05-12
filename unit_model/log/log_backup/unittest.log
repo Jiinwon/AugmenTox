@@ -1,0 +1,68 @@
+[1/4] Converting Excel to CSV...
+[2/4] Pre-training on ERα...
+[3/4] Fine-tuning on ERβ...
+[4/4] Visualizing embeddings...
+[12:44:07] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:08] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[12:44:09] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:09] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:10] WARNING: not removing hydrogen atom without neighbors
+[12:44:12] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[12:44:12] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:12] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:13] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:13] WARNING: not removing hydrogen atom without neighbors
+[12:44:13] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:13] Explicit valence for atom # 6 O, 3, is greater than permitted
+[12:44:13] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[12:44:14] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+Epoch 1/2 - Loss: 0.3794 - Val F1: 0.0360 - Val ROC-AUC: 0.6531 - Val PR-AUC: 0.1938
+Epoch 2/2 - Loss: 0.3589 - Val F1: 0.0000 - Val ROC-AUC: 0.6631 - Val PR-AUC: 0.2000
+Pretraining completed. Test F1: 0.0000, ROC-AUC: 0.7062, PR-AUC: 0.2519
+[12:44:30] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:30] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[12:44:31] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:31] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:34] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:34] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:34] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:34] WARNING: not removing hydrogen atom without neighbors
+[12:44:35] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:35] Explicit valence for atom # 6 O, 3, is greater than permitted
+[12:44:35] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[12:44:35] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[Fine-tune] Epoch 1/2 - Loss: 0.3552 - Val F1: 0.0000 - Val ROC-AUC: 0.6988 - Val PR-AUC: 0.2325
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+[Fine-tune] Epoch 2/2 - Loss: 0.3428 - Val F1: 0.0000 - Val ROC-AUC: 0.7355 - Val PR-AUC: 0.2858
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Finetuning completed. Test F1: 0.0000, ROC-AUC: 0.7597, PR-AUC: 0.2763
+[12:44:48] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:49] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[12:44:50] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:50] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:52] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:52] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:53] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:53] WARNING: not removing hydrogen atom without neighbors
+[12:44:54] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:54] Explicit valence for atom # 6 O, 3, is greater than permitted
+[12:44:54] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[12:44:54] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+Traceback (most recent call last):
+  File "<stdin>", line 24, in <module>
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/data/load_data.py", line 36, in load_data
+    train_data, temp_data, train_labels, temp_labels = train_test_split(
+                                                       ^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/model_selection/_split.py", line 2806, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/model_selection/_split.py", line 1843, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/model_selection/_split.py", line 2265, in _iter_indices
+    raise ValueError(
+ValueError: The test_size = 1 should be greater or equal to the number of classes = 2

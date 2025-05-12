@@ -1,0 +1,62 @@
+[18:14:49] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:14:49] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:14:50] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:14:51] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:14:51] WARNING: not removing hydrogen atom without neighbors
+[18:14:53] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:14:53] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:14:53] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:14:54] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:14:54] WARNING: not removing hydrogen atom without neighbors
+[18:14:54] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:14:54] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:14:54] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:14:55] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:15:19] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:15:20] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:15:20] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:15:21] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:15:23] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:15:23] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:15:24] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:15:24] WARNING: not removing hydrogen atom without neighbors
+[18:15:24] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:15:24] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:15:24] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:15:24] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:15:43] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:15:44] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:15:45] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:15:45] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:15:47] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:15:47] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:15:48] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:15:48] WARNING: not removing hydrogen atom without neighbors
+[18:15:48] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:15:48] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:15:48] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:15:49] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:16:09] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:16:10] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:16:10] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:16:11] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:16:13] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:16:13] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:16:14] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:16:14] WARNING: not removing hydrogen atom without neighbors
+[18:16:14] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:16:14] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:16:14] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:16:15] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:16:15] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:16:15] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:16:16] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:16:16] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:16:19] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:16:19] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:16:19] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:16:19] WARNING: not removing hydrogen atom without neighbors
+[18:16:20] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:16:20] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:16:20] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:16:20] Explicit valence for atom # 0 Cl, 2, is greater than permitted

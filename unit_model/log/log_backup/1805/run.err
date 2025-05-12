@@ -1,0 +1,85 @@
+[18:05:56] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:05:56] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:05:57] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:05:58] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:05:58] WARNING: not removing hydrogen atom without neighbors
+[18:06:00] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:06:00] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:06:00] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:06:01] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:06:01] WARNING: not removing hydrogen atom without neighbors
+[18:06:01] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:06:01] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:06:01] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:06:02] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:06:29] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:06:29] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:06:30] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:06:30] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:06:32] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:06:33] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:06:33] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:06:33] WARNING: not removing hydrogen atom without neighbors
+[18:06:34] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:06:34] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:06:34] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:06:34] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:07:04] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:05] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:07:05] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:07:06] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:07:08] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:08] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:07:09] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:09] WARNING: not removing hydrogen atom without neighbors
+[18:07:09] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:09] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:07:09] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:07:09] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:07:48] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:48] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:07:49] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:07:49] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:07:51] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:51] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:07:52] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:52] WARNING: not removing hydrogen atom without neighbors
+[18:07:53] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:53] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:07:53] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:07:53] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:07:53] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:54] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[18:07:54] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:07:55] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:07:57] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:57] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[18:07:58] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:58] WARNING: not removing hydrogen atom without neighbors
+[18:07:58] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[18:07:58] Explicit valence for atom # 6 O, 3, is greater than permitted
+[18:07:58] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[18:07:58] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+Traceback (most recent call last):
+  File "<stdin>", line 45, in <module>
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/eval/visualize.py", line 34, in visualize_embeddings
+    embeddings_2d = tsne.fit_transform(embeddings)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/manifold/_t_sne.py", line 1176, in fit_transform
+    embedding = self._fit(X)
+                ^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/manifold/_t_sne.py", line 884, in _fit
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/base.py", line 633, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1058, in check_array
+    raise ValueError(
+ValueError: Found array with dim 3. TSNE expected <= 2.

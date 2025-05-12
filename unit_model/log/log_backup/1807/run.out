@@ -1,0 +1,17 @@
+[1/4] Converting Excel to CSV...
+→ 변환 스킵: SOURCE_DATA_PATH와 TARGET_DATA_PATH가 모두 존재합니다.
+[2/4] Pre-training on ERα...
+Epoch 1/2 - Loss: 0.6379 - Val F1: 0.2918 - Val ROC-AUC: 0.6769 - Val PR-AUC: 0.2198
+Epoch 2/2 - Loss: 0.6012 - Val F1: 0.3004 - Val ROC-AUC: 0.7037 - Val PR-AUC: 0.2315
+Pretraining completed. Test F1: 0.3445, ROC-AUC: 0.7517, PR-AUC: 0.2985
+[3/4] Fine-tuning on ERβ...
+[Fine-tune] Epoch 1/2 - Loss: 0.5925 - Val F1: 0.3158 - Val ROC-AUC: 0.7371 - Val PR-AUC: 0.2693
+[Fine-tune] Epoch 2/2 - Loss: 0.5699 - Val F1: 0.3974 - Val ROC-AUC: 0.7520 - Val PR-AUC: 0.3063
+Finetuning completed. Test F1: 0.4281, ROC-AUC: 0.7884, PR-AUC: 0.3501
+[3.1/4] Target-only training on ERβ...
+=== Target-only training ===
+[Target-only] Epoch 1/2 – Loss: 0.6267  Val F1: 0.3738  ROC-AUC: 0.7405  PR-AUC: 0.2658
+[Target-only] Epoch 2/2 – Loss: 0.5903  Val F1: 0.3582  ROC-AUC: 0.7344  PR-AUC: 0.2967
+=== Target-only TEST performance ===
+Test F1: 0.3797, ROC-AUC: 0.7433, PR-AUC: 0.2881
+[4/4] Visualizing embeddings...

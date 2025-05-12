@@ -1,0 +1,17 @@
+[1/4] Converting Excel to CSV...
+→ Skipping conversion: both SOURCE_DATA_PATH and TARGET_DATA_PATH already exist.
+[2/4] Pre-training on ERα...
+Epoch 1/2 - Loss: 0.6327 - Val F1: 0.3377 - Val ROC-AUC: 0.6961 - Val PR-AUC: 0.2290
+Epoch 2/2 - Loss: 0.5970 - Val F1: 0.3521 - Val ROC-AUC: 0.7300 - Val PR-AUC: 0.2716
+Pretraining completed. Test F1: 0.3805, ROC-AUC: 0.7789, PR-AUC: 0.3660
+[3/4] Fine-tuning on ERβ...
+[Fine-tune] Epoch 1/2 - Loss: 0.5906 - Val F1: 0.3363 - Val ROC-AUC: 0.7575 - Val PR-AUC: 0.3007
+[Fine-tune] Epoch 2/2 - Loss: 0.5717 - Val F1: 0.3457 - Val ROC-AUC: 0.7638 - Val PR-AUC: 0.2819
+Finetuning completed. Test F1: 0.4235, ROC-AUC: 0.7928, PR-AUC: 0.3031
+[3.1/4] Training on ERβ only (target_only)...
+=== Target-only training ===
+[Target-only] Epoch 1/2 – Loss: 0.6311  Val F1: 0.2983  ROC-AUC: 0.7461  PR-AUC: 0.2689
+[Target-only] Epoch 2/2 – Loss: 0.6001  Val F1: 0.3522  ROC-AUC: 0.7685  PR-AUC: 0.3111
+=== Target-only TEST performance ===
+Test F1: 0.2174, ROC-AUC: 0.7691, PR-AUC: 0.3031
+[4/4] Visualizing embeddings...

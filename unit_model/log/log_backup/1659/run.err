@@ -1,0 +1,32 @@
+[16:59:19] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[16:59:20] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[16:59:20] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[16:59:21] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[16:59:21] WARNING: not removing hydrogen atom without neighbors
+[16:59:23] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[16:59:23] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[16:59:23] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[16:59:24] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[16:59:24] WARNING: not removing hydrogen atom without neighbors
+[16:59:25] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[16:59:25] Explicit valence for atom # 6 O, 3, is greater than permitted
+[16:59:25] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[16:59:25] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:09:53] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:09:53] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[17:09:54] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:09:55] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:09:57] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:09:57] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[17:09:57] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:09:57] WARNING: not removing hydrogen atom without neighbors
+[17:09:58] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[17:09:58] Explicit valence for atom # 6 O, 3, is greater than permitted
+[17:09:58] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[17:09:58] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+Traceback (most recent call last):
+  File "<stdin>", line 13, in <module>
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/data/load_data.py", line 11, in load_data
+    df = pd.read_excel(file_path) if file_path.endswith(('.xls','xlsx')) else pd.read_csv(file_path)
+                                     ^^^^^^^^^
+NameError: name 'file_path' is not defined
