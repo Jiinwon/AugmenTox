@@ -1,8 +1,12 @@
 import os
+import torch
 
 ## Data paths
-SOURCE_DATA_PATH = os.path.join("data", "sample", "era_pretraining.csv")   # Source dataset
-TARGET_DATA_PATH = os.path.join("data", "sample", "era_finetuning.csv")    # Target dataset
+ENTIRE_DATA_PATH = os.path.join("data", "sample", "ToxCast_v.4.2_mc_hitc_ER_sample.xlsx")
+SOURCE_DATA_PATH = os.path.join("data", "sample", "pretraining.csv")    # Source dataset
+SOURCE_NAME = "TOX21_ERa_BLA_Antagonist_ratio"   
+TARGET_DATA_PATH = os.path.join("data", "sample", "finetuning.csv")    # Target dataset
+TARGET_NAME = "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2"
 
 ## Device
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -29,6 +33,10 @@ DROPOUT = 0.5
 MODEL_TYPE = "GIN"           # default model type ("GIN", "GCN", or "GAT")
 NUM_CLASSES = 1              # output classes (1 for binary classification)
 NUM_HEADS = 4               # number of heads for GAT (if applicable)
+
+# File paths for saving models
+PRETRAINED_MODEL_PATH = "pretrained_model.pth"
+FINETUNED_MODEL_PATH = "finetuned_model.pth"
 
 # 모델 체크포인트를 저장할 디렉토리
 CHECKPOINT_DIR = "checkpoints"
