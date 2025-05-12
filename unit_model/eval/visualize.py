@@ -23,12 +23,12 @@ def visualize_embeddings(model, data_list, device, save_path=None):
             label = int(data.y.item()) if data.y.dim() == 1 else int(data.y.argmax().item())
             labels.append(label)
     embeddings = np.array(embeddings)
-    # Use t-SNE to reduce to 2 dimensions
-    if embeddings.shape[1] > 2:
+    # 임베딩 차원이 2가 아니면 TSNE로 2차원으로 변환
+    if embeddings.shape[1] != 2:
         tsne = TSNE(n_components=2, random_state=42)
         embeddings_2d = tsne.fit_transform(embeddings)
     else:
-        embeddings_2d = embeddings  # already 2D
+        embeddings_2d = embeddings  # 이미 2차원인 경우는 그대로 사용
     # Plot the embeddings
     plt.figure(figsize=(6,5))
     labels = np.array(labels)
