@@ -18,7 +18,6 @@ def load_data(csv_path, smiles_col='smiles', label_col='label',
             data.y = torch.tensor([float(lbl)], dtype=torch.float)
             data_list.append(data)
         return [], [], data_list
-    
     df = pd.read_csv(csv_path)
     if smiles_col not in df.columns or label_col not in df.columns:
         raise ValueError(f"CSV must contain columns '{smiles_col}' and '{label_col}'.")
