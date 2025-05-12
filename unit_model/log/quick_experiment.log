@@ -14,3 +14,27 @@
 [12:16:18] Explicit valence for atom # 6 O, 3, is greater than permitted
 [12:16:18] Explicit valence for atom # 3 Si, 8, is greater than permitted
 [12:16:18] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Epoch 1/2 - Loss: 0.3782 - Val F1: 0.0000 - Val ROC-AUC: 0.6924 - Val PR-AUC: 0.2466
+Epoch 2/2 - Loss: 0.3571 - Val F1: 0.0177 - Val ROC-AUC: 0.6996 - Val PR-AUC: 0.2264
+Pretraining completed. Test F1: 0.0855, ROC-AUC: 0.7395, PR-AUC: 0.2730
+>>> Finetuning (2 epochs)...
+[12:25:34] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:25:34] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[12:25:35] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:25:36] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:25:38] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:25:38] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:25:39] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:25:39] WARNING: not removing hydrogen atom without neighbors
+[12:25:40] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:25:40] Explicit valence for atom # 6 O, 3, is greater than permitted
+[12:25:40] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[12:25:40] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+[Fine-tune] Epoch 1/2 - Loss: 0.3579 - Val F1: 0.0000 - Val ROC-AUC: 0.7096 - Val PR-AUC: 0.2623
+[Fine-tune] Epoch 2/2 - Loss: 0.3444 - Val F1: 0.0708 - Val ROC-AUC: 0.7354 - Val PR-AUC: 0.2775
+Finetuning completed. Test F1: 0.0571, ROC-AUC: 0.7780, PR-AUC: 0.3083
+✅ Quick experiment completed!
