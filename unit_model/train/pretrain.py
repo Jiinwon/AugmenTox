@@ -5,6 +5,7 @@ from torch_geometric.loader import DataLoader
 from data.load_data import load_data
 from train import utils
 import config.config as cfg
+from torch.utils.data import WeightedRandomSampler
 
 def run_pretraining():
     # Load source dataset and split
@@ -31,12 +32,25 @@ def run_pretraining():
         raise ValueError(f"Unknown model type: {cfg.MODEL_TYPE}")
     # Prepare for training
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = model.to(device)
+    model = model.to(device, non_blocking=True)
     criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters(), lr=cfg.LEARNING_RATE)
     scheduler = utils.get_scheduler(optimizer, step_size=cfg.LR_STEP_SIZE, gamma=cfg.LR_GAMMA)
-    train_loader = DataLoader(train_data, batch_size=cfg.BATCH_SIZE, shuffle=True)
-    val_loader = DataLoader(val_data, batch_size=cfg.BATCH_SIZE, shuffle=False)
+    # 레이블 리스트 추출
+    labels = [int(d.y.item()) for d in train_data]
+    # 클래스별 샘플 수
+    class_counts = [labels.count(0), labels.count(1)]
+    # 각 샘플에 대해 inverse frequency 가중치 부여
+    weights = [1.0 / class_counts[label] for label in labels]
+    sampler = WeightedRandomSampler(weights, num_samples=len(weights), replacement=True)
+    train_loader = DataLoader(
+        train_data,
+        batch_size=cfg.BATCH_SIZE,
+        sampler=sampler,
+        num_workers=4,
+        pin_memory=True
+    )
+    val_loader = DataLoader(val_data, batch_size=cfg.BATCH_SIZE, shuffle=False, pin_memory=True)
     # Training loop
     best_val_f1 = 0.0
     best_state = None

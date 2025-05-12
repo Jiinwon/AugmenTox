@@ -1,0 +1,26 @@
+[1/4] Converting Excel to CSV...
+[2/4] Pre-training on ERα...
+[15:48:01] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[15:48:01] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[15:48:02] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[15:48:02] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[15:48:03] WARNING: not removing hydrogen atom without neighbors
+[15:48:05] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[15:48:05] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[15:48:05] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[15:48:06] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[15:48:06] WARNING: not removing hydrogen atom without neighbors
+[15:48:06] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[15:48:07] Explicit valence for atom # 6 O, 3, is greater than permitted
+[15:48:07] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[15:48:07] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Epoch 1/2 - Loss: 0.3859 - Val F1: 0.0000 - Val ROC-AUC: 0.6314 - Val PR-AUC: 0.1903
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Epoch 2/2 - Loss: 0.3585 - Val F1: 0.0000 - Val ROC-AUC: 0.7036 - Val PR-AUC: 0.2329
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Pretraining completed. Test F1: 0.0000, ROC-AUC: 0.7370, PR-AUC: 0.2741
+/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/unit_test.sh: line 38: xcel_to_csv: command not found

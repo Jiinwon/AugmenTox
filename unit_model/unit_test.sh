@@ -1,35 +1,43 @@
-#!/usr/bin/env bash
+#!/bin/bash
+#SBATCH --job-name=GNN_pipeline
+#SBATCH --output=./log/slurm_%x_%j_%Y%m%d_%H%M.out
+#SBATCH --error=./log/slurm_%x_%j_%Y%m%d_%H%M.err
+#SBATCH --partition=gpu1
+#SBATCH --gres=gpu:rtx3090:1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32G
+#SBATCH --time=02:00:00
+
 set -e
 
-# 로그 디렉토리 설정
-LOG_DIR="/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/log"
-mkdir -p "${LOG_DIR}"
-
-# 현재 날짜-시간 형식 지정 (예: 20250512_1430)
+# 로그 디렉토리 생성
+LOG_DIR="./log"
+mkdir -p "$LOG_DIR"
 NOW=$(date +"%Y%m%d_%H%M")
 
-# self-nohup 실행
+# self-nohup 실행 (최초 실행 시에만)
 if [ -z "$NOHUP_MODE" ]; then
-  echo "[*] Launching unittest.sh via nohup..."
-  NOHUP_MODE=1 nohup bash "$0" > "${LOG_DIR}/unittest_${NOW}.log" 2>&1 &
-  exit 0
+    echo "[*] Launching via nohup..."
+    NOHUP_MODE=1 nohup sbatch "$0" > "$LOG_DIR/unittest_${NOW}.log" 2>&1 &
+    exit 0
 fi
 
-# 0. 프로젝트 루트(이 스크립트가 있는 디렉토리)를 PYTHONPATH에 추가
+# 0. PYTHONPATH 설정
 DIR=$(cd "$(dirname "$0")" && pwd)
 export PYTHONPATH="$DIR"
 
-# (선택) 가상환경 활성화
+# (필요시) 가상환경 활성화
 # source /home1/won0316/anaconda3/envs/toxcast_env/bin/activate
 
-# 1. Excel → CSV 변환
+# 1. Excel to CSV
 echo "[1/4] Converting Excel to CSV..."
 python -m scripts.convert_excel_to_csv
 
-# 2~4. Pre-training + Fine-tuning + 시각화 (에폭 2로 제한)
-echo "[2/4] Pre-training on ERα..."
-echo "[3/4] Fine-tuning on ERβ..."
+# 2~4. Pretraining + Finetuning + Embedding (각각 2에폭)
+echo "[2/4] Pretraining on ERα..."
+echo "[3/4] Finetuning on ERβ..."
 echo "[4/4] Visualizing embeddings..."
+
 python -u - << 'PYCODE'
 import config.config as cfg
 from data.load_data import load_data
@@ -37,15 +45,12 @@ from train import pretrain, finetune
 from train.utils import load_model
 from eval.visualize import visualize_embeddings
 
-# 하이퍼파라미터 조정 (짧은 실험용)
-cfg.NUM_EPOCHS_PRETRAIN = 2
-cfg.NUM_EPOCHS_FINETUNE = 2
+#cfg.NUM_EPOCHS_PRETRAIN = 2
+#cfg.NUM_EPOCHS_FINETUNE = 2
 
-# 사전학습 및 파인튜닝
 pretrain.run_pretraining()
 finetune.run_finetuning()
 
-# 시각화용 모델 로드
 ModelClass = {
     "GIN": "models.gin.GINNet",
     "GCN": "models.gcn.GCNNet",
@@ -60,6 +65,7 @@ _, _, tmp = load_data(
     random_seed=cfg.RANDOM_SEED
 )
 input_dim = tmp[0].x.shape[1]
+
 model = Model(
     input_dim=input_dim,
     hidden_dim=cfg.HIDDEN_DIM,
@@ -68,9 +74,9 @@ model = Model(
     dropout=cfg.DROPOUT,
     **({"heads": cfg.NUM_HEADS} if cfg.MODEL_TYPE.upper() == "GAT" else {})
 )
+
 load_model(model, cfg.FINETUNED_MODEL_PATH, device='cpu')
 
-# 테스트 데이터 준비 및 시각화
 _, _, test_data = load_data(
     cfg.TARGET_DATA_PATH,
     train_ratio=cfg.TRAIN_RATIO,
@@ -78,8 +84,9 @@ _, _, test_data = load_data(
     test_ratio=cfg.TEST_RATIO,
     random_seed=cfg.RANDOM_SEED
 )
+
 visualize_embeddings(model, test_data, save_path="embeddings.png")
 print("✅ Saved embeddings.png")
 PYCODE
 
-echo "✅ All steps in unittest completed!"
+echo "✅ All steps in SBATCH pipeline completed!"

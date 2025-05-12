@@ -5,6 +5,7 @@ from torch_geometric.loader import DataLoader
 from data.load_data import load_data
 from train import utils
 import config.config as cfg
+from torch.utils.data import WeightedRandomSampler
 
 def run_finetuning():
     # Load target dataset and split
@@ -29,14 +30,24 @@ def run_finetuning():
     else:
         raise ValueError(f"Unknown model type: {cfg.MODEL_TYPE}")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = model.to(device)
+    model = model.to(device, non_blocking=True)
     # Load pretrained weights
     utils.load_model(model, cfg.PRETRAINED_MODEL_PATH, device)
     criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters(), lr=cfg.LEARNING_RATE)
     scheduler = utils.get_scheduler(optimizer, step_size=cfg.LR_STEP_SIZE, gamma=cfg.LR_GAMMA)
-    train_loader = DataLoader(train_data, batch_size=cfg.BATCH_SIZE, shuffle=True)
-    val_loader = DataLoader(val_data, batch_size=cfg.BATCH_SIZE, shuffle=False)
+    labels = [int(d.y.item()) for d in train_data]
+    class_counts = [labels.count(0), labels.count(1)]
+    weights = [1.0 / class_counts[label] for label in labels]
+    sampler = WeightedRandomSampler(weights, num_samples=len(weights), replacement=True)
+    train_loader = DataLoader(
+        train_data,
+        batch_size=cfg.BATCH_SIZE,
+        sampler=sampler,
+        num_workers=4,
+        pin_memory=True
+    )
+    val_loader = DataLoader(val_data, batch_size=cfg.BATCH_SIZE, shuffle=False, pin_memory=True)
     # Fine-tuning training loop
     best_val_f1 = 0.0
     best_state = None
