@@ -42,3 +42,27 @@ Finetuning completed. Test F1: 0.0000, ROC-AUC: 0.7597, PR-AUC: 0.2763
 [12:44:49] Explicit valence for atom # 0 Cl, 2, is greater than permitted
 [12:44:50] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
 [12:44:50] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:52] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:52] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[12:44:53] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:53] WARNING: not removing hydrogen atom without neighbors
+[12:44:54] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[12:44:54] Explicit valence for atom # 6 O, 3, is greater than permitted
+[12:44:54] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[12:44:54] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+Traceback (most recent call last):
+  File "<stdin>", line 24, in <module>
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/data/load_data.py", line 36, in load_data
+    train_data, temp_data, train_labels, temp_labels = train_test_split(
+                                                       ^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/model_selection/_split.py", line 2806, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/model_selection/_split.py", line 1843, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/model_selection/_split.py", line 2265, in _iter_indices
+    raise ValueError(
+ValueError: The test_size = 1 should be greater or equal to the number of classes = 2
