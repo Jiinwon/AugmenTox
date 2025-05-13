@@ -23,6 +23,7 @@ TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2")
 ## Data paths
 DATA_BASE_PATH = os.path.join("data", "sample")
 ENTIRE_DATA_PATH = os.path.join(DATA_BASE_PATH, "ToxCast_v.4.2_mc_hitc_ER.xlsx")
+
 # 조합 디렉토리: data/sample/{SOURCE_NAME}&&{TARGET_NAME}/
 COMBO_DIR = os.path.join(DATA_BASE_PATH, f"{SOURCE_NAME}&&{TARGET_NAME}")
 # CSV 경로는 조합 디렉토리 내로 설정
