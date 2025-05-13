@@ -117,3 +117,46 @@ Finetuning completed. Test F1: 0.3195, ROC-AUC: 0.8359, PR-AUC: 0.3153
 [Target-only] Epoch 10/50 – Loss: 0.3615  Val F1: 0.3146  ROC-AUC: 0.8583  PR-AUC: 0.3748
 [Target-only] Epoch 11/50 – Loss: 0.3178  Val F1: 0.3497  ROC-AUC: 0.8452  PR-AUC: 0.3439
 [Target-only] Epoch 12/50 – Loss: 0.3019  Val F1: 0.2974  ROC-AUC: 0.8677  PR-AUC: 0.3524
+[Target-only] Epoch 13/50 – Loss: 0.2927  Val F1: 0.2727  ROC-AUC: 0.8419  PR-AUC: 0.3597
+[Target-only] Epoch 14/50 – Loss: 0.2754  Val F1: 0.3068  ROC-AUC: 0.8464  PR-AUC: 0.2901
+[Target-only] Epoch 15/50 – Loss: 0.2661  Val F1: 0.2967  ROC-AUC: 0.8505  PR-AUC: 0.3238
+[Target-only] Epoch 16/50 – Loss: 0.2700  Val F1: 0.3103  ROC-AUC: 0.8512  PR-AUC: 0.3560
+[Target-only] Epoch 17/50 – Loss: 0.2539  Val F1: 0.3358  ROC-AUC: 0.8601  PR-AUC: 0.3557
+[Target-only] Epoch 18/50 – Loss: 0.2609  Val F1: 0.3230  ROC-AUC: 0.8446  PR-AUC: 0.3308
+[Target-only] Epoch 19/50 – Loss: 0.2492  Val F1: 0.3380  ROC-AUC: 0.8622  PR-AUC: 0.4173
+[Target-only] Epoch 20/50 – Loss: 0.2471  Val F1: 0.2903  ROC-AUC: 0.8572  PR-AUC: 0.3784
+[Target-only] Epoch 21/50 – Loss: 0.2162  Val F1: 0.3265  ROC-AUC: 0.8523  PR-AUC: 0.3400
+[Target-only] Epoch 22/50 – Loss: 0.2011  Val F1: 0.2819  ROC-AUC: 0.8411  PR-AUC: 0.3396
+[Target-only] Epoch 23/50 – Loss: 0.1954  Val F1: 0.2695  ROC-AUC: 0.8364  PR-AUC: 0.3029
+[Target-only] Epoch 24/50 – Loss: 0.1970  Val F1: 0.3429  ROC-AUC: 0.8628  PR-AUC: 0.3458
+[Target-only] Epoch 25/50 – Loss: 0.1894  Val F1: 0.3284  ROC-AUC: 0.8588  PR-AUC: 0.3740
+[Target-only] Epoch 26/50 – Loss: 0.1817  Val F1: 0.3333  ROC-AUC: 0.8671  PR-AUC: 0.3563
+[Target-only] Epoch 27/50 – Loss: 0.1780  Val F1: 0.2923  ROC-AUC: 0.8640  PR-AUC: 0.3712
+[Target-only] Epoch 28/50 – Loss: 0.1755  Val F1: 0.3208  ROC-AUC: 0.8417  PR-AUC: 0.3288
+[Target-only] Epoch 29/50 – Loss: 0.1740  Val F1: 0.3788  ROC-AUC: 0.8775  PR-AUC: 0.3649
+[Target-only] Epoch 30/50 – Loss: 0.1721  Val F1: 0.2992  ROC-AUC: 0.8515  PR-AUC: 0.3299
+[Target-only] Epoch 31/50 – Loss: 0.1508  Val F1: 0.2879  ROC-AUC: 0.8633  PR-AUC: 0.3404
+[Target-only] Epoch 32/50 – Loss: 0.1506  Val F1: 0.2985  ROC-AUC: 0.8590  PR-AUC: 0.3400
+[Target-only] Epoch 33/50 – Loss: 0.1647  Val F1: 0.3025  ROC-AUC: 0.8581  PR-AUC: 0.3489
+[Target-only] Epoch 34/50 – Loss: 0.1568  Val F1: 0.3226  ROC-AUC: 0.8692  PR-AUC: 0.3738
+[Target-only] Epoch 35/50 – Loss: 0.1481  Val F1: 0.2881  ROC-AUC: 0.8537  PR-AUC: 0.3448
+[Target-only] Epoch 36/50 – Loss: 0.1497  Val F1: 0.3036  ROC-AUC: 0.8537  PR-AUC: 0.3465
+[Target-only] Epoch 37/50 – Loss: 0.1434  Val F1: 0.3411  ROC-AUC: 0.8711  PR-AUC: 0.3433
+[Target-only] Epoch 38/50 – Loss: 0.1487  Val F1: 0.3025  ROC-AUC: 0.8601  PR-AUC: 0.3302
+[Target-only] Epoch 39/50 – Loss: 0.1400  Val F1: 0.2963  ROC-AUC: 0.8485  PR-AUC: 0.3244
+[Target-only] Epoch 40/50 – Loss: 0.1403  Val F1: 0.3577  ROC-AUC: 0.8642  PR-AUC: 0.3644
+[Target-only] Epoch 41/50 – Loss: 0.1386  Val F1: 0.2906  ROC-AUC: 0.8548  PR-AUC: 0.3555
+[Target-only] Epoch 42/50 – Loss: 0.1283  Val F1: 0.2810  ROC-AUC: 0.8517  PR-AUC: 0.3429
+[Target-only] Epoch 43/50 – Loss: 0.1251  Val F1: 0.3077  ROC-AUC: 0.8566  PR-AUC: 0.3386
+[Target-only] Epoch 44/50 – Loss: 0.1308  Val F1: 0.2931  ROC-AUC: 0.8588  PR-AUC: 0.3297
+[Target-only] Epoch 45/50 – Loss: 0.1272  Val F1: 0.3009  ROC-AUC: 0.8507  PR-AUC: 0.3324
+[Target-only] Epoch 46/50 – Loss: 0.1156  Val F1: 0.2992  ROC-AUC: 0.8587  PR-AUC: 0.3294
+[Target-only] Epoch 47/50 – Loss: 0.1296  Val F1: 0.2909  ROC-AUC: 0.8582  PR-AUC: 0.3546
+[Target-only] Epoch 48/50 – Loss: 0.1257  Val F1: 0.3175  ROC-AUC: 0.8631  PR-AUC: 0.3349
+[Target-only] Epoch 49/50 – Loss: 0.1299  Val F1: 0.3119  ROC-AUC: 0.8593  PR-AUC: 0.3448
+[Target-only] Epoch 50/50 – Loss: 0.1136  Val F1: 0.3423  ROC-AUC: 0.8674  PR-AUC: 0.3442
+=== Target-only TEST performance ===
+Test F1: 0.2833, ROC-AUC: 0.7432, PR-AUC: 0.2742
+[4/4] Embedding 시각화 중...
+✅ Embeddings 저장 완료: embeddings_TOX21_ERa_BLA_Antagonist_ch1_TOX21_ERa_BLA_Agonist_ch2_GIN.png
+✅ 실험 완료: TOX21_ERa_BLA_Antagonist_ch1 -> TOX21_ERa_BLA_Agonist_ch2 [GIN]
