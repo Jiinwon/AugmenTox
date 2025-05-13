@@ -1,12 +1,16 @@
 import os
 import torch
 
-## Data paths
-ENTIRE_DATA_PATH = os.path.join("data", "sample", "ToxCast_v.4.2_mc_hitc_ER_sample.xlsx")
-SOURCE_DATA_PATH = os.path.join("data", "sample", "pretraining.csv")    # Source dataset
-SOURCE_NAME = "TOX21_ERa_BLA_Antagonist_ratio"   
-TARGET_DATA_PATH = os.path.join("data", "sample", "finetuning.csv")    # Target dataset
+# Assay names
+SOURCE_NAME = "TOX21_ERa_BLA_Antagonist_ratio"
 TARGET_NAME = "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2"
+
+## Data paths
+DATA_BASE_PATH = os.path.join("data", "sample")
+ENTIRE_DATA_PATH = os.path.join(DATA_BASE_PATH "ToxCast_v.4.2_mc_hitc_ER_sample.xlsx")
+SOURCE_DATA_PATH = os.path.join(DATA_BASE_PATH, "pretraining.csv")    
+TARGET_DATA_PATH = os.path.join(DATA_BASE_PATH, "finetuning.csv")    
+
 
 ## Device
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

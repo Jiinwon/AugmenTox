@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=GNN_pipeline
-#SBATCH --partition=gpu4
+#SBATCH --partition=gpu6
 ##SBATCH --gres=gpu:rtx3090:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
