@@ -12,7 +12,7 @@ TARGET_NAME = "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 ## Data split ratios
-TRAIN_RATIO = 0
+TRAIN_RATIO = 0.8
 VAL_RATIO = 0.1
 TEST_RATIO = 0.1
 
