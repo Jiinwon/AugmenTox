@@ -19,8 +19,10 @@ BASE_LOG="./log"
 LOG_DIR="${BASE_LOG}/${DATE}/${TIME}"
 mkdir -p "${LOG_DIR}"
 
-# 2) 이후의 stdout은 run.out에, stderr는 run.err에 기록
-exec > "${LOG_DIR}/run.out" 2> "${LOG_DIR}/run.err"
+# 2) Slurm Job ID
+JOBID=${SLURM_JOB_ID:-${DATE}${TIME}}
+
+exec > "${LOG_DIR}/${JOBID}_run.out" 2> "${LOG_DIR}/${JOBID}_run.err"
 # ──────────────────────────────────────────────────────────────
 
 # pretraining, finetuning data name
