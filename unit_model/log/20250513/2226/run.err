@@ -1,0 +1,3 @@
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+AttributeError: module 'config.config' has no attribute 'MODEL_TYPES'. Did you mean: 'MODEL_TYPE'?
