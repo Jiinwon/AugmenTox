@@ -1,0 +1,46 @@
+[13:20:01] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[13:20:01] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[13:20:02] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[13:20:03] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[13:20:03] WARNING: not removing hydrogen atom without neighbors
+[13:20:05] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[13:20:05] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[13:20:05] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[13:20:06] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[13:20:06] WARNING: not removing hydrogen atom without neighbors
+[13:20:06] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[13:20:07] Explicit valence for atom # 6 O, 3, is greater than permitted
+[13:20:07] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[13:20:07] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[13:21:06] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[13:21:06] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[13:21:07] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[13:21:08] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[13:21:10] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[13:21:10] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[13:21:11] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[13:21:11] WARNING: not removing hydrogen atom without neighbors
+[13:21:11] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[13:21:11] Explicit valence for atom # 6 O, 3, is greater than permitted
+[13:21:11] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[13:21:12] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/train/finetune.py", line 35, in run_finetuning
+    utils.load_model(model, cfg.PRETRAINED_MODEL_PATH, device)
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/train/utils.py", line 59, in load_model
+    model.load_state_dict(torch.load(path, map_location=device))
+  File "/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 2189, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for GINNet:
+	Missing key(s) in state_dict: "convs.0.eps", "convs.0.nn.0.weight", "convs.0.nn.0.bias", "convs.0.nn.2.weight", "convs.0.nn.2.bias", "convs.1.eps", "convs.1.nn.0.weight", "convs.1.nn.0.bias", "convs.1.nn.2.weight", "convs.1.nn.2.bias". 
+	Unexpected key(s) in state_dict: "convs.2.att_src", "convs.2.att_dst", "convs.2.bias", "convs.2.lin.weight", "convs.0.att_src", "convs.0.att_dst", "convs.0.bias", "convs.0.lin.weight", "convs.1.att_src", "convs.1.att_dst", "convs.1.bias", "convs.1.lin.weight", "bns.2.weight", "bns.2.bias", "bns.2.running_mean", "bns.2.running_var", "bns.2.num_batches_tracked". 
+	size mismatch for bns.0.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for bns.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for bns.0.running_mean: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for bns.0.running_var: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for bns.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for bns.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for bns.1.running_mean: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for bns.1.running_var: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([1024]).
+	size mismatch for fc.weight: copying a param with shape torch.Size([1, 64]) from checkpoint, the shape in current model is torch.Size([1, 1024]).
