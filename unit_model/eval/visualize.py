@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 import torch
 import os
+import config.config as cfg
 
 def visualize_embeddings(model, data_list, device, save_path=None):
     """
@@ -51,7 +52,8 @@ def visualize_embeddings(model, data_list, device, save_path=None):
     if save_path is None:
         save_dir = os.path.join("unit_model", "figure")
         os.makedirs(save_dir, exist_ok=True)
-        save_path = os.path.join(save_dir, "embedding_tsne.png")
+        filename = f"embedding_tsne_{cfg.TARGET_NAME}&&{cfg.SOURCE_NAME}_{cfg.MODEL_NAME}.png"
+        save_path = os.path.join(save_dir, filename)
 
     plt.savefig(save_path)
     plt.close()
