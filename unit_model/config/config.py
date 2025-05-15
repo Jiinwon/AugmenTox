@@ -54,21 +54,20 @@ HIDDEN_DIM = 1024  # 원래는 64
 NUM_LAYERS = 2  # 원래는 3 
 DROPOUT = 0.5
 MODEL_TYPE = "GIN"           # default model type ("GIN", "GCN", or "GAT")
+MODEL_NAME = MODEL_TYPE.lower()
 NUM_CLASSES = 1              # output classes (1 for binary classification)
 NUM_HEADS = 4               # number of heads for GAT (if applicable)
 
-# File paths for saving models
-PRETRAINED_MODEL_PATH = "pretrained_model.pth"
-FINETUNED_MODEL_PATH = "finetuned_model.pth"
+# 저장 베이스 디렉토리
+BASE_SAVE_DIR = "model_save"
 
-# 모델 체크포인트를 저장할 디렉토리
-CHECKPOINT_DIR = "checkpoints"
+# 모델 저장 디렉토리 경로: model_save/gin/
+MODEL_DIR = os.path.join(BASE_SAVE_DIR, MODEL_NAME)
 
-# 체크포인트 디렉토리가 없으면 자동 생성
-os.makedirs(CHECKPOINT_DIR, exist_ok=True)
+# 디렉토리 생성
+os.makedirs(MODEL_DIR, exist_ok=True)
 
-# 사전학습된 모델 가중치
-PRETRAINED_MODEL_PATH = os.path.join(CHECKPOINT_DIR, "pretrained_{}.pth".format(MODEL_TYPE.lower()))
-
-# 파인튜닝된 모델 가중치
-FINETUNED_MODEL_PATH  = os.path.join(CHECKPOINT_DIR, "finetuned_{}.pth".format(MODEL_TYPE.lower()))
+# 저장 경로 구성
+PRETRAINED_MODEL_PATH   = os.path.join(MODEL_DIR, f"{SOURCE_NAME}&&{SOURCE_NAME}_{MODEL_NAME}.pth")
+FINETUNED_MODEL_PATH    = os.path.join(MODEL_DIR, f"{SOURCE_NAME}&&{TARGET_NAME}_{MODEL_NAME}.pth")
+TARGET_ONLY_MODEL_PATH  = os.path.join(MODEL_DIR, f"{TARGET_NAME}&&{TARGET_NAME}_{MODEL_NAME}.pth")
