@@ -8,7 +8,6 @@ SOURCE_NAMES = [
     "TOX21_ERa_LUC_VM7_Agonist",
     "TOX21_ERa_BLA_Antagonist_ch1",
 ]
-SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_BLA_Agonist_ch1")
 
 TARGET_NAMES = [
     "TOX21_ERb_BLA_Agonist_ch2",
@@ -16,20 +15,10 @@ TARGET_NAMES = [
     "TOX21_ERa_BLA_Agonist_ch2",
     "TOX21_ERb_BLA_Antagonist_viability",
 ]
-TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2")
-
-
 
 ## Data paths
 DATA_BASE_PATH = os.path.join("data", "sample")
 ENTIRE_DATA_PATH = os.path.join(DATA_BASE_PATH, "ToxCast_v.4.2_mc_hitc_ER.xlsx")
-
-# 조합 디렉토리: data/sample/{SOURCE_NAME}&&{TARGET_NAME}/
-COMBO_DIR = os.path.join(DATA_BASE_PATH, f"{SOURCE_NAME}&&{TARGET_NAME}")
-# CSV 경로는 조합 디렉토리 내로 설정
-SOURCE_DATA_PATH = os.path.join(COMBO_DIR, "pretraining.csv")
-TARGET_DATA_PATH = os.path.join(COMBO_DIR, "finetuning.csv")  
-
 
 ## Device
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
