@@ -28,8 +28,18 @@ def run_pretraining():
     elif model_type == "GAT":
         from models.gat import GATNet
         model = GATNet(input_dim, cfg.HIDDEN_DIM, output_dim, num_layers=cfg.NUM_LAYERS, heads=cfg.NUM_HEADS, dropout=cfg.DROPOUT)
+    elif model_type == "GIN_GCN":
+        from models.gin_gcn import GIN_GCN_Hybrid as ModelClass
+        model = ModelClass(input_dim, cfg.HIDDEN_DIM, output_dim, num_layers=cfg.NUM_LAYERS, dropout=cfg.DROPOUT)
+    elif model_type == "GIN_GAT":
+        from models.gin_gat import GIN_GAT_Hybrid as ModelClass
+        model = ModelClass(input_dim, cfg.HIDDEN_DIM, output_dim, num_layers=cfg.NUM_LAYERS, heads=cfg.NUM_HEADS, dropout=cfg.DROPOUT)
+    elif model_type == "GCN_GAT":
+        from models.gcn_gat import GCN_GAT_Hybrid as ModelClass
+        model = ModelClass(input_dim, cfg.HIDDEN_DIM, output_dim, num_layers=cfg.NUM_LAYERS, heads=cfg.NUM_HEADS, dropout=cfg.DROPOUT)
     else:
         raise ValueError(f"Unknown model type: {cfg.MODEL_TYPE}")
+
     # Prepare for training
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device, non_blocking=True)
