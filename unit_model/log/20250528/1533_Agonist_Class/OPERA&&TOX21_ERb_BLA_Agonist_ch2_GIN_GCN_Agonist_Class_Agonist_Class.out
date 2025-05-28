@@ -1,0 +1,22 @@
+[2/4] Pretraining on Supplemental_Material_2_TrainingSet using GIN_GCN...
+Epoch 1/50 - Loss: 0.6447 - Val F1: 0.2316 - Val ROC-AUC: 0.5115 - Val PR-AUC: 0.1487
+Epoch 2/50 - Loss: 0.5786 - Val F1: 0.4062 - Val ROC-AUC: 0.7550 - Val PR-AUC: 0.4641
+Epoch 3/50 - Loss: 0.5622 - Val F1: 0.3333 - Val ROC-AUC: 0.7344 - Val PR-AUC: 0.3681
+Epoch 4/50 - Loss: 0.5364 - Val F1: 0.2991 - Val ROC-AUC: 0.7379 - Val PR-AUC: 0.5022
+Epoch 5/50 - Loss: 0.5556 - Val F1: 0.5556 - Val ROC-AUC: 0.7481 - Val PR-AUC: 0.4702
+Epoch 6/50 - Loss: 0.5185 - Val F1: 0.3611 - Val ROC-AUC: 0.7777 - Val PR-AUC: 0.4755
+Epoch 7/50 - Loss: 0.5277 - Val F1: 0.4407 - Val ROC-AUC: 0.7656 - Val PR-AUC: 0.5247
+Epoch 8/50 - Loss: 0.5177 - Val F1: 0.3137 - Val ROC-AUC: 0.7335 - Val PR-AUC: 0.4427
+Epoch 9/50 - Loss: 0.5118 - Val F1: 0.3333 - Val ROC-AUC: 0.7702 - Val PR-AUC: 0.4746
+Epoch 10/50 - Loss: 0.4936 - Val F1: 0.4308 - Val ROC-AUC: 0.8082 - Val PR-AUC: 0.5064
+Epoch 11/50 - Loss: 0.4665 - Val F1: 0.3947 - Val ROC-AUC: 0.7967 - Val PR-AUC: 0.5090
+Epoch 12/50 - Loss: 0.4672 - Val F1: 0.4667 - Val ROC-AUC: 0.7979 - Val PR-AUC: 0.5408
+Epoch 13/50 - Loss: 0.4128 - Val F1: 0.4048 - Val ROC-AUC: 0.8138 - Val PR-AUC: 0.5221
+Epoch 14/50 - Loss: 0.4533 - Val F1: 0.3846 - Val ROC-AUC: 0.7550 - Val PR-AUC: 0.5008
+Epoch 15/50 - Loss: 0.4317 - Val F1: 0.4118 - Val ROC-AUC: 0.7836 - Val PR-AUC: 0.5122
+Epoch 16/50 - Loss: 0.4053 - Val F1: 0.3614 - Val ROC-AUC: 0.7372 - Val PR-AUC: 0.3972
+Epoch 17/50 - Loss: 0.4154 - Val F1: 0.4000 - Val ROC-AUC: 0.7603 - Val PR-AUC: 0.5060
+Epoch 18/50 - Loss: 0.3986 - Val F1: 0.5185 - Val ROC-AUC: 0.7830 - Val PR-AUC: 0.4623
+Epoch 19/50 - Loss: 0.4088 - Val F1: 0.3684 - Val ROC-AUC: 0.7453 - Val PR-AUC: 0.4429
+Epoch 20/50 - Loss: 0.3777 - Val F1: 0.4000 - Val ROC-AUC: 0.7867 - Val PR-AUC: 0.3779
+Epoch 21/50 - Loss: 0.3421 - Val F1: 0.4308 - Val ROC-AUC: 0.7849 - Val PR-AUC: 0.5093

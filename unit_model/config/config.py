@@ -35,7 +35,6 @@ TARGET_NAMES = [
     "TOX21_ERb_BLA_Agonist_ch2",
     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",
     "TOX21_ERa_BLA_Agonist_ch2",
-    "TOX21_ERb_BLA_Antagonist_viability",
     "TOX21_ERa_LUC_VM7_Agonist"
 ]
 TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2")

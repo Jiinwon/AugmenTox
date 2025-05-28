@@ -2,11 +2,21 @@
 
 set -e
 
+# 0.5. ENDPOINTS 환경변수 설정 (config.py의 리스트를 언더바로 합쳐 문자열로)
+ENDPOINTS=$(python3 - <<'PYCODE'
+import config.config as cfg
+print("_".join(cfg.ENDPOINTS))
+PYCODE
+)
+export ENDPOINTS
+
+# ──────────────────────────────────────────────────────
 # 1. 로그 디렉토리 설정
-mkdir -p "$LOG_SUBDIR"
-LOG_OUT="$LOG_SUBDIR/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}.out"
-LOG_ERR="$LOG_SUBDIR/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}.err"
-exec > "$LOG_OUT" 2> "$LOG_ERR"
+#mkdir -p "$LOG_SUBDIR"
+#LOG_OUT="$LOG_SUBDIR/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}_${ENDPOINTS}.out"
+#LOG_ERR="$LOG_SUBDIR/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}_${ENDPOINTS}.err"
+#exec > "$LOG_OUT" 2> "$LOG_ERR"
+# ──────────────────────────────────────────────────────
 
 # 2. PYTHONPATH 설정
 DIR=$(cd "$(dirname "$0")" && pwd)
