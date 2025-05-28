@@ -1,31 +1,46 @@
+#!/usr/bin/env python3
+import os
 import pandas as pd
 import config.config as cfg
-import os
 
-# 환경변수로부터 이름 읽기 (없으면 config 기본값 사용)
-pretrain_name = os.getenv("SOURCE_NAME", cfg.SOURCE_NAME)
-finetune_name = os.getenv("TARGET_NAME", cfg.TARGET_NAME)
+def main():
+    # 1. 전체 엑셀 파일 읽기
+    excel_path = cfg.ENTIRE_DATA_PATH
+    if excel_path.endswith(('.xls','xlsx')):
+        df = pd.read_excel(excel_path)
+    else:
+        df = pd.read_csv(excel_path)
 
-# 원본 데이터 경로
-data_path = cfg.ENTIRE_DATA_PATH
+    # 2. 공통: SMILES 열이 반드시 있어야 함
+    if 'SMILES' not in df.columns:
+        raise KeyError("Excel에 'SMILES' 컬럼이 없습니다!")
+    df = df.dropna(subset=['SMILES'])
 
-# 동적 디렉토리 생성: data/sample/SOURCE&&TARGET/
-combo_dir = os.path.join("data", "sample", f"{pretrain_name}&&{finetune_name}")
-os.makedirs(combo_dir, exist_ok=True)
+    # 3. SOURCE_NAMES 기준 CSV 생성
+    for src in cfg.SOURCE_NAMES:
+        if src not in df.columns:
+            print(f"[WARN] '{src}' 컬럼이 없어 SKIP")
+            continue
+        df_src = df[['SMILES', src]].dropna()
+        df_src.columns = ['smiles', 'label']
+        out_dir = os.path.join("data", "sample")
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, f"{src}.csv")
+        df_src.to_csv(out_path, index=False)
+        print(f"Saved pretrain CSV for {src}: {out_path}")
 
-# pretrain/finetune 경로를 해당 디렉토리 아래로 변경
-pretrain_path = os.path.join(combo_dir, "pretraining.csv")
-finetune_path = os.path.join(combo_dir, "finetuning.csv")
+    # 4. TARGET_NAMES 기준 CSV 생성
+    for tgt in cfg.TARGET_NAMES:
+        if tgt not in df.columns:
+            print(f"[WARN] '{tgt}' 컬럼이 없어 SKIP")
+            continue
+        df_tgt = df[['SMILES', tgt]].dropna()
+        df_tgt.columns = ['smiles', 'label']
+        out_dir = os.path.join("data", "sample")
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, f"{tgt}.csv")
+        df_tgt.to_csv(out_path, index=False)
+        print(f"Saved finetune CSV for {tgt}: {out_path}")
 
-# 원본 엑셀 불러오기
-df = pd.read_excel(data_path)
-
-# 1) Pre-training용 CSV 생성
-df_pre = df[["SMILES", pretrain_name]].dropna()
-df_pre.columns = ["smiles", "label"]
-df_pre.to_csv(pretrain_path, index=False)
-
-# 2) Fine-tuning용 CSV 생성
-df_fine = df[["SMILES", finetune_name]].dropna()
-df_fine.columns = ["smiles", "label"]
-df_fine.to_csv(finetune_path, index=False)
+if __name__ == "__main__":
+    main()

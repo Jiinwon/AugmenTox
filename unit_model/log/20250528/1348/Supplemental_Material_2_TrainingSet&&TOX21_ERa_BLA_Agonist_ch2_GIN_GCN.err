@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/train/pretrain.py", line 50, in run_pretraining
+    labels = [int(d.y.item()) for d in train_data]
+                  ^^^^^^^^^^
+RuntimeError: a Tensor with 3 elements cannot be converted to Scalar

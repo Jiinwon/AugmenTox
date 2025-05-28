@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/train/pretrain.py", line 58, in run_pretraining
+    labels = [ int(d.y[primary_idx].item()) for d in train_data ]
+                   ~~~^^^^^^^^^^^^^
+IndexError: index 2 is out of bounds for dimension 0 with size 1

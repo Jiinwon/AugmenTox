@@ -52,7 +52,7 @@ def visualize_embeddings(model, data_list, device, save_path=None):
     if save_path is None:
         save_dir = os.path.join("unit_model", "figure")
         os.makedirs(save_dir, exist_ok=True)
-        filename = f"embedding_tsne_{cfg.TARGET_NAME}&&{cfg.SOURCE_NAME}_{cfg.MODEL_NAME}.png"
+        filename = f"figure/embedding_tsne_{cfg.TARGET_NAME}&&{cfg.SOURCE_NAME}_{cfg.MODEL_NAME}.png"
         save_path = os.path.join(save_dir, filename)
 
     plt.savefig(save_path)

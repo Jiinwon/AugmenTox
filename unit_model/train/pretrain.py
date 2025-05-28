@@ -16,7 +16,11 @@ def run_pretraining():
                                                 random_seed=cfg.RANDOM_SEED)
     # Determine input dimension from data
     input_dim = train_data[0].x.shape[1]
-    output_dim = cfg.NUM_CLASSES
+    # CSV 모드일 땐 1, SDF 모드(OPERA)일 땐 ENDPOINTS 길이
+    if cfg.OPERA:
+        output_dim = len(cfg.ENDPOINTS)
+    else:
+        output_dim = 1
     # Select model architecture
     model_type = cfg.MODEL_TYPE.upper()
     if model_type == "GIN":
@@ -47,7 +51,24 @@ def run_pretraining():
     optimizer = optim.Adam(model.parameters(), lr=cfg.LEARNING_RATE)
     scheduler = utils.get_scheduler(optimizer, step_size=cfg.LR_STEP_SIZE, gamma=cfg.LR_GAMMA)
     # 레이블 리스트 추출
-    labels = [int(d.y.item()) for d in train_data]
+    # CSV 모드: 스칼라, SDF 모드: vector → primary label (예: 첫 번째)로 샘플링
+    labels = []
+    if cfg.OPERA:
+        # 첫 번째 ENDPOINTS 값에 매핑되는 인덱스 찾기 (없으면 0으로 fallback)
+        primary_field = cfg.ENDPOINTS[0]
+        if primary_field in cfg.SDF_LABEL_FIELDS:
+            primary_idx = cfg.SDF_LABEL_FIELDS.index(primary_field)
+        else:
+            primary_idx = 0
+
+        for d in train_data:
+            y = d.y
+            # 벡터 길이보다 primary_idx가 크면 0번 요소로 대체
+            idx = primary_idx if y.numel() > primary_idx else 0
+            labels.append(int(y[idx].item()))
+    else:
+        for d in train_data:
+            labels.append(int(d.y.item()))
     # 클래스별 샘플 수
     class_counts = [labels.count(0), labels.count(1)]
     # 각 샘플에 대해 inverse frequency 가중치 부여

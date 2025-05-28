@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/train/finetune.py", line 12, in run_finetuning
+    train_data, val_data, test_data = load_data(cfg.TARGET_DATA_PATH, 
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/data/load_data.py", line 93, in load_data
+    raise ValueError(f"CSV must contain columns '{smiles_col}' and '{label_col}'.")
+ValueError: CSV must contain columns 'smiles' and 'label'.

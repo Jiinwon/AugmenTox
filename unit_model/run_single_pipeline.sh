@@ -16,8 +16,10 @@ export PYTHONPATH="$DIR"
 # source /home1/USER/anaconda3/envs/toxcast_env/bin/activate
 
 # 4. convert_excel_to_csv: 변환 수행
-echo "[1/4] Excel → CSV 변환 중..."
-python3 -u -m scripts.convert_excel_to_csv
+if [ "$OPERA" = "False" ]; then
+    echo "[1/4] Excel → CSV 변환 중..."
+    python3 -u -m scripts.convert_excel_to_csv
+fi
 
 # 5. pretrain
 echo "[2/4] Pretraining on $SOURCE_NAME using $MODEL_TYPE..."
@@ -26,6 +28,9 @@ import os
 import config.config as cfg
 cfg.SOURCE_NAME = os.environ["SOURCE_NAME"]
 cfg.MODEL_TYPE = os.environ["MODEL_TYPE"]
+# OPERA 모드 시 SDF 사용
+if cfg.OPERA:
+    cfg.SOURCE_DATA_PATH = cfg.SOURCE_SDF_PATH
 from train.pretrain import run_pretraining
 run_pretraining()
 PYCODE
