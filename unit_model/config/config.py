@@ -2,10 +2,31 @@ import os
 import torch
 
 # Assay names
-# MULTI_SOURCE_NAMES = [
+SOURCE_NAMES = [
+    "TOX21_ERb_BLA_Antagonist_ch1",
+    "TOX21_ERa_LUC_VM7_Antagonist_0.5nM_E2_viability",
+    "TOX21_ERa_LUC_VM7_Agonist",
+    "TOX21_ERa_BLA_Antagonist_ch1",
+]
+SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERb_BLA_Antagonist_ch1")
+
+TARGET_NAMES = [
+    "TOX21_ERb_BLA_Agonist_ch2",
+    "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",
+    "TOX21_ERa_BLA_Agonist_ch2",
+    "TOX21_ERb_BLA_Antagonist_viability",
+]
+TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERb_BLA_Agonist_ch2")
+
+OPERA = True
+# SDF에 들어 있는 모든 클래스 필드 순서
+SDF_LABEL_FIELDS = ["Agonist_Class", "Antagonist_Class", "Binding_Class"]
+ENDPOINTS = ["Binding_Class"]  # 원하는 대로 토글
+
+# SOURCE_NAMES = [
 #     "TOX21_ERb_BLA_Antagonist_ch1",
 #     "TOX21_ERa_LUC_VM7_Antagonist_0.5nM_E2_viability",
-#     "TOX21_ERa_LUC_VM7_Agonist",
+#     "TOX21_ERb_BLA_Antagonist_viability",
 #     "TOX21_ERa_BLA_Antagonist_ch1",
 # ]
 # SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_BLA_Agonist_ch1")
@@ -15,29 +36,9 @@ import torch
 #     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",
 #     "TOX21_ERa_BLA_Agonist_ch2",
 #     "TOX21_ERb_BLA_Antagonist_viability",
+#     "TOX21_ERa_LUC_VM7_Agonist"
 # ]
 # TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2")
-
-OPERA = True
-# SDF에 들어 있는 모든 클래스 필드 순서
-SDF_LABEL_FIELDS = ["Agonist_Class", "Antagonist_Class", "Binding_Class"]
-ENDPOINTS = ["Agonist_Class"]  # 원하는 대로 토글
-
-SOURCE_NAMES = [
-    "TOX21_ERb_BLA_Antagonist_ch1",
-    "TOX21_ERa_LUC_VM7_Antagonist_0.5nM_E2_viability",
-    "TOX21_ERb_BLA_Antagonist_viability",
-    "TOX21_ERa_BLA_Antagonist_ch1",
-]
-SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_BLA_Agonist_ch1")
-
-TARGET_NAMES = [
-    "TOX21_ERb_BLA_Agonist_ch2",
-    "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",
-    "TOX21_ERa_BLA_Agonist_ch2",
-    "TOX21_ERa_LUC_VM7_Agonist"
-]
-TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2")
 
 
 
@@ -85,11 +86,9 @@ HIDDEN_DIM = 1024  # 원래는 64
 NUM_LAYERS = 2  # 원래는 3 
 DROPOUT = 0.5
 
-# MODEL_TYPE = "GIN"           # default model type ("GIN", "GCN", or "GAT")
-# MODEL_NAME = MODEL_TYPE.lower()
 
 # 기존 모델 타입 + 하이브리드 타입 지원
-MODEL_TYPE = os.getenv("MODEL_TYPE", "GIN_GCN")  # 가능 값: GIN, GCN, GAT, GIN_GCN, GIN_GAT, GCN_GAT
+MODEL_TYPE = os.getenv("MODEL_TYPE", "GIN")  # 가능 값: GIN, GCN, GAT, GIN_GCN, GIN_GAT, GCN_GAT
 # 하이브리드 모델일 경우 파일명 표준화
 MODEL_NAME = MODEL_TYPE.lower().replace("_", "_")
 
