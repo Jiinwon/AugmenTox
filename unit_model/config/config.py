@@ -1,21 +1,19 @@
 import os
 import torch
 
-Assay names
+# Assay names
 SOURCE_NAMES = [
     "TOX21_ERa_LUC_VM7_Agonist",                            # nonempty : 8305, zero : 7243, one : 1062
-    "TOX21_ERa_BLA_Antagonist_viability",                   # nonempty : 8305, zero : 7990, one : 315
+    # "TOX21_ERa_BLA_Antagonist_viability",                   # nonempty : 8305, zero : 7990, one : 315
 ]
 SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_LUC_VM7_Agonist")
 
 
 TARGET_NAMES = [
     "TOX21_ERb_BLA_Antagonist_ratio",                       # nonempty : 7871, zero : 6406, one : 1465
-    "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",             # nonempty : 7871, zero : 7712, one : 159
+    # "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",             # nonempty : 7871, zero : 7712, one : 159
 ]
 TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERb_BLA_Antagonist_ratio")
-
-
 
 # SOURCE_NAMES = [
 #     "TOX21_ERa_BLA_Antagonist_ratio",                       # nonempty : 8305, zero : 7244, one : 1061
@@ -76,7 +74,6 @@ TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERb_BLA_Antagonist_ratio")
 # TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_BLA_Antagonist_ratio")
 
 
-
 OPERA = False
 # SDF에 들어 있는 모든 클래스 필드 순서
 SDF_LABEL_FIELDS = ["Agonist_Class", "Antagonist_Class", "Binding_Class"]
@@ -123,7 +120,7 @@ LR_STEP_SIZE = 10            # StepLR scheduler step
 LR_GAMMA = 0.5               # Learning rate decay factor
 
 ## Model hyperparameters
-HIDDEN_DIM = 1024  # 원래는 64
+HIDDEN_DIM = 512  # 원래는 64
 NUM_LAYERS = 2  # 원래는 3 
 DROPOUT = 0.5  # 원래는 0.5
 

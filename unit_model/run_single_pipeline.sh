@@ -16,10 +16,10 @@ export PYTHONPATH="$DIR"
 # source /home1/USER/anaconda3/envs/toxcast_env/bin/activate
 
 # 4. convert_excel_to_csv: 변환 수행
-if [ "$OPERA" = "False" ]; then
-    echo "[1/4] Excel → CSV 변환 중..."
-    python3 -u -m scripts.convert_excel_to_csv
-fi
+# if [ "$OPERA" = "False" ]; then
+#     echo "[1/4] Excel → CSV 변환 중..."
+#     python3 -u -m scripts.convert_excel_to_csv
+# fi
 
 # 5. pretrain
 echo "[2/4] Pretraining on $SOURCE_NAME using $MODEL_TYPE..."
@@ -102,9 +102,18 @@ model = ModelClass(
 )
 load_model(model, cfg.FINETUNED_MODEL_PATH, device)
 
+
 # 시각화 수행
 _, _, test_data = load_data(cfg.TARGET_DATA_PATH, train_ratio=cfg.TRAIN_RATIO, val_ratio=cfg.VAL_RATIO, test_ratio=cfg.TEST_RATIO, random_seed=cfg.RANDOM_SEED)
-save_path = f"embeddings_{cfg.SOURCE_NAME.replace('/', '_')}_{cfg.TARGET_NAME.replace('/', '_')}_{cfg.MODEL_TYPE}.png"
+
+# 저장 경로: unit_model/figure/MODEL_TYPE/파일명.png
+save_dir = os.path.join("figure", cfg.MODEL_TYPE)
+os.makedirs(save_dir, exist_ok=True)
+save_path = os.path.join(
+    save_dir,
+    f"{embeddings_cfg.SOURCE_NAME.replace('/', '_')}_{cfg.TARGET_NAME.replace('/', '_')}_{cfg.MODEL_TYPE}.png"
+)
+
 visualize_embeddings(model, test_data, device, save_path=save_path)
 print(f"✅ Embeddings 저장 완료: {save_path}")
 PYCODE
