@@ -15,7 +15,7 @@ TARGET_NAMES = [
 ]
 TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERb_BLA_Antagonist_ratio")
 
- SOURCE_NAMES = [
+SOURCE_NAMES = [
      "TOX21_ERa_BLA_Antagonist_ratio",                       # nonempty : 8305, zero : 7244, one : 1061
      "TOX21_ERa_LUC_VM7_Agonist",                            # nonempty : 8305, zero : 7243, one : 1062
      "TOX21_ERa_BLA_Antagonist_viability",                   # nonempty : 8305, zero : 7990, one : 315
@@ -44,7 +44,7 @@ TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERb_BLA_Antagonist_ratio")
  ]
 # SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_BLA_Antagonist_ratio")
 
- TARGET_NAMES = [
+TARGET_NAMES = [
      "TOX21_ERa_BLA_Antagonist_ratio",                       # nonempty : 8305, zero : 7244, one : 1061
      "TOX21_ERa_LUC_VM7_Agonist",                            # nonempty : 8305, zero : 7243, one : 1062
      "TOX21_ERa_BLA_Antagonist_viability",                   # nonempty : 8305, zero : 7990, one : 315
