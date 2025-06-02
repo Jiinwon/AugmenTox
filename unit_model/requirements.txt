@@ -7,7 +7,7 @@ scikit-learn
 openpyxl
 matplotlib
 seaborn
-rdkit-pypi
+rdkit
 tqdm
 networkx
 

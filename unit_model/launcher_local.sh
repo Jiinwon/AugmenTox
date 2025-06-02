@@ -62,13 +62,17 @@ PYCODE
         bash "$SCRIPT_DIR/run_single_pipeline.sh"
     done
 else
-    # 일반적인 SOURCE ↔ TARGET 매핑
-    for i in "${!SOURCE_NAMES[@]}"; do
-        SRC="${SOURCE_NAMES[$i]}"
-        TGT="${TARGET_NAMES[$i]}"
-        echo "🔹 실행: $SRC -> $TGT ($MODEL_TYPE)"
-        SOURCE_NAME="$SRC" TARGET_NAME="$TGT" MODEL_TYPE="$MODEL_TYPE" OPERA="False" LOG_SUBDIR="$BASE_LOG" \
-        bash "$SCRIPT_DIR/run_single_pipeline.sh"
+    # SOURCE_NAMES × TARGET_NAMES 모든 조합 실행 (단, 같은 이름은 제외)
+    for SRC in "${SOURCE_NAMES[@]}"; do
+        for TGT in "${TARGET_NAMES[@]}"; do
+            if [ "$SRC" != "$TGT" ]; then
+                echo "🔹 실행: $SRC -> $TGT ($MODEL_TYPE)"
+                SOURCE_NAME="$SRC" TARGET_NAME="$TGT" MODEL_TYPE="$MODEL_TYPE" OPERA="False" LOG_SUBDIR="$BASE_LOG" \
+                bash "$SCRIPT_DIR/run_single_pipeline.sh"
+            else
+                echo "⚠️ 건너뜀 (동일한 SOURCE/TARGET): $SRC"
+            fi
+        done
     done
 fi
 
