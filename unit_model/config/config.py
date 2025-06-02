@@ -145,4 +145,4 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 # 저장 경로 구성
 PRETRAINED_MODEL_PATH   = os.path.join(MODEL_DIR, f"{SOURCE_NAME}&&{SOURCE_NAME}_{MODEL_NAME}.pth")
 FINETUNED_MODEL_PATH    = os.path.join(MODEL_DIR, f"{SOURCE_NAME}&&{TARGET_NAME}_{MODEL_NAME}.pth")
-TARGET_ONLY_MODEL_PATH  = os.path.join(MODEL_DIR, f"{TARGET_NAME}&&{TARGET_NAME}_{MODEL_NAME}.pth")
+TARGET_ONLY_MODEL_PATH  = os.path.join(MODEL_DIR, f"TargetOnly_{TARGET_NAME}_{MODEL_NAME}.pth")
