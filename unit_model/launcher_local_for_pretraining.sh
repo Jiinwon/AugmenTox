@@ -66,7 +66,7 @@ else
     for SRC in "${SOURCE_NAMES[@]}"; do
         echo "🔹 실행: $SRC (pretraining only, $MODEL_TYPE)"
         SOURCE_NAME="$SRC" MODEL_TYPE="$MODEL_TYPE" OPERA="False" LOG_SUBDIR="$BASE_LOG" \
-        bash "$SCRIPT_DIR/run_single_pipeline_test.sh"
+        bash "$SCRIPT_DIR/run_single_pipeline_for_pretraining.sh"
     done
 fi
 

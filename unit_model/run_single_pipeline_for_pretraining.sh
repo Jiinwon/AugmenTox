@@ -4,8 +4,8 @@ set -e
 
 # 1. 로그 디렉토리 설정
 mkdir -p "$LOG_SUBDIR"
-LOG_OUT="$LOG_SUBDIR/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}.out"
-LOG_ERR="$LOG_SUBDIR/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}.err"
+LOG_OUT="$LOG_SUBDIR/pre_${SOURCE_NAME}_${MODEL_TYPE}.out"
+LOG_ERR="$LOG_SUBDIR/pre_${SOURCE_NAME}_${MODEL_TYPE}.err"
 exec > "$LOG_OUT" 2> "$LOG_ERR"
 
 # 2. PYTHONPATH 설정
@@ -16,10 +16,10 @@ export PYTHONPATH="$DIR"
 # source /home1/USER/anaconda3/envs/toxcast_env/bin/activate
 
 # 4. convert_excel_to_csv: 변환 수행
-if [ "$OPERA" = "False" ]; then
-    echo "[1/4] Excel → CSV 변환 중..."
-    python3 -u -m scripts.convert_excel_to_csv
-fi
+# if [ "$OPERA" = "False" ]; then
+#     echo "[1/4] Excel → CSV 변환 중..."
+#     python3 -u -m scripts.convert_excel_to_csv
+# fi
 
 # 5. pretrain
 echo "[2/4] Pretraining on $SOURCE_NAME using $MODEL_TYPE..."
