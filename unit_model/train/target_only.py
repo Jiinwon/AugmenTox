@@ -7,6 +7,7 @@ from data.load_data import load_data
 from train.utils import train_one_epoch, evaluate, save_model, get_scheduler
 import config.config as cfg
 from torch.utils.data import WeightedRandomSampler
+from train import utils
 
 def run_target_only():
     # 1) load and split the target dataset
@@ -103,7 +104,7 @@ def run_target_only():
           f"PR-AUC: {test_metrics['pr_auc']:.4f}")
 
     # 6) optionally save
-    save_model(model, f"model_save/target_only_{cfg.MODEL_TYPE.lower()}.pth")
+    utils.save_model(model, cfg.TARGET_ONLY_MODEL_PATH)
 
 
 if __name__ == "__main__":
