@@ -2,43 +2,82 @@ import os
 import torch
 
 # Assay names
-# MULTI_SOURCE_NAMES = [
-#     "TOX21_ERb_BLA_Antagonist_ch1",
-#     "TOX21_ERa_LUC_VM7_Antagonist_0.5nM_E2_viability",
-#     "TOX21_ERa_LUC_VM7_Agonist",
-#     "TOX21_ERa_BLA_Antagonist_ch1",
-# ]
-# SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_BLA_Agonist_ch1")
-
-# TARGET_NAMES = [
-#     "TOX21_ERb_BLA_Agonist_ch2",
-#     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",
-#     "TOX21_ERa_BLA_Agonist_ch2",
-#     "TOX21_ERb_BLA_Antagonist_viability",
-# ]
-# TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2")
-
-OPERA = True
-# SDF에 들어 있는 모든 클래스 필드 순서
-SDF_LABEL_FIELDS = ["Agonist_Class", "Antagonist_Class", "Binding_Class"]
-ENDPOINTS = ["Agonist_Class"]  # 원하는 대로 토글
-
 SOURCE_NAMES = [
-    "TOX21_ERb_BLA_Antagonist_ch1",
-    "TOX21_ERa_LUC_VM7_Antagonist_0.5nM_E2_viability",
-    "TOX21_ERb_BLA_Antagonist_viability",
-    "TOX21_ERa_BLA_Antagonist_ch1",
+    "TOX21_ERa_LUC_VM7_Agonist",                            # nonempty : 8305, zero : 7243, one : 1062
+    # "TOX21_ERa_BLA_Antagonist_viability",                   # nonempty : 8305, zero : 7990, one : 315
 ]
-SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_BLA_Agonist_ch1")
+SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_LUC_VM7_Agonist")
+
 
 TARGET_NAMES = [
-    "TOX21_ERb_BLA_Agonist_ch2",
-    "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",
-    "TOX21_ERa_BLA_Agonist_ch2",
-    "TOX21_ERa_LUC_VM7_Agonist"
+    "TOX21_ERb_BLA_Antagonist_ratio",                       # nonempty : 7871, zero : 6406, one : 1465
+    # "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",             # nonempty : 7871, zero : 7712, one : 159
 ]
-TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2")
+TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERb_BLA_Antagonist_ratio")
 
+# SOURCE_NAMES = [
+#     "TOX21_ERa_BLA_Antagonist_ratio",                       # nonempty : 8305, zero : 7244, one : 1061
+#     "TOX21_ERa_LUC_VM7_Agonist",                            # nonempty : 8305, zero : 7243, one : 1062
+#     "TOX21_ERa_BLA_Antagonist_viability",                   # nonempty : 8305, zero : 7990, one : 315
+#     "TOX21_ERa_LUC_VM7_Antagonist_0.5nM_E2",                # nonempty : 8305, zero : 7468, one : 837
+#     "TOX21_ERa_BLA_Antagonist_ch2",                         # nonempty : 8305, zero : 7830, one : 475
+#     "TOX21_ERa_BLA_Antagonist_ch1",                         # nonempty : 8305, zero : 7774, one : 531
+#     "TOX21_ERa_LUC_VM7_Antagonist_0.5nM_E2_viability",      # nonempty : 8305, zero : 7707, one : 598
+#     "TOX21_ERa_BLA_Agonist_ch2",                            # nonempty : 8305, zero : 7885, one : 420
+#     "TOX21_ERa_BLA_Agonist_ch1",                            # nonempty : 8305, zero : 7912, one : 393
+#     "TOX21_ERa_BLA_Agonist_ratio",                          # nonempty : 8305, zero : 7849, one : 456
+#     "TOX21_ERb_BLA_Antagonist_ch1",                         # nonempty : 7871, zero : 7627, one : 244
+#     "TOX21_ERb_BLA_Antagonist_ch2",                         # nonempty : 7871, zero : 7058, one : 813
+#     "TOX21_ERb_BLA_Agonist_viability",                      # nonempty : 7871, zero : 6782, one : 1089
+#     "TOX21_ERb_BLA_Agonist_ratio",                          # nonempty : 7871, zero : 7224, one : 147
+#     "TOX21_ERb_BLA_Agonist_ch2",                            # nonempty : 7871, zero : 7692, one : 179
+#     "TOX21_ERb_BLA_Agonist_ch1",                            # nonempty : 7871, zero : 7735, one : 136
+#     "TOX21_ERR_LUC_Agonist",                                # nonempty : 7871, zero : 7622, one : 249
+#     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability",   # nonempty : 7871, zero : 7164, one : 707
+#     "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2",                # nonempty : 7871, zero : 6889, one : 982
+#     "TOX21_ERb_BLA_Antagonist_ratio",                       # nonempty : 7871, zero : 6406, one : 1465
+#     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",             # nonempty : 7871, zero : 7712, one : 159
+#     "TOX21_ERR_LUC_viability",                              # nonempty : 7871, zero : 6819, one : 1052
+#     "TOX21_ERR_LUC_Antagonist",                             # nonempty : 7871, zero : 6245, one : 1626
+#     "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2_viability",      # nonempty : 7871, zero : 7306, one : 565
+#     "TOX21_ERb_BLA_Antagonist_viability",                   # nonempty : 7871, zero : 6811, one : 1060
+# ]
+# SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_BLA_Antagonist_ratio")
+
+# TARGET_NAMES = [
+#     "TOX21_ERa_BLA_Antagonist_ratio",                       # nonempty : 8305, zero : 7244, one : 1061
+#     "TOX21_ERa_LUC_VM7_Agonist",                            # nonempty : 8305, zero : 7243, one : 1062
+#     "TOX21_ERa_BLA_Antagonist_viability",                   # nonempty : 8305, zero : 7990, one : 315
+#     "TOX21_ERa_LUC_VM7_Antagonist_0.5nM_E2",                # nonempty : 8305, zero : 7468, one : 837
+#     "TOX21_ERa_BLA_Antagonist_ch2",                         # nonempty : 8305, zero : 7830, one : 475
+#     "TOX21_ERa_BLA_Antagonist_ch1",                         # nonempty : 8305, zero : 7774, one : 531
+#     "TOX21_ERa_LUC_VM7_Antagonist_0.5nM_E2_viability",      # nonempty : 8305, zero : 7707, one : 598
+#     "TOX21_ERa_BLA_Agonist_ch2",                            # nonempty : 8305, zero : 7885, one : 420
+#     "TOX21_ERa_BLA_Agonist_ch1",                            # nonempty : 8305, zero : 7912, one : 393
+#     "TOX21_ERa_BLA_Agonist_ratio",                          # nonempty : 8305, zero : 7849, one : 456
+#     "TOX21_ERb_BLA_Antagonist_ch1",                         # nonempty : 7871, zero : 7627, one : 244
+#     "TOX21_ERb_BLA_Antagonist_ch2",                         # nonempty : 7871, zero : 7058, one : 813
+#     "TOX21_ERb_BLA_Agonist_viability",                      # nonempty : 7871, zero : 6782, one : 1089
+#     "TOX21_ERb_BLA_Agonist_ratio",                          # nonempty : 7871, zero : 7224, one : 147
+#     "TOX21_ERb_BLA_Agonist_ch2",                            # nonempty : 7871, zero : 7692, one : 179
+#     "TOX21_ERb_BLA_Agonist_ch1",                            # nonempty : 7871, zero : 7735, one : 136
+#     "TOX21_ERR_LUC_Agonist",                                # nonempty : 7871, zero : 7622, one : 249
+#     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability",   # nonempty : 7871, zero : 7164, one : 707
+#     "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2",                # nonempty : 7871, zero : 6889, one : 982
+#     "TOX21_ERb_BLA_Antagonist_ratio",                       # nonempty : 7871, zero : 6406, one : 1465
+#     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",             # nonempty : 7871, zero : 7712, one : 159
+#     "TOX21_ERR_LUC_viability",                              # nonempty : 7871, zero : 6819, one : 1052
+#     "TOX21_ERR_LUC_Antagonist",                             # nonempty : 7871, zero : 6245, one : 1626
+#     "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2_viability",      # nonempty : 7871, zero : 7306, one : 565
+#     "TOX21_ERb_BLA_Antagonist_viability",                   # nonempty : 7871, zero : 6811, one : 1060
+# ]
+# TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_BLA_Antagonist_ratio")
+
+
+OPERA = False
+# SDF에 들어 있는 모든 클래스 필드 순서
+SDF_LABEL_FIELDS = ["Agonist_Class", "Antagonist_Class", "Binding_Class"]
+ENDPOINTS = ["Binding_Class"]  # 원하는 대로 토글
 
 
 ## Data paths
@@ -75,18 +114,16 @@ RANDOM_SEED = 42
 ## Training hyperparameters
 BATCH_SIZE = 32
 NUM_EPOCHS_PRETRAIN = 50
-NUM_EPOCHS_FINETUNE = 50  # 원래는 30
+NUM_EPOCHS_FINETUNE = 30
 LEARNING_RATE = 0.001
 LR_STEP_SIZE = 10            # StepLR scheduler step
 LR_GAMMA = 0.5               # Learning rate decay factor
 
 ## Model hyperparameters
-HIDDEN_DIM = 1024  # 원래는 64
+HIDDEN_DIM = 512  # 원래는 64
 NUM_LAYERS = 2  # 원래는 3 
-DROPOUT = 0.5
+DROPOUT = 0.5  # 원래는 0.5
 
-# MODEL_TYPE = "GIN"           # default model type ("GIN", "GCN", or "GAT")
-# MODEL_NAME = MODEL_TYPE.lower()
 
 # 기존 모델 타입 + 하이브리드 타입 지원
 MODEL_TYPE = os.getenv("MODEL_TYPE", "GIN_GCN")  # 가능 값: GIN, GCN, GAT, GIN_GCN, GIN_GAT, GCN_GAT

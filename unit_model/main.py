@@ -14,3 +14,4 @@ if __name__ == "__main__":
     pretrain.run_pretraining()
     # Run finetuning on target dataset
     finetune.run_finetuning()
+
