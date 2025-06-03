@@ -57,3 +57,6 @@ def visualize_embeddings(model, data_list, device, save_path=None):
 
     plt.savefig(save_path)
     plt.close()
+
+
+
