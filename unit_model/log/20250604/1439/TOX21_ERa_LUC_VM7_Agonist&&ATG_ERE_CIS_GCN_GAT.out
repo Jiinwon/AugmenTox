@@ -113,3 +113,9 @@ Finetuning completed. Test F1: 0.5078, ROC-AUC: 0.7366, PR-AUC: 0.5072
 [Target-only] Epoch 45/50 – Loss: 0.4935  Val F1: 0.4771  ROC-AUC: 0.7400  PR-AUC: 0.4724
 [Target-only] Epoch 46/50 – Loss: 0.4952  Val F1: 0.4831  ROC-AUC: 0.7375  PR-AUC: 0.4711
 [Target-only] Epoch 47/50 – Loss: 0.4659  Val F1: 0.4700  ROC-AUC: 0.7267  PR-AUC: 0.4637
+[Target-only] Epoch 48/50 – Loss: 0.4827  Val F1: 0.4796  ROC-AUC: 0.7266  PR-AUC: 0.4456
+[Target-only] Epoch 49/50 – Loss: 0.4738  Val F1: 0.4860  ROC-AUC: 0.7333  PR-AUC: 0.4653
+[Target-only] Epoch 50/50 – Loss: 0.4694  Val F1: 0.4928  ROC-AUC: 0.7359  PR-AUC: 0.4866
+=== Target-only TEST performance ===
+Test F1: 0.5000, ROC-AUC: 0.7629, PR-AUC: 0.5333
+✅ 실험 완료: TOX21_ERa_LUC_VM7_Agonist -> ATG_ERE_CIS [GCN_GAT]
