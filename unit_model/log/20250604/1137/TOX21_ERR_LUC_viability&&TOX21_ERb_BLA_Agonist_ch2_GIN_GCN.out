@@ -1,0 +1,172 @@
+[1/4] Excel → CSV 변환 중...
+Saved pretrain CSV for TOX21_ERa_LUC_VM7_Agonist: data/sample/TOX21_ERa_LUC_VM7_Agonist.csv
+Saved pretrain CSV for TOX21_ERb_BLA_Agonist_viability: data/sample/TOX21_ERb_BLA_Agonist_viability.csv
+Saved pretrain CSV for TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability: data/sample/TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability.csv
+Saved pretrain CSV for TOX21_ERR_LUC_viability: data/sample/TOX21_ERR_LUC_viability.csv
+Saved finetune CSV for TOX21_ERa_BLA_Agonist_ch2: data/sample/TOX21_ERa_BLA_Agonist_ch2.csv
+Saved finetune CSV for TOX21_ERa_BLA_Agonist_ch1: data/sample/TOX21_ERa_BLA_Agonist_ch1.csv
+Saved finetune CSV for TOX21_ERa_BLA_Agonist_ratio: data/sample/TOX21_ERa_BLA_Agonist_ratio.csv
+Saved finetune CSV for TOX21_ERb_BLA_Agonist_ratio: data/sample/TOX21_ERb_BLA_Agonist_ratio.csv
+Saved finetune CSV for TOX21_ERb_BLA_Agonist_ch2: data/sample/TOX21_ERb_BLA_Agonist_ch2.csv
+Saved finetune CSV for TOX21_ERb_BLA_Agonist_ch1: data/sample/TOX21_ERb_BLA_Agonist_ch1.csv
+Saved finetune CSV for TOX21_ERR_LUC_Agonist: data/sample/TOX21_ERR_LUC_Agonist.csv
+Saved finetune CSV for TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780: data/sample/TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780.csv
+[2/4] Pretraining on TOX21_ERR_LUC_viability using GIN_GCN...
+Epoch 1/50 - Loss: 0.6105 - Val F1: 0.3668 - Val ROC-AUC: 0.7123 - Val PR-AUC: 0.2550
+Epoch 2/50 - Loss: 0.5471 - Val F1: 0.3533 - Val ROC-AUC: 0.7167 - Val PR-AUC: 0.2478
+Epoch 3/50 - Loss: 0.5266 - Val F1: 0.3300 - Val ROC-AUC: 0.7191 - Val PR-AUC: 0.2638
+Epoch 4/50 - Loss: 0.5119 - Val F1: 0.3377 - Val ROC-AUC: 0.7185 - Val PR-AUC: 0.2678
+Epoch 5/50 - Loss: 0.4986 - Val F1: 0.3767 - Val ROC-AUC: 0.7400 - Val PR-AUC: 0.3139
+Epoch 6/50 - Loss: 0.4957 - Val F1: 0.3526 - Val ROC-AUC: 0.7325 - Val PR-AUC: 0.2943
+Epoch 7/50 - Loss: 0.4876 - Val F1: 0.3030 - Val ROC-AUC: 0.7014 - Val PR-AUC: 0.2856
+Epoch 8/50 - Loss: 0.4801 - Val F1: 0.3588 - Val ROC-AUC: 0.7338 - Val PR-AUC: 0.2842
+Epoch 9/50 - Loss: 0.4758 - Val F1: 0.3382 - Val ROC-AUC: 0.7176 - Val PR-AUC: 0.2455
+Epoch 10/50 - Loss: 0.4544 - Val F1: 0.3916 - Val ROC-AUC: 0.7451 - Val PR-AUC: 0.2897
+Epoch 11/50 - Loss: 0.4219 - Val F1: 0.3730 - Val ROC-AUC: 0.7509 - Val PR-AUC: 0.3224
+Epoch 12/50 - Loss: 0.4300 - Val F1: 0.4082 - Val ROC-AUC: 0.7564 - Val PR-AUC: 0.3158
+Epoch 13/50 - Loss: 0.4089 - Val F1: 0.4049 - Val ROC-AUC: 0.7695 - Val PR-AUC: 0.3560
+Epoch 14/50 - Loss: 0.4152 - Val F1: 0.3812 - Val ROC-AUC: 0.7671 - Val PR-AUC: 0.3403
+Epoch 15/50 - Loss: 0.4212 - Val F1: 0.3725 - Val ROC-AUC: 0.7601 - Val PR-AUC: 0.3643
+Epoch 16/50 - Loss: 0.4024 - Val F1: 0.3974 - Val ROC-AUC: 0.7549 - Val PR-AUC: 0.3864
+Epoch 17/50 - Loss: 0.3917 - Val F1: 0.4155 - Val ROC-AUC: 0.7681 - Val PR-AUC: 0.3658
+Epoch 18/50 - Loss: 0.3682 - Val F1: 0.4089 - Val ROC-AUC: 0.7708 - Val PR-AUC: 0.3488
+Epoch 19/50 - Loss: 0.3788 - Val F1: 0.4181 - Val ROC-AUC: 0.7805 - Val PR-AUC: 0.3674
+Epoch 20/50 - Loss: 0.3653 - Val F1: 0.4207 - Val ROC-AUC: 0.7721 - Val PR-AUC: 0.3880
+Epoch 21/50 - Loss: 0.3535 - Val F1: 0.4558 - Val ROC-AUC: 0.7815 - Val PR-AUC: 0.3961
+Epoch 22/50 - Loss: 0.3364 - Val F1: 0.4399 - Val ROC-AUC: 0.7681 - Val PR-AUC: 0.4010
+Epoch 23/50 - Loss: 0.3351 - Val F1: 0.4595 - Val ROC-AUC: 0.7781 - Val PR-AUC: 0.3961
+Epoch 24/50 - Loss: 0.3249 - Val F1: 0.4567 - Val ROC-AUC: 0.7790 - Val PR-AUC: 0.3897
+Epoch 25/50 - Loss: 0.3250 - Val F1: 0.4684 - Val ROC-AUC: 0.7726 - Val PR-AUC: 0.3787
+Epoch 26/50 - Loss: 0.3101 - Val F1: 0.4525 - Val ROC-AUC: 0.7737 - Val PR-AUC: 0.3778
+Epoch 27/50 - Loss: 0.3181 - Val F1: 0.4423 - Val ROC-AUC: 0.7757 - Val PR-AUC: 0.3818
+Epoch 28/50 - Loss: 0.3231 - Val F1: 0.4444 - Val ROC-AUC: 0.7678 - Val PR-AUC: 0.3766
+Epoch 29/50 - Loss: 0.3038 - Val F1: 0.4694 - Val ROC-AUC: 0.7770 - Val PR-AUC: 0.3740
+Epoch 30/50 - Loss: 0.3013 - Val F1: 0.4758 - Val ROC-AUC: 0.7820 - Val PR-AUC: 0.3770
+Epoch 31/50 - Loss: 0.2833 - Val F1: 0.4437 - Val ROC-AUC: 0.7819 - Val PR-AUC: 0.3973
+Epoch 32/50 - Loss: 0.2781 - Val F1: 0.4642 - Val ROC-AUC: 0.7766 - Val PR-AUC: 0.3732
+Epoch 33/50 - Loss: 0.2818 - Val F1: 0.4453 - Val ROC-AUC: 0.7747 - Val PR-AUC: 0.3782
+Epoch 34/50 - Loss: 0.2704 - Val F1: 0.4561 - Val ROC-AUC: 0.7753 - Val PR-AUC: 0.3799
+Epoch 35/50 - Loss: 0.2881 - Val F1: 0.4621 - Val ROC-AUC: 0.7783 - Val PR-AUC: 0.3817
+Epoch 36/50 - Loss: 0.2749 - Val F1: 0.4305 - Val ROC-AUC: 0.7734 - Val PR-AUC: 0.3917
+Epoch 37/50 - Loss: 0.2716 - Val F1: 0.4758 - Val ROC-AUC: 0.7789 - Val PR-AUC: 0.3839
+Epoch 38/50 - Loss: 0.2624 - Val F1: 0.4460 - Val ROC-AUC: 0.7857 - Val PR-AUC: 0.3838
+Epoch 39/50 - Loss: 0.2625 - Val F1: 0.4723 - Val ROC-AUC: 0.7748 - Val PR-AUC: 0.3881
+Epoch 40/50 - Loss: 0.2571 - Val F1: 0.4491 - Val ROC-AUC: 0.7751 - Val PR-AUC: 0.3786
+Epoch 41/50 - Loss: 0.2557 - Val F1: 0.4599 - Val ROC-AUC: 0.7731 - Val PR-AUC: 0.3863
+Epoch 42/50 - Loss: 0.2344 - Val F1: 0.4467 - Val ROC-AUC: 0.7705 - Val PR-AUC: 0.3755
+Epoch 43/50 - Loss: 0.2530 - Val F1: 0.4632 - Val ROC-AUC: 0.7706 - Val PR-AUC: 0.3795
+Epoch 44/50 - Loss: 0.2358 - Val F1: 0.4638 - Val ROC-AUC: 0.7787 - Val PR-AUC: 0.4019
+Epoch 45/50 - Loss: 0.2294 - Val F1: 0.4867 - Val ROC-AUC: 0.7776 - Val PR-AUC: 0.3843
+Epoch 46/50 - Loss: 0.2514 - Val F1: 0.4512 - Val ROC-AUC: 0.7741 - Val PR-AUC: 0.3653
+Epoch 47/50 - Loss: 0.2452 - Val F1: 0.4315 - Val ROC-AUC: 0.7726 - Val PR-AUC: 0.3957
+Epoch 48/50 - Loss: 0.2411 - Val F1: 0.4399 - Val ROC-AUC: 0.7720 - Val PR-AUC: 0.3746
+Epoch 49/50 - Loss: 0.2350 - Val F1: 0.4773 - Val ROC-AUC: 0.7735 - Val PR-AUC: 0.3832
+Epoch 50/50 - Loss: 0.2357 - Val F1: 0.4399 - Val ROC-AUC: 0.7730 - Val PR-AUC: 0.3831
+Pretraining completed. Test F1: 0.4403, ROC-AUC: 0.8194, PR-AUC: 0.4221
+[3/4] Finetuning on TOX21_ERb_BLA_Agonist_ch2 using GIN_GCN...
+[Fine-tune] Epoch 1/50 - Loss: 0.3561 - Val F1: 0.2727 - Val ROC-AUC: 0.8637 - Val PR-AUC: 0.3795
+[Fine-tune] Epoch 2/50 - Loss: 0.2283 - Val F1: 0.2177 - Val ROC-AUC: 0.8727 - Val PR-AUC: 0.4319
+[Fine-tune] Epoch 3/50 - Loss: 0.2043 - Val F1: 0.3333 - Val ROC-AUC: 0.8650 - Val PR-AUC: 0.4926
+[Fine-tune] Epoch 4/50 - Loss: 0.2100 - Val F1: 0.2569 - Val ROC-AUC: 0.8892 - Val PR-AUC: 0.4145
+[Fine-tune] Epoch 5/50 - Loss: 0.1805 - Val F1: 0.4138 - Val ROC-AUC: 0.8798 - Val PR-AUC: 0.5784
+[Fine-tune] Epoch 6/50 - Loss: 0.1640 - Val F1: 0.3824 - Val ROC-AUC: 0.8806 - Val PR-AUC: 0.5550
+[Fine-tune] Epoch 7/50 - Loss: 0.1552 - Val F1: 0.4615 - Val ROC-AUC: 0.8811 - Val PR-AUC: 0.5112
+[Fine-tune] Epoch 8/50 - Loss: 0.1476 - Val F1: 0.3200 - Val ROC-AUC: 0.8837 - Val PR-AUC: 0.5546
+[Fine-tune] Epoch 9/50 - Loss: 0.1028 - Val F1: 0.4000 - Val ROC-AUC: 0.8353 - Val PR-AUC: 0.5337
+[Fine-tune] Epoch 10/50 - Loss: 0.1277 - Val F1: 0.3235 - Val ROC-AUC: 0.8462 - Val PR-AUC: 0.4806
+[Fine-tune] Epoch 11/50 - Loss: 0.0909 - Val F1: 0.3692 - Val ROC-AUC: 0.8508 - Val PR-AUC: 0.5726
+[Fine-tune] Epoch 12/50 - Loss: 0.0675 - Val F1: 0.5000 - Val ROC-AUC: 0.8396 - Val PR-AUC: 0.5203
+[Fine-tune] Epoch 13/50 - Loss: 0.0775 - Val F1: 0.4364 - Val ROC-AUC: 0.8782 - Val PR-AUC: 0.5255
+[Fine-tune] Epoch 14/50 - Loss: 0.0686 - Val F1: 0.4783 - Val ROC-AUC: 0.8327 - Val PR-AUC: 0.5032
+[Fine-tune] Epoch 15/50 - Loss: 0.0763 - Val F1: 0.4800 - Val ROC-AUC: 0.8604 - Val PR-AUC: 0.5720
+[Fine-tune] Epoch 16/50 - Loss: 0.0736 - Val F1: 0.4898 - Val ROC-AUC: 0.8574 - Val PR-AUC: 0.5219
+[Fine-tune] Epoch 17/50 - Loss: 0.0638 - Val F1: 0.5000 - Val ROC-AUC: 0.8712 - Val PR-AUC: 0.5507
+[Fine-tune] Epoch 18/50 - Loss: 0.0678 - Val F1: 0.4898 - Val ROC-AUC: 0.8670 - Val PR-AUC: 0.4878
+[Fine-tune] Epoch 19/50 - Loss: 0.0660 - Val F1: 0.5000 - Val ROC-AUC: 0.8871 - Val PR-AUC: 0.4513
+[Fine-tune] Epoch 20/50 - Loss: 0.0793 - Val F1: 0.4528 - Val ROC-AUC: 0.8378 - Val PR-AUC: 0.5848
+[Fine-tune] Epoch 21/50 - Loss: 0.0514 - Val F1: 0.5333 - Val ROC-AUC: 0.8392 - Val PR-AUC: 0.6238
+[Fine-tune] Epoch 22/50 - Loss: 0.0471 - Val F1: 0.4898 - Val ROC-AUC: 0.8658 - Val PR-AUC: 0.5817
+[Fine-tune] Epoch 23/50 - Loss: 0.0528 - Val F1: 0.5333 - Val ROC-AUC: 0.8619 - Val PR-AUC: 0.5298
+[Fine-tune] Epoch 24/50 - Loss: 0.0435 - Val F1: 0.4706 - Val ROC-AUC: 0.8558 - Val PR-AUC: 0.6337
+[Fine-tune] Epoch 25/50 - Loss: 0.0528 - Val F1: 0.4583 - Val ROC-AUC: 0.8561 - Val PR-AUC: 0.5009
+[Fine-tune] Epoch 26/50 - Loss: 0.0385 - Val F1: 0.5000 - Val ROC-AUC: 0.8625 - Val PR-AUC: 0.5821
+[Fine-tune] Epoch 27/50 - Loss: 0.0457 - Val F1: 0.5581 - Val ROC-AUC: 0.8573 - Val PR-AUC: 0.6250
+[Fine-tune] Epoch 28/50 - Loss: 0.0319 - Val F1: 0.5000 - Val ROC-AUC: 0.8776 - Val PR-AUC: 0.5828
+[Fine-tune] Epoch 29/50 - Loss: 0.0365 - Val F1: 0.5217 - Val ROC-AUC: 0.8575 - Val PR-AUC: 0.5397
+[Fine-tune] Epoch 30/50 - Loss: 0.0297 - Val F1: 0.4800 - Val ROC-AUC: 0.8747 - Val PR-AUC: 0.5946
+[Fine-tune] Epoch 31/50 - Loss: 0.0399 - Val F1: 0.4889 - Val ROC-AUC: 0.8896 - Val PR-AUC: 0.4207
+[Fine-tune] Epoch 32/50 - Loss: 0.0346 - Val F1: 0.5500 - Val ROC-AUC: 0.8776 - Val PR-AUC: 0.4872
+[Fine-tune] Epoch 33/50 - Loss: 0.0380 - Val F1: 0.4681 - Val ROC-AUC: 0.8714 - Val PR-AUC: 0.5727
+[Fine-tune] Epoch 34/50 - Loss: 0.0340 - Val F1: 0.5217 - Val ROC-AUC: 0.8754 - Val PR-AUC: 0.4596
+[Fine-tune] Epoch 35/50 - Loss: 0.0326 - Val F1: 0.5238 - Val ROC-AUC: 0.8638 - Val PR-AUC: 0.4653
+[Fine-tune] Epoch 36/50 - Loss: 0.0302 - Val F1: 0.5581 - Val ROC-AUC: 0.8806 - Val PR-AUC: 0.5306
+[Fine-tune] Epoch 37/50 - Loss: 0.0339 - Val F1: 0.5116 - Val ROC-AUC: 0.8777 - Val PR-AUC: 0.5270
+[Fine-tune] Epoch 38/50 - Loss: 0.0254 - Val F1: 0.5116 - Val ROC-AUC: 0.8833 - Val PR-AUC: 0.4795
+[Fine-tune] Epoch 39/50 - Loss: 0.0322 - Val F1: 0.5116 - Val ROC-AUC: 0.8708 - Val PR-AUC: 0.4463
+[Fine-tune] Epoch 40/50 - Loss: 0.0202 - Val F1: 0.5116 - Val ROC-AUC: 0.8345 - Val PR-AUC: 0.5291
+[Fine-tune] Epoch 41/50 - Loss: 0.0303 - Val F1: 0.4889 - Val ROC-AUC: 0.8604 - Val PR-AUC: 0.4738
+[Fine-tune] Epoch 42/50 - Loss: 0.0263 - Val F1: 0.4889 - Val ROC-AUC: 0.8709 - Val PR-AUC: 0.5160
+[Fine-tune] Epoch 43/50 - Loss: 0.0245 - Val F1: 0.4783 - Val ROC-AUC: 0.8621 - Val PR-AUC: 0.5224
+[Fine-tune] Epoch 44/50 - Loss: 0.0304 - Val F1: 0.4889 - Val ROC-AUC: 0.8606 - Val PR-AUC: 0.4773
+[Fine-tune] Epoch 45/50 - Loss: 0.0278 - Val F1: 0.4681 - Val ROC-AUC: 0.8735 - Val PR-AUC: 0.4806
+[Fine-tune] Epoch 46/50 - Loss: 0.0209 - Val F1: 0.5000 - Val ROC-AUC: 0.8706 - Val PR-AUC: 0.4655
+[Fine-tune] Epoch 47/50 - Loss: 0.0210 - Val F1: 0.4681 - Val ROC-AUC: 0.8700 - Val PR-AUC: 0.4851
+[Fine-tune] Epoch 48/50 - Loss: 0.0270 - Val F1: 0.4889 - Val ROC-AUC: 0.8734 - Val PR-AUC: 0.4825
+[Fine-tune] Epoch 49/50 - Loss: 0.0250 - Val F1: 0.5238 - Val ROC-AUC: 0.8756 - Val PR-AUC: 0.4716
+[Fine-tune] Epoch 50/50 - Loss: 0.0213 - Val F1: 0.5000 - Val ROC-AUC: 0.8752 - Val PR-AUC: 0.4778
+Finetuning completed. Test F1: 0.3556, ROC-AUC: 0.8860, PR-AUC: 0.4203
+[3.1/4] Target-only training on TOX21_ERb_BLA_Agonist_ch2 using GIN_GCN...
+=== Target-only training ===
+[Target-only] Epoch 1/50 – Loss: 0.4382  Val F1: 0.2586  ROC-AUC: 0.8726  PR-AUC: 0.3977
+[Target-only] Epoch 2/50 – Loss: 0.3402  Val F1: 0.1940  ROC-AUC: 0.8261  PR-AUC: 0.4517
+[Target-only] Epoch 3/50 – Loss: 0.3024  Val F1: 0.2500  ROC-AUC: 0.8683  PR-AUC: 0.6057
+[Target-only] Epoch 4/50 – Loss: 0.2714  Val F1: 0.2804  ROC-AUC: 0.8911  PR-AUC: 0.5785
+[Target-only] Epoch 5/50 – Loss: 0.2426  Val F1: 0.3636  ROC-AUC: 0.8955  PR-AUC: 0.5439
+[Target-only] Epoch 6/50 – Loss: 0.2360  Val F1: 0.3111  ROC-AUC: 0.8742  PR-AUC: 0.5663
+[Target-only] Epoch 7/50 – Loss: 0.2103  Val F1: 0.2921  ROC-AUC: 0.8493  PR-AUC: 0.3901
+[Target-only] Epoch 8/50 – Loss: 0.1998  Val F1: 0.3250  ROC-AUC: 0.8658  PR-AUC: 0.5341
+[Target-only] Epoch 9/50 – Loss: 0.1842  Val F1: 0.4058  ROC-AUC: 0.9052  PR-AUC: 0.5635
+[Target-only] Epoch 10/50 – Loss: 0.1801  Val F1: 0.3684  ROC-AUC: 0.8883  PR-AUC: 0.5084
+[Target-only] Epoch 11/50 – Loss: 0.1412  Val F1: 0.4561  ROC-AUC: 0.8927  PR-AUC: 0.5711
+[Target-only] Epoch 12/50 – Loss: 0.1379  Val F1: 0.4262  ROC-AUC: 0.8830  PR-AUC: 0.5820
+[Target-only] Epoch 13/50 – Loss: 0.1113  Val F1: 0.4444  ROC-AUC: 0.8770  PR-AUC: 0.6358
+[Target-only] Epoch 14/50 – Loss: 0.1264  Val F1: 0.3768  ROC-AUC: 0.8712  PR-AUC: 0.3096
+[Target-only] Epoch 15/50 – Loss: 0.1148  Val F1: 0.3095  ROC-AUC: 0.8715  PR-AUC: 0.4767
+[Target-only] Epoch 16/50 – Loss: 0.1015  Val F1: 0.3871  ROC-AUC: 0.8730  PR-AUC: 0.6548
+[Target-only] Epoch 17/50 – Loss: 0.1171  Val F1: 0.3944  ROC-AUC: 0.8860  PR-AUC: 0.5256
+[Target-only] Epoch 18/50 – Loss: 0.1088  Val F1: 0.3243  ROC-AUC: 0.8565  PR-AUC: 0.3697
+[Target-only] Epoch 19/50 – Loss: 0.1078  Val F1: 0.4068  ROC-AUC: 0.8772  PR-AUC: 0.5671
+[Target-only] Epoch 20/50 – Loss: 0.0922  Val F1: 0.3457  ROC-AUC: 0.8673  PR-AUC: 0.6357
+[Target-only] Epoch 21/50 – Loss: 0.0922  Val F1: 0.4528  ROC-AUC: 0.8628  PR-AUC: 0.5648
+[Target-only] Epoch 22/50 – Loss: 0.0673  Val F1: 0.3824  ROC-AUC: 0.8586  PR-AUC: 0.5970
+[Target-only] Epoch 23/50 – Loss: 0.0757  Val F1: 0.4800  ROC-AUC: 0.8422  PR-AUC: 0.6016
+[Target-only] Epoch 24/50 – Loss: 0.0655  Val F1: 0.4898  ROC-AUC: 0.8689  PR-AUC: 0.5972
+[Target-only] Epoch 25/50 – Loss: 0.0655  Val F1: 0.4800  ROC-AUC: 0.8369  PR-AUC: 0.5081
+[Target-only] Epoch 26/50 – Loss: 0.0677  Val F1: 0.4262  ROC-AUC: 0.8624  PR-AUC: 0.4736
+[Target-only] Epoch 27/50 – Loss: 0.0649  Val F1: 0.4615  ROC-AUC: 0.8251  PR-AUC: 0.6458
+[Target-only] Epoch 28/50 – Loss: 0.0619  Val F1: 0.4286  ROC-AUC: 0.8385  PR-AUC: 0.5370
+[Target-only] Epoch 29/50 – Loss: 0.0608  Val F1: 0.4800  ROC-AUC: 0.8375  PR-AUC: 0.6392
+[Target-only] Epoch 30/50 – Loss: 0.0636  Val F1: 0.4286  ROC-AUC: 0.8816  PR-AUC: 0.5082
+[Target-only] Epoch 31/50 – Loss: 0.0555  Val F1: 0.4800  ROC-AUC: 0.8576  PR-AUC: 0.5834
+[Target-only] Epoch 32/50 – Loss: 0.0601  Val F1: 0.5217  ROC-AUC: 0.8553  PR-AUC: 0.6219
+[Target-only] Epoch 33/50 – Loss: 0.0501  Val F1: 0.4800  ROC-AUC: 0.8610  PR-AUC: 0.6273
+[Target-only] Epoch 34/50 – Loss: 0.0499  Val F1: 0.4681  ROC-AUC: 0.8376  PR-AUC: 0.5444
+[Target-only] Epoch 35/50 – Loss: 0.0528  Val F1: 0.4490  ROC-AUC: 0.8130  PR-AUC: 0.6183
+[Target-only] Epoch 36/50 – Loss: 0.0596  Val F1: 0.4898  ROC-AUC: 0.8574  PR-AUC: 0.5796
+[Target-only] Epoch 37/50 – Loss: 0.0474  Val F1: 0.4615  ROC-AUC: 0.8383  PR-AUC: 0.5887
+[Target-only] Epoch 38/50 – Loss: 0.0475  Val F1: 0.4800  ROC-AUC: 0.8438  PR-AUC: 0.5744
+[Target-only] Epoch 39/50 – Loss: 0.0511  Val F1: 0.4800  ROC-AUC: 0.8369  PR-AUC: 0.6187
+[Target-only] Epoch 40/50 – Loss: 0.0482  Val F1: 0.5333  ROC-AUC: 0.8167  PR-AUC: 0.6364
+[Target-only] Epoch 41/50 – Loss: 0.0485  Val F1: 0.5217  ROC-AUC: 0.8229  PR-AUC: 0.6190
+[Target-only] Epoch 42/50 – Loss: 0.0466  Val F1: 0.5106  ROC-AUC: 0.8337  PR-AUC: 0.6172
+[Target-only] Epoch 43/50 – Loss: 0.0409  Val F1: 0.5106  ROC-AUC: 0.8396  PR-AUC: 0.6572
+[Target-only] Epoch 44/50 – Loss: 0.0440  Val F1: 0.4889  ROC-AUC: 0.8423  PR-AUC: 0.5945
+[Target-only] Epoch 45/50 – Loss: 0.0408  Val F1: 0.5000  ROC-AUC: 0.8415  PR-AUC: 0.5847
+[Target-only] Epoch 46/50 – Loss: 0.0399  Val F1: 0.4783  ROC-AUC: 0.8418  PR-AUC: 0.5905
+[Target-only] Epoch 47/50 – Loss: 0.0391  Val F1: 0.5000  ROC-AUC: 0.8339  PR-AUC: 0.5972
+[Target-only] Epoch 48/50 – Loss: 0.0430  Val F1: 0.5000  ROC-AUC: 0.8376  PR-AUC: 0.5827
+[Target-only] Epoch 49/50 – Loss: 0.0294  Val F1: 0.5106  ROC-AUC: 0.8535  PR-AUC: 0.6086
+[Target-only] Epoch 50/50 – Loss: 0.0415  Val F1: 0.4800  ROC-AUC: 0.8419  PR-AUC: 0.6093
+=== Target-only TEST performance ===
+Test F1: 0.3556, ROC-AUC: 0.8235, PR-AUC: 0.4450
+✅ 실험 완료: TOX21_ERR_LUC_viability -> TOX21_ERb_BLA_Agonist_ch2 [GIN_GCN]

@@ -1,0 +1,36 @@
+[11:53:02] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:53:03] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[11:53:03] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:53:04] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:53:06] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:53:06] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:53:07] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:53:07] WARNING: not removing hydrogen atom without neighbors
+[11:53:07] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:53:07] Explicit valence for atom # 6 O, 3, is greater than permitted
+[11:53:07] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[11:53:08] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[11:54:24] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:54:24] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[11:54:25] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:54:25] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:54:28] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:54:28] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:54:28] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:54:28] WARNING: not removing hydrogen atom without neighbors
+[11:54:29] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:54:29] Explicit valence for atom # 6 O, 3, is greater than permitted
+[11:54:29] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[11:54:29] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[11:55:45] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:55:45] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[11:55:46] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:55:46] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:55:49] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:55:49] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:55:49] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:55:49] WARNING: not removing hydrogen atom without neighbors
+[11:55:50] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:55:50] Explicit valence for atom # 6 O, 3, is greater than permitted
+[11:55:50] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[11:55:50] Explicit valence for atom # 0 Cl, 2, is greater than permitted
