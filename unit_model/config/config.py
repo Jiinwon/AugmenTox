@@ -25,17 +25,17 @@ SOURCE_NAME = os.getenv("SOURCE_NAME", "no exist source")
 
 TARGET_NAMES = [
      "ATG_ERE_CIS",  # nonempty : 4060, zero : 3162, one : 898
-     "ATG_ERa_TRANS",  # nonempty : 4060, zero : 3292, one : 768
-     "ACEA_ER_80hr",  # nonempty : 3183, zero : 2892, one : 291
-     "OT_ER_ERaERa_1440",  # nonempty : 1857, zero : 1700, one : 157
-     "OT_ER_ERaERb_1440",  # nonempty : 1857, zero : 1577, one : 280
-     "OT_ER_ERbERb_1440",  # nonempty : 1857, zero : 1624, one : 233
-     "NVS_NR_hER"  # nonempty : 1177, zero : 978, one : 199
+     #"ATG_ERa_TRANS",  # nonempty : 4060, zero : 3292, one : 768
+     #"ACEA_ER_80hr",  # nonempty : 3183, zero : 2892, one : 291
+     #"OT_ER_ERaERa_1440",  # nonempty : 1857, zero : 1700, one : 157
+     #"OT_ER_ERaERb_1440",  # nonempty : 1857, zero : 1577, one : 280
+     #"OT_ER_ERbERb_1440",  # nonempty : 1857, zero : 1624, one : 233
+     #"NVS_NR_hER"  # nonempty : 1177, zero : 978, one : 199
  ]
 TARGET_NAME = os.getenv("TARGET_NAME", "no exist target")
 
 
-OPERA = True
+OPERA = False
 # SDF에 들어 있는 모든 클래스 필드 순서
 SDF_LABEL_FIELDS = ["Agonist_Class", "Antagonist_Class", "Binding_Class"]
 ENDPOINTS = ["Binding_Class"]  # 원하는 대로 토글
@@ -105,6 +105,6 @@ MODEL_DIR = os.path.join(BASE_SAVE_DIR, MODEL_NAME)
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 # 저장 경로 구성
-PRETRAINED_MODEL_PATH   = os.path.join(BASE_SAVE_DIR, f"./pretrained/{MODEL_NAME}/Pretrained_{SOURCE_NAME}_{MODEL_NAME}.pth")
+PRETRAINED_MODEL_PATH   = os.path.join(BASE_SAVE_DIR, f"pretrained/{MODEL_NAME}/Pretrained_{SOURCE_NAME}_{MODEL_NAME}.pth")
 FINETUNED_MODEL_PATH    = os.path.join(MODEL_DIR, f"{SOURCE_NAME}&&{TARGET_NAME}_{MODEL_NAME}.pth")
-TARGET_ONLY_MODEL_PATH  = os.path.join(MODEL_DIR, f"TargetOnly_{TARGET_NAME}_{MODEL_NAME}.pth")
+TARGET_ONLY_MODEL_PATH  = os.path.join(BASE_SAVE_DIR, f"targetonly/{MODEL_NAME}/TargetOnly_{TARGET_NAME}_{MODEL_NAME}.pth")
