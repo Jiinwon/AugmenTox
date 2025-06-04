@@ -93,11 +93,11 @@ print(cfg.MODEL_TYPE)
 PYCODE
 )
 
-# 길이 체크
-if [ "${#SOURCE_NAMES[@]}" -ne "${#TARGET_NAMES[@]}" ]; then
-  echo "SOURCE_NAMES와 TARGET_NAMES의 길이가 다릅니다." >&2
-  exit 1
-fi
+## 길이 체크
+#if [ "${#SOURCE_NAMES[@]}" -ne "${#TARGET_NAMES[@]}" ]; then
+#  echo "SOURCE_NAMES와 TARGET_NAMES의 길이가 다릅니다." >&2
+#  exit 1
+#fi
 
 # OPERA가 True인 경우 SDF 파일을 사용하여 단일 SOURCE_NAME과 모든 TARGET_NAME 조합 수행
 if [ "$OPERA" = "True" ]; then

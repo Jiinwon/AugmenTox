@@ -11,7 +11,7 @@ import config.config as cfg
 # 설정
 LOG_ROOT    = "./log/20250514"                   # 로그가 저장된 최상위 디렉토리
 OUTPUT_XLSX = "f1_summary.xlsx"                  # 출력할 엑셀 파일명
-MODEL_TYPES = ["GIN", "GCN", "GAT"]              # 돌린 모델 타입 목록
+MODEL_TYPES = ["GIN", "GCN", "GAT", "GIN_GCN", "GCN_GAT", "GIN_GAT"]              # 돌린 모델 타입 목록
 # ───────────────────────────────────────────────────────────────────────────────
 
 # 1) .out 파일 목록
