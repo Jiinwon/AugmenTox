@@ -24,12 +24,12 @@ SOURCE_NAMES = [
 SOURCE_NAME = os.getenv("SOURCE_NAME", "no exist source")
 
 TARGET_NAMES = [
-     "ATG_ERE_CIS"  # nonempty : 4060, zero : 3162, one : 898
-     "ATG_ERa_TRANS"  # nonempty : 4060, zero : 3292, one : 768
-     "ACEA_ER_80hr"  # nonempty : 3183, zero : 2892, one : 291
-     "OT_ER_ERaERa_1440"  # nonempty : 1857, zero : 1700, one : 157
-     "OT_ER_ERaERb_1440"  # nonempty : 1857, zero : 1577, one : 280
-     "OT_ER_ERbERb_1440"  # nonempty : 1857, zero : 1624, one : 233
+     "ATG_ERE_CIS",  # nonempty : 4060, zero : 3162, one : 898
+     "ATG_ERa_TRANS",  # nonempty : 4060, zero : 3292, one : 768
+     "ACEA_ER_80hr",  # nonempty : 3183, zero : 2892, one : 291
+     "OT_ER_ERaERa_1440",  # nonempty : 1857, zero : 1700, one : 157
+     "OT_ER_ERaERb_1440",  # nonempty : 1857, zero : 1577, one : 280
+     "OT_ER_ERbERb_1440",  # nonempty : 1857, zero : 1624, one : 233
      "NVS_NR_hER"  # nonempty : 1177, zero : 978, one : 199
  ]
 TARGET_NAME = os.getenv("TARGET_NAME", "no exist target")
