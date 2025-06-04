@@ -1,0 +1,6 @@
+/home1/won0316/anaconda3/envs/toxcast_env/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+[13:40:51] Explicit valence for atom # 6 O, 3, is greater than permitted
+[13:40:51] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[13:41:18] Explicit valence for atom # 6 O, 3, is greater than permitted
+[13:41:18] Explicit valence for atom # 3 Si, 8, is greater than permitted
