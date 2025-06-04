@@ -24,14 +24,21 @@ SOURCE_NAMES = [
 SOURCE_NAME = os.getenv("SOURCE_NAME", "no exist source")
 
 TARGET_NAMES = [
-     "TOX21_ERa_BLA_Agonist_ch2",                            # nonempty : 8305, zero : 7885, one : 420
-     "TOX21_ERa_BLA_Agonist_ch1",                            # nonempty : 8305, zero : 7912, one : 393
-     "TOX21_ERa_BLA_Agonist_ratio",                          # nonempty : 8305, zero : 7849, one : 456
-     "TOX21_ERb_BLA_Agonist_ratio",                          # nonempty : 7871, zero : 7224, one : 147
-     "TOX21_ERb_BLA_Agonist_ch2",                            # nonempty : 7871, zero : 7692, one : 179
-     "TOX21_ERb_BLA_Agonist_ch1",                            # nonempty : 7871, zero : 7735, one : 136
-     "TOX21_ERR_LUC_Agonist",                                # nonempty : 7871, zero : 7622, one : 249
-     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780",             # nonempty : 7871, zero : 7712, one : 159
+     "ATG_ERE_CIS"  # nonempty : 4060, zero : 3162, one : 898
+     "ATG_ERa_TRANS"  # nonempty : 4060, zero : 3292, one : 768
+     "ACEA_ER_80hr"  # nonempty : 3183, zero : 2892, one : 291
+     "OT_ER_ERaERa_0480"  # nonempty : 1857, zero : 1718, one : 139
+     "OT_ER_ERaERa_1440"  # nonempty : 1857, zero : 1700, one : 157
+     "OT_ER_ERaERb_0480"  # nonempty : 1857, zero : 1641, one : 216
+     "OT_ER_ERaERb_0480"  # nonempty : 1857, zero : 1641, one : 216
+     "OT_ER_ERaERb_1440"  # nonempty : 1857, zero : 1577, one : 280
+     "OT_ER_ERaERb_1440"  # nonempty : 1857, zero : 1577, one : 280
+     "OT_ER_ERbERb_0480"  # nonempty : 1857, zero : 1644, one : 213
+     "OT_ER_ERbERb_1440"  # nonempty : 1857, zero : 1624, one : 233
+     "OT_ERa_GFPERaERE_0120"  # nonempty : 1857, zero : 1674, one : 183
+     "OT_ERa_GFPERaERE_0480"  # nonempty : 1857, zero : 1666, one : 191
+     "NVS_NR_hER"  # nonempty : 1177, zero : 978, one : 199
+     "NVS_NR_bER"  # nonempty : 1088, zero : 994, one : 94
  ]
 TARGET_NAME = os.getenv("TARGET_NAME", "no exist target")
 
