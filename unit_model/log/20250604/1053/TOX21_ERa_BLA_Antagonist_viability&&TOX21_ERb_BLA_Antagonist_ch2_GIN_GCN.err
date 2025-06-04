@@ -1,0 +1,15 @@
+[11:34:49] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:34:49] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+[11:34:50] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:34:51] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:34:51] WARNING: not removing hydrogen atom without neighbors
+[11:34:53] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[11:34:53] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:34:53] Can't kekulize mol.  Unkekulized atoms: 3 4 5 6 7
+[11:34:54] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:34:54] WARNING: not removing hydrogen atom without neighbors
+[11:34:55] Can't kekulize mol.  Unkekulized atoms: 1 2 3 4 5
+[11:34:55] Explicit valence for atom # 6 O, 3, is greater than permitted
+[11:34:55] Explicit valence for atom # 3 Si, 8, is greater than permitted
+[11:34:55] Explicit valence for atom # 0 Cl, 2, is greater than permitted
+slurmstepd-n013: error: *** JOB 424235 ON n013 CANCELLED AT 2025-06-04T11:36:21 ***
