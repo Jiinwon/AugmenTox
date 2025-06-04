@@ -23,7 +23,16 @@ fi
 
 # 5. pretrain
 echo "[2/4] Pretraining on $SOURCE_NAME using $MODEL_TYPE..."
-python3 -u - <<PYCODE
+# config.PRETRAINED_MODEL_PATH already includes BASE_SAVE_DIR/pretrained/{MODEL_NAME}/Pretrained_{SOURCE_NAME}_{MODEL_NAME}.pth
+PRETRAIN_FILE=$(python3 - <<PYCODE
+import os, config.config as cfg
+print(cfg.PRETRAINED_MODEL_PATH)
+PYCODE
+)
+if [ -f "$PRETRAIN_FILE" ]; then
+    echo "  * Pretrained model already exists at $PRETRAIN_FILE, loading..."
+else
+    python3 -u - <<PYCODE
 import os
 import config.config as cfg
 cfg.SOURCE_NAME = os.environ["SOURCE_NAME"]
@@ -34,28 +43,192 @@ if cfg.OPERA:
 from train.pretrain import run_pretraining
 run_pretraining()
 PYCODE
-
+fi
+#: <<'COMMENT'
 # 6. finetune
 echo "[3/4] Finetuning on $TARGET_NAME using $MODEL_TYPE..."
-python3 -u - <<PYCODE
+# finetuned 모델 경로 설정
+FINETUNE_PATH=$(python3 - <<PYCODE
+import os, config.config as cfg
+cfg.SOURCE_NAME = os.environ["SOURCE_NAME"]
+cfg.TARGET_NAME = os.environ["TARGET_NAME"]
+cfg.MODEL_TYPE  = os.environ["MODEL_TYPE"]
+print(cfg.FINETUNED_MODEL_PATH)
+PYCODE
+)
+if [ -f "$FINETUNE_PATH" ]; then
+    echo "  * 파인튜닝된 모델 이미 존재: $FINETUNE_PATH"
+    echo "  * Finetune 생략, 저장된 모델로 평가만 진행"
+    python3 -u - <<EVAL_FT
+import os, torch
+import config.config as cfg
+from torch_geometric.loader import DataLoader
+from data.load_data import load_data
+from train.utils import load_model, evaluate
+
+# 환경 변수
+cfg.SOURCE_NAME = os.environ["SOURCE_NAME"]
+cfg.TARGET_NAME = os.environ["TARGET_NAME"]
+cfg.MODEL_TYPE  = os.environ["MODEL_TYPE"]
+
+# 테스트 데이터 로드
+_, _, test_data = load_data(
+    cfg.TARGET_DATA_PATH,
+    train_ratio=cfg.TRAIN_RATIO,
+    val_ratio=cfg.VAL_RATIO,
+    test_ratio=cfg.TEST_RATIO,
+    random_seed=cfg.RANDOM_SEED
+)
+input_dim = test_data[0].x.shape[1]
+output_dim = cfg.NUM_CLASSES
+
+# 모델 생성
+mt = cfg.MODEL_TYPE.upper()
+if mt == "GIN":
+    from models.gin import GINNet
+    model = GINNet(input_dim, cfg.HIDDEN_DIM, output_dim,
+                   num_layers=cfg.NUM_LAYERS, dropout=cfg.DROPOUT)
+elif mt == "GCN":
+    from models.gcn import GCNNet
+    model = GCNNet(input_dim, cfg.HIDDEN_DIM, output_dim,
+                   num_layers=cfg.NUM_LAYERS, dropout=cfg.DROPOUT)
+elif mt == "GAT":
+    from models.gat import GATNet
+    model = GATNet(input_dim, cfg.HIDDEN_DIM, output_dim,
+                   num_layers=cfg.NUM_LAYERS, heads=cfg.NUM_HEADS, dropout=cfg.DROPOUT)
+elif mt == "GIN_GCN":
+    from models.gin_gcn import GIN_GCN_Hybrid as M
+    model = M(input_dim, cfg.HIDDEN_DIM, output_dim,
+              num_layers=cfg.NUM_LAYERS, dropout=cfg.DROPOUT)
+elif mt == "GIN_GAT":
+    from models.gin_gat import GIN_GAT_Hybrid as M
+    model = M(input_dim, cfg.HIDDEN_DIM, output_dim,
+              num_layers=cfg.NUM_LAYERS, heads=cfg.NUM_HEADS, dropout=cfg.DROPOUT)
+elif mt == "GCN_GAT":
+    from models.gcn_gat import GCN_GAT_Hybrid as M
+    model = M(input_dim, cfg.HIDDEN_DIM, output_dim,
+              num_layers=cfg.NUM_LAYERS, heads=cfg.NUM_HEADS, dropout=cfg.DROPOUT)
+else:
+    raise ValueError(f"Unknown model type: {cfg.MODEL_TYPE}")
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = model.to(device)
+
+# 저장된 파인튜닝 모델 불러오기
+load_model(model, cfg.FINETUNED_MODEL_PATH, device)
+
+# 테스트 데이터로 최종 성능 평가
+test_loader = DataLoader(test_data, batch_size=cfg.BATCH_SIZE, shuffle=False)
+test_metrics = evaluate(model, test_loader, device)
+print("=== Fine-tuned TEST performance ===")
+print(f"Test F1: {test_metrics['f1']:.4f}, "
+      f"ROC-AUC: {test_metrics['roc_auc']:.4f}, "
+      f"PR-AUC: {test_metrics['pr_auc']:.4f}")
+EVAL_FT
+else
+    python3 -u - <<PYCODE
 import os
 import config.config as cfg
+cfg.SOURCE_NAME = os.environ["SOURCE_NAME"]
 cfg.TARGET_NAME = os.environ["TARGET_NAME"]
-cfg.MODEL_TYPE = os.environ["MODEL_TYPE"]
+cfg.MODEL_TYPE  = os.environ["MODEL_TYPE"]
 from train.finetune import run_finetuning
 run_finetuning()
 PYCODE
+fi
+ 
 
 # 7. target-only
 echo "[3.1/4] Target-only training on $TARGET_NAME using $MODEL_TYPE..."
-python3 -u - <<PYCODE
+# 타겟-온리 모델 경로 확인
+TARGETONLY_PATH=$(python3 - <<PYCODE
+import os, config.config as cfg
+cfg.TARGET_NAME = os.environ["TARGET_NAME"]
+cfg.MODEL_TYPE  = os.environ["MODEL_TYPE"]
+print(cfg.TARGET_ONLY_MODEL_PATH)
+PYCODE
+)
+if [ -f "$TARGETONLY_PATH" ]; then
+    echo "  * Target-only 모델 이미 존재: $TARGETONLY_PATH"
+    echo "  * Target-only 생략, 저장된 모델로 평가만 진행"
+    python3 -u - <<EVAL_TO
+import os, torch
+import config.config as cfg
+from torch_geometric.loader import DataLoader
+from data.load_data import load_data
+from train.utils import load_model, evaluate
+
+# 환경 변수
+cfg.TARGET_NAME = os.environ["TARGET_NAME"]
+cfg.MODEL_TYPE  = os.environ["MODEL_TYPE"]
+
+# 테스트 데이터 로드
+_, _, test_data = load_data(
+    cfg.TARGET_DATA_PATH,
+    train_ratio=cfg.TRAIN_RATIO,
+    val_ratio=cfg.VAL_RATIO,
+    test_ratio=cfg.TEST_RATIO,
+    random_seed=cfg.RANDOM_SEED
+)
+input_dim = test_data[0].x.shape[1]
+output_dim = cfg.NUM_CLASSES
+
+# 모델 생성 (Target-only 구조가 Fine-tune과 동일 가정)
+mt = cfg.MODEL_TYPE.upper()
+if mt == "GIN":
+    from models.gin import GINNet
+    model = GINNet(input_dim, cfg.HIDDEN_DIM, output_dim,
+                   num_layers=cfg.NUM_LAYERS, dropout=cfg.DROPOUT)
+elif mt == "GCN":
+    from models.gcn import GCNNet
+    model = GCNNet(input_dim, cfg.HIDDEN_DIM, output_dim,
+                   num_layers=cfg.NUM_LAYERS, dropout=cfg.DROPOUT)
+elif mt == "GAT":
+    from models.gat import GATNet
+    model = GATNet(input_dim, cfg.HIDDEN_DIM, output_dim,
+                   num_layers=cfg.NUM_LAYERS, heads=cfg.NUM_HEADS, dropout=cfg.DROPOUT)
+elif mt == "GIN_GCN":
+    from models.gin_gcn import GIN_GCN_Hybrid as M
+    model = M(input_dim, cfg.HIDDEN_DIM, output_dim,
+              num_layers=cfg.NUM_LAYERS, dropout=cfg.DROPOUT)
+elif mt == "GIN_GAT":
+    from models.gin_gat import GIN_GAT_Hybrid as M
+    model = M(input_dim, cfg.HIDDEN_DIM, output_dim,
+              num_layers=cfg.NUM_LAYERS, heads=cfg.NUM_HEADS, dropout=cfg.DROPOUT)
+elif mt == "GCN_GAT":
+    from models.gcn_gat import GCN_GAT_Hybrid as M
+    model = M(input_dim, cfg.HIDDEN_DIM, output_dim,
+              num_layers=cfg.NUM_LAYERS, heads=cfg.NUM_HEADS, dropout=cfg.DROPOUT)
+else:
+    raise ValueError(f"Unknown model type: {cfg.MODEL_TYPE}")
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = model.to(device)
+
+# 저장된 Target-only 모델 불러오기
+load_model(model, cfg.TARGET_ONLY_MODEL_PATH, device)
+
+# 테스트 데이터로 최종 성능 평가
+test_loader = DataLoader(test_data, batch_size=cfg.BATCH_SIZE, shuffle=False)
+test_metrics = evaluate(model, test_loader, device)
+print("=== Target-only TEST performance ===")
+print(f"Test F1: {test_metrics['f1']:.4f}, "
+      f"ROC-AUC: {test_metrics['roc_auc']:.4f}, "
+      f"PR-AUC: {test_metrics['pr_auc']:.4f}")
+EVAL_TO
+else
+    python3 -u - <<PYCODE
 import os
 import config.config as cfg
 cfg.TARGET_NAME = os.environ["TARGET_NAME"]
-cfg.MODEL_TYPE = os.environ["MODEL_TYPE"]
+cfg.MODEL_TYPE  = os.environ["MODEL_TYPE"]
 from train.target_only import run_target_only
 run_target_only()
 PYCODE
+fi
+#COMMENT
+
+
 
 # 8. visualize
 # echo "[4/4] Embedding 시각화 중..."
