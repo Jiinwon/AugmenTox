@@ -1,0 +1,25 @@
+[1/4] Excel → CSV 변환 중...
+Saved pretrain CSV for TOX21_ERa_LUC_VM7_Agonist: data/sample/TOX21_ERa_LUC_VM7_Agonist.csv
+Saved pretrain CSV for TOX21_ERb_BLA_Agonist_viability: data/sample/TOX21_ERb_BLA_Agonist_viability.csv
+Saved pretrain CSV for TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability: data/sample/TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability.csv
+Saved pretrain CSV for TOX21_ERR_LUC_viability: data/sample/TOX21_ERR_LUC_viability.csv
+Saved finetune CSV for ATG_ERE_CIS: data/sample/ATG_ERE_CIS.csv
+Saved finetune CSV for ATG_ERa_TRANS: data/sample/ATG_ERa_TRANS.csv
+Saved finetune CSV for ACEA_ER_80hr: data/sample/ACEA_ER_80hr.csv
+Saved finetune CSV for OT_ER_ERaERa_1440: data/sample/OT_ER_ERaERa_1440.csv
+Saved finetune CSV for OT_ER_ERaERb_1440: data/sample/OT_ER_ERaERb_1440.csv
+Saved finetune CSV for OT_ER_ERbERb_1440: data/sample/OT_ER_ERbERb_1440.csv
+Saved finetune CSV for NVS_NR_hER: data/sample/NVS_NR_hER.csv
+[2/4] Pretraining on TOX21_ERR_LUC_viability using GIN_GCN...
+  * Pretrained model already exists at model_save/pretrained/gin_gcn/Pretrained_TOX21_ERR_LUC_viability_gin_gcn.pth, loading...
+[3/4] Finetuning on OT_ER_ERaERb_1440 using GIN_GCN...
+  * 파인튜닝된 모델 이미 존재: model_save/gin_gcn/TOX21_ERR_LUC_viability&&OT_ER_ERaERb_1440_gin_gcn.pth
+  * Finetune 생략, 저장된 모델로 평가만 진행
+=== Fine-tuned TEST performance ===
+Test F1: 0.4776, ROC-AUC: 0.7942, PR-AUC: 0.3663
+[3.1/4] Target-only training on OT_ER_ERaERb_1440 using GIN_GCN...
+  * Target-only 모델 이미 존재: model_save/targetonly/gin_gcn/TargetOnly_OT_ER_ERaERb_1440_gin_gcn.pth
+  * Target-only 생략, 저장된 모델로 평가만 진행
+=== Target-only TEST performance ===
+Test F1: 0.4179, ROC-AUC: 0.7863, PR-AUC: 0.3460
+✅ 실험 완료: TOX21_ERR_LUC_viability -> OT_ER_ERaERb_1440 [GIN_GCN]
