@@ -25,6 +25,27 @@ set -e
 
 # 최대 동시 Slurm 작업 개수
 MAX_JOBS=20
+# PARTITIONS 선언 위치 (기존 맨 위 부근)
+PARTITIONS=(gpu1 gpu2 gpu3 gpu4 gpu5 gpu6)
+DEFAULT_PART="gpu1"
+GRES="gpu" #"gpu:rtx3090:1"
+MAX_RUNNING_PER_PART=10
+
+
+
+# “실행(run) 중인 잡” 개수를 특정 파티션에서 세어 반환
+function running_in_partition {
+    local part="$1"
+    squeue -u "$USER" -p "$part" -t R -h | wc -l
+}
+
+# 해당 파티션에 유휴(idle) 노드가 있는지 확인 (idle 노드 수 > 0)
+function has_idle_nodes {
+    local part="$1"
+    sinfo -h -p "$part" -o "%D %t" \
+        | awk '$2=="idle" || $2=="mix" {print $1}' \
+        | grep -q '[1-9]'
+}
 
 # 현재 Slurm 작업 개수를 반환
 function current_job_count {
@@ -97,14 +118,38 @@ PYCODE
         OUT="${BASE_LOG}/${PAIR}.out"
         ERR="${BASE_LOG}/${PAIR}.err"
         wait_for_slot
-        sbatch --job-name="GNN_${SRC}_${TGT}" \
-               --partition=gpu1 \
-               --gres=gpu:rtx3090:1 \
-               --cpus-per-task=8 \
-               --output="${OUT}" \
-               --error="${ERR}" \
-               --export=ALL,SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL_TYPE",LOG_SUBDIR="${BASE_LOG}",OPERA="${OPERA}" \
-               "${SCRIPT_DIR}/run_single_pipeline.sh"
+        # PARTITON 정의는 sbatch 직전에 동적으로 결정 → 실행(RUN)될 때까지 순회
+        SUBMITTED=0
+        for p in "${PARTITIONS[@]}"; do
+            if [ "$(running_in_partition "$p")" -lt "$MAX_RUNNING_PER_PART" ] && has_idle_nodes "$p" ]; then
+                JOBID=$(sbatch --parsable --job-name="GNN_${SRC}_${TGT}" \
+                               --partition="$p" \
+                               --gres="${GRES}" \
+                               --cpus-per-task=8 \
+                               --output="${OUT}" \
+                               --error="${ERR}" \
+                               --export=ALL,SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL_TYPE",LOG_SUBDIR="${BASE_LOG}",OPERA="${OPERA}" \
+                               "${SCRIPT_DIR}/run_single_pipeline.sh")
+                sleep 3
+                STATE=$(squeue -j "$JOBID" -h -o "%T")
+                if [ "$STATE" = "RUNNING" ]; then
+                    SUBMITTED=1
+                    break
+                else
+                    scancel "$JOBID"
+                fi
+            fi
+        done
+        if [ "$SUBMITTED" -eq 0 ]; then
+            sbatch --job-name="GNN_${SRC}_${TGT}" \
+                   --partition="${DEFAULT_PART}" \
+                   --gres="${GRES}" \
+                   --cpus-per-task=8 \
+                   --output="${OUT}" \
+                   --error="${ERR}" \
+                   --export=ALL,SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL_TYPE",LOG_SUBDIR="${BASE_LOG}",OPERA="${OPERA}" \
+                   "${SCRIPT_DIR}/run_single_pipeline.sh"
+        fi
     done
 else
     # 기존 방식: SOURCE_NAMES와 TARGET_NAMES의 모든 조합 수행
@@ -114,14 +159,38 @@ else
             OUT="${BASE_LOG}/${PAIR}.out"
             ERR="${BASE_LOG}/${PAIR}.err"
             wait_for_slot
-            sbatch --job-name="GNN_${SRC}_${TGT}" \
-                   --partition=gpu1 \
-                   --gres=gpu:rtx3090:1 \
-                   --cpus-per-task=8 \
-                   --output="${OUT}" \
-                   --error="${ERR}" \
-                   --export=ALL,SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="${MODEL_TYPE}",LOG_SUBDIR="${BASE_LOG}",OPERA="${OPERA}" \
-                   "${SCRIPT_DIR}/run_single_pipeline.sh"
+            # PARTITON 정의는 sbatch 직전에 동적으로 결정 → 실행(RUN)될 때까지 순회
+            SUBMITTED=0
+            for p in "${PARTITIONS[@]}"; do
+                if [ "$(running_in_partition "$p")" -lt "$MAX_RUNNING_PER_PART" ] && has_idle_nodes "$p" ]; then
+                    JOBID=$(sbatch --parsable --job-name="GNN_${SRC}_${TGT}" \
+                                   --partition="$p" \
+                                   --gres="${GRES}" \
+                                   --cpus-per-task=8 \
+                                   --output="${OUT}" \
+                                   --error="${ERR}" \
+                                   --export=ALL,SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="${MODEL_TYPE}",LOG_SUBDIR="${BASE_LOG}",OPERA="${OPERA}" \
+                                   "${SCRIPT_DIR}/run_single_pipeline.sh")
+                    sleep 3
+                    STATE=$(squeue -j "$JOBID" -h -o "%T")
+                    if [ "$STATE" = "RUNNING" ]; then
+                        SUBMITTED=1
+                        break
+                    else
+                        scancel "$JOBID"
+                    fi
+                fi
+            done
+            if [ "$SUBMITTED" -eq 0 ]; then
+                sbatch --job-name="GNN_${SRC}_${TGT}" \
+                       --partition="${DEFAULT_PART}" \
+                       --gres="${GRES}" \
+                       --cpus-per-task=8 \
+                       --output="${OUT}" \
+                       --error="${ERR}" \
+                       --export=ALL,SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="${MODEL_TYPE}",LOG_SUBDIR="${BASE_LOG}",OPERA="${OPERA}" \
+                       "${SCRIPT_DIR}/run_single_pipeline.sh"
+            fi
         done
     done
 fi
