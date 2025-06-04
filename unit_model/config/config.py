@@ -27,18 +27,10 @@ TARGET_NAMES = [
      "ATG_ERE_CIS"  # nonempty : 4060, zero : 3162, one : 898
      "ATG_ERa_TRANS"  # nonempty : 4060, zero : 3292, one : 768
      "ACEA_ER_80hr"  # nonempty : 3183, zero : 2892, one : 291
-     "OT_ER_ERaERa_0480"  # nonempty : 1857, zero : 1718, one : 139
      "OT_ER_ERaERa_1440"  # nonempty : 1857, zero : 1700, one : 157
-     "OT_ER_ERaERb_0480"  # nonempty : 1857, zero : 1641, one : 216
-     "OT_ER_ERaERb_0480"  # nonempty : 1857, zero : 1641, one : 216
      "OT_ER_ERaERb_1440"  # nonempty : 1857, zero : 1577, one : 280
-     "OT_ER_ERaERb_1440"  # nonempty : 1857, zero : 1577, one : 280
-     "OT_ER_ERbERb_0480"  # nonempty : 1857, zero : 1644, one : 213
      "OT_ER_ERbERb_1440"  # nonempty : 1857, zero : 1624, one : 233
-     "OT_ERa_GFPERaERE_0120"  # nonempty : 1857, zero : 1674, one : 183
-     "OT_ERa_GFPERaERE_0480"  # nonempty : 1857, zero : 1666, one : 191
      "NVS_NR_hER"  # nonempty : 1177, zero : 978, one : 199
-     "NVS_NR_bER"  # nonempty : 1088, zero : 994, one : 94
  ]
 TARGET_NAME = os.getenv("TARGET_NAME", "no exist target")
 
