@@ -76,7 +76,7 @@ RANDOM_SEED = 42
 ## Training hyperparameters
 BATCH_SIZE = 32         # 32   
 # NUM_EPOCHS_TRAIN = 50
-NUM_EPOCHS_PRETRAIN = 100
+NUM_EPOCHS_PRETRAIN = 50
 NUM_EPOCHS_FINETUNE = 50
 LEARNING_RATE = 0.001
 LR_STEP_SIZE = 10            # StepLR scheduler step
