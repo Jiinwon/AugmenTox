@@ -35,7 +35,7 @@ TARGET_NAMES = [
 TARGET_NAME = os.getenv("TARGET_NAME", "no exist target")
 
 
-OPERA = False
+OPERA = True
 # SDF에 들어 있는 모든 클래스 필드 순서
 SDF_LABEL_FIELDS = ["Agonist_Class", "Antagonist_Class", "Binding_Class"]
 ENDPOINTS = ["Binding_Class"]  # 원하는 대로 토글
@@ -105,6 +105,6 @@ MODEL_DIR = os.path.join(BASE_SAVE_DIR, MODEL_NAME)
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 # 저장 경로 구성
-PRETRAINED_MODEL_PATH   = os.path.join(MODEL_DIR, f"{SOURCE_NAME}&&{SOURCE_NAME}_{MODEL_NAME}.pth")
+PRETRAINED_MODEL_PATH   = os.path.join(BASE_SAVE_DIR, f"./pretrained/{MODEL_NAME}/Pretrained_{SOURCE_NAME}_{MODEL_NAME}.pth")
 FINETUNED_MODEL_PATH    = os.path.join(MODEL_DIR, f"{SOURCE_NAME}&&{TARGET_NAME}_{MODEL_NAME}.pth")
 TARGET_ONLY_MODEL_PATH  = os.path.join(MODEL_DIR, f"TargetOnly_{TARGET_NAME}_{MODEL_NAME}.pth")
