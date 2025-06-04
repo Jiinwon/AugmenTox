@@ -42,7 +42,7 @@ SOURCE_NAMES = [
      "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2_viability",      # nonempty : 7871, zero : 7306, one : 565
      "TOX21_ERb_BLA_Antagonist_viability",                   # nonempty : 7871, zero : 6811, one : 1060
  ]
-SOURCE_NAME = os.getenv("SOURCE_NAME", "TOX21_ERa_BLA_Antagonist_ratio")
+SOURCE_NAME = os.getenv("SOURCE_NAME", "no exist source")
 
 TARGET_NAMES = [
      "TOX21_ERa_BLA_Antagonist_ratio",                       # nonempty : 8305, zero : 7244, one : 1061
@@ -71,7 +71,7 @@ TARGET_NAMES = [
      "TOX21_ERa_LUC_VM7_Antagonist_0.1nM_E2_viability",      # nonempty : 7871, zero : 7306, one : 565
      "TOX21_ERb_BLA_Antagonist_viability",                   # nonempty : 7871, zero : 6811, one : 1060
  ]
-TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERa_BLA_Antagonist_ratio")
+TARGET_NAME = os.getenv("TARGET_NAME", "no exist target")
 
 
 OPERA = False
@@ -113,7 +113,7 @@ RANDOM_SEED = 42
 
 ## Training hyperparameters
 BATCH_SIZE = 32         # 32   
-# NUM_EPOCHS_PRETRAIN = 50
+# NUM_EPOCHS_TRAIN = 50
 NUM_EPOCHS_PRETRAIN = 100
 NUM_EPOCHS_FINETUNE = 50
 LEARNING_RATE = 0.001
