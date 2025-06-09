@@ -14,12 +14,13 @@ export PYTHONPATH="$DIR"
 
 # 3. 가상환경 활성화 (필요시)
 # source /home1/USER/anaconda3/envs/toxcast_env/bin/activate
-
+: <<'COMMENT'
 # 4. convert_excel_to_csv: 변환 수행
 if [ "$OPERA" = "False" ]; then
     echo "[1/4] Excel → CSV 변환 중..."
     python3 -u -m scripts.convert_excel_to_csv
 fi
+COMMENT
 
 # 5. pretrain
 echo "[2/4] Pretraining on $SOURCE_NAME using $MODEL_TYPE..."
