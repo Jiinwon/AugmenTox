@@ -1,0 +1,60 @@
+[2/4] Pretraining on TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability using GCN_GAT...
+  * Pretrained model already exists at model_save/pretrained/gcn_gat/Pretrained_TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability_gcn_gat.pth, loading...
+[3/4] Finetuning on OT_ER_ERbERb_1440 using GCN_GAT...
+[Fine-tune] Epoch 1/50 - Loss: 0.7155 - Val F1: 0.2857 - Val ROC-AUC: 0.6865 - Val PR-AUC: 0.2386
+[Fine-tune] Epoch 2/50 - Loss: 0.5578 - Val F1: 0.3133 - Val ROC-AUC: 0.6851 - Val PR-AUC: 0.3638
+[Fine-tune] Epoch 3/50 - Loss: 0.5495 - Val F1: 0.3667 - Val ROC-AUC: 0.6602 - Val PR-AUC: 0.4032
+[Fine-tune] Epoch 4/50 - Loss: 0.4923 - Val F1: 0.3457 - Val ROC-AUC: 0.7095 - Val PR-AUC: 0.4332
+[Fine-tune] Epoch 5/50 - Loss: 0.5089 - Val F1: 0.3636 - Val ROC-AUC: 0.7292 - Val PR-AUC: 0.4177
+[Fine-tune] Epoch 6/50 - Loss: 0.4709 - Val F1: 0.3714 - Val ROC-AUC: 0.7156 - Val PR-AUC: 0.3783
+[Fine-tune] Epoch 7/50 - Loss: 0.4732 - Val F1: 0.3111 - Val ROC-AUC: 0.7040 - Val PR-AUC: 0.4163
+[Fine-tune] Epoch 8/50 - Loss: 0.4400 - Val F1: 0.4127 - Val ROC-AUC: 0.7026 - Val PR-AUC: 0.4666
+[Fine-tune] Epoch 9/50 - Loss: 0.4356 - Val F1: 0.3333 - Val ROC-AUC: 0.7350 - Val PR-AUC: 0.4026
+[Fine-tune] Epoch 10/50 - Loss: 0.4331 - Val F1: 0.3667 - Val ROC-AUC: 0.7200 - Val PR-AUC: 0.4455
+[Fine-tune] Epoch 11/50 - Loss: 0.4178 - Val F1: 0.3768 - Val ROC-AUC: 0.7247 - Val PR-AUC: 0.4766
+[Fine-tune] Epoch 12/50 - Loss: 0.3908 - Val F1: 0.3611 - Val ROC-AUC: 0.7300 - Val PR-AUC: 0.4412
+[Fine-tune] Epoch 13/50 - Loss: 0.3837 - Val F1: 0.3288 - Val ROC-AUC: 0.7308 - Val PR-AUC: 0.4342
+[Fine-tune] Epoch 14/50 - Loss: 0.3975 - Val F1: 0.3714 - Val ROC-AUC: 0.7153 - Val PR-AUC: 0.4492
+[Fine-tune] Epoch 15/50 - Loss: 0.4143 - Val F1: 0.4000 - Val ROC-AUC: 0.7317 - Val PR-AUC: 0.3572
+[Fine-tune] Epoch 16/50 - Loss: 0.3946 - Val F1: 0.4407 - Val ROC-AUC: 0.7305 - Val PR-AUC: 0.4257
+[Fine-tune] Epoch 17/50 - Loss: 0.3959 - Val F1: 0.3871 - Val ROC-AUC: 0.7485 - Val PR-AUC: 0.4982
+[Fine-tune] Epoch 18/50 - Loss: 0.3782 - Val F1: 0.3729 - Val ROC-AUC: 0.7305 - Val PR-AUC: 0.4672
+[Fine-tune] Epoch 19/50 - Loss: 0.3891 - Val F1: 0.3235 - Val ROC-AUC: 0.7275 - Val PR-AUC: 0.4365
+[Fine-tune] Epoch 20/50 - Loss: 0.3908 - Val F1: 0.3768 - Val ROC-AUC: 0.7427 - Val PR-AUC: 0.5044
+[Fine-tune] Epoch 21/50 - Loss: 0.3598 - Val F1: 0.3377 - Val ROC-AUC: 0.7483 - Val PR-AUC: 0.4839
+[Fine-tune] Epoch 22/50 - Loss: 0.3860 - Val F1: 0.3684 - Val ROC-AUC: 0.7488 - Val PR-AUC: 0.4882
+[Fine-tune] Epoch 23/50 - Loss: 0.3272 - Val F1: 0.3590 - Val ROC-AUC: 0.7458 - Val PR-AUC: 0.4803
+[Fine-tune] Epoch 24/50 - Loss: 0.3527 - Val F1: 0.3429 - Val ROC-AUC: 0.7319 - Val PR-AUC: 0.4697
+[Fine-tune] Epoch 25/50 - Loss: 0.3544 - Val F1: 0.3333 - Val ROC-AUC: 0.7245 - Val PR-AUC: 0.4742
+[Fine-tune] Epoch 26/50 - Loss: 0.3129 - Val F1: 0.3333 - Val ROC-AUC: 0.7239 - Val PR-AUC: 0.4098
+[Fine-tune] Epoch 27/50 - Loss: 0.3504 - Val F1: 0.3284 - Val ROC-AUC: 0.7364 - Val PR-AUC: 0.4461
+[Fine-tune] Epoch 28/50 - Loss: 0.3601 - Val F1: 0.3836 - Val ROC-AUC: 0.7463 - Val PR-AUC: 0.4728
+[Fine-tune] Epoch 29/50 - Loss: 0.3598 - Val F1: 0.3797 - Val ROC-AUC: 0.7372 - Val PR-AUC: 0.4291
+[Fine-tune] Epoch 30/50 - Loss: 0.3506 - Val F1: 0.4286 - Val ROC-AUC: 0.7449 - Val PR-AUC: 0.4575
+[Fine-tune] Epoch 31/50 - Loss: 0.3604 - Val F1: 0.4156 - Val ROC-AUC: 0.7549 - Val PR-AUC: 0.4963
+[Fine-tune] Epoch 32/50 - Loss: 0.3304 - Val F1: 0.3836 - Val ROC-AUC: 0.7654 - Val PR-AUC: 0.5126
+[Fine-tune] Epoch 33/50 - Loss: 0.3312 - Val F1: 0.3662 - Val ROC-AUC: 0.7533 - Val PR-AUC: 0.4897
+[Fine-tune] Epoch 34/50 - Loss: 0.3236 - Val F1: 0.4167 - Val ROC-AUC: 0.7516 - Val PR-AUC: 0.5056
+[Fine-tune] Epoch 35/50 - Loss: 0.3409 - Val F1: 0.3684 - Val ROC-AUC: 0.7549 - Val PR-AUC: 0.4935
+[Fine-tune] Epoch 36/50 - Loss: 0.3431 - Val F1: 0.4198 - Val ROC-AUC: 0.7419 - Val PR-AUC: 0.4340
+[Fine-tune] Epoch 37/50 - Loss: 0.3235 - Val F1: 0.3824 - Val ROC-AUC: 0.7422 - Val PR-AUC: 0.4960
+[Fine-tune] Epoch 38/50 - Loss: 0.3393 - Val F1: 0.3824 - Val ROC-AUC: 0.7411 - Val PR-AUC: 0.4422
+[Fine-tune] Epoch 39/50 - Loss: 0.3368 - Val F1: 0.3636 - Val ROC-AUC: 0.7389 - Val PR-AUC: 0.4848
+[Fine-tune] Epoch 40/50 - Loss: 0.3341 - Val F1: 0.3768 - Val ROC-AUC: 0.7449 - Val PR-AUC: 0.4777
+[Fine-tune] Epoch 41/50 - Loss: 0.3305 - Val F1: 0.3714 - Val ROC-AUC: 0.7372 - Val PR-AUC: 0.4742
+[Fine-tune] Epoch 42/50 - Loss: 0.3280 - Val F1: 0.3733 - Val ROC-AUC: 0.7425 - Val PR-AUC: 0.4727
+[Fine-tune] Epoch 43/50 - Loss: 0.3312 - Val F1: 0.4000 - Val ROC-AUC: 0.7438 - Val PR-AUC: 0.4793
+[Fine-tune] Epoch 44/50 - Loss: 0.3279 - Val F1: 0.3836 - Val ROC-AUC: 0.7444 - Val PR-AUC: 0.4611
+[Fine-tune] Epoch 45/50 - Loss: 0.3529 - Val F1: 0.3684 - Val ROC-AUC: 0.7463 - Val PR-AUC: 0.4898
+[Fine-tune] Epoch 46/50 - Loss: 0.3146 - Val F1: 0.3944 - Val ROC-AUC: 0.7436 - Val PR-AUC: 0.4808
+[Fine-tune] Epoch 47/50 - Loss: 0.3063 - Val F1: 0.3529 - Val ROC-AUC: 0.7355 - Val PR-AUC: 0.4629
+[Fine-tune] Epoch 48/50 - Loss: 0.3249 - Val F1: 0.3582 - Val ROC-AUC: 0.7422 - Val PR-AUC: 0.4741
+[Fine-tune] Epoch 49/50 - Loss: 0.3397 - Val F1: 0.3733 - Val ROC-AUC: 0.7325 - Val PR-AUC: 0.4758
+[Fine-tune] Epoch 50/50 - Loss: 0.3003 - Val F1: 0.3784 - Val ROC-AUC: 0.7422 - Val PR-AUC: 0.4727
+Finetuning completed. Test F1: 0.3774, ROC-AUC: 0.6594, PR-AUC: 0.3352
+[3.1/4] Target-only training on OT_ER_ERbERb_1440 using GCN_GAT...
+  * Target-only 모델 이미 존재: model_save/targetonly/gcn_gat/TargetOnly_OT_ER_ERbERb_1440_gcn_gat.pth
+  * Target-only 생략, 저장된 모델로 평가만 진행
+=== Target-only TEST performance ===
+Test F1: 0.2857, ROC-AUC: 0.6746, PR-AUC: 0.3161
+✅ 실험 완료: TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability -> OT_ER_ERbERb_1440 [GCN_GAT]

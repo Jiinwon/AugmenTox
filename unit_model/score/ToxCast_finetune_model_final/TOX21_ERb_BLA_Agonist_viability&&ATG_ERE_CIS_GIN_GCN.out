@@ -1,15 +1,3 @@
-[1/4] Excel → CSV 변환 중...
-Saved pretrain CSV for TOX21_ERa_LUC_VM7_Agonist: data/sample/TOX21_ERa_LUC_VM7_Agonist.csv
-Saved pretrain CSV for TOX21_ERb_BLA_Agonist_viability: data/sample/TOX21_ERb_BLA_Agonist_viability.csv
-Saved pretrain CSV for TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability: data/sample/TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability.csv
-Saved pretrain CSV for TOX21_ERR_LUC_viability: data/sample/TOX21_ERR_LUC_viability.csv
-Saved finetune CSV for ATG_ERE_CIS: data/sample/ATG_ERE_CIS.csv
-Saved finetune CSV for ATG_ERa_TRANS: data/sample/ATG_ERa_TRANS.csv
-Saved finetune CSV for ACEA_ER_80hr: data/sample/ACEA_ER_80hr.csv
-Saved finetune CSV for OT_ER_ERaERa_1440: data/sample/OT_ER_ERaERa_1440.csv
-Saved finetune CSV for OT_ER_ERaERb_1440: data/sample/OT_ER_ERaERb_1440.csv
-Saved finetune CSV for OT_ER_ERbERb_1440: data/sample/OT_ER_ERbERb_1440.csv
-Saved finetune CSV for NVS_NR_hER: data/sample/NVS_NR_hER.csv
 [2/4] Pretraining on TOX21_ERb_BLA_Agonist_viability using GIN_GCN...
   * Pretrained model already exists at model_save/pretrained/gin_gcn/Pretrained_TOX21_ERb_BLA_Agonist_viability_gin_gcn.pth, loading...
 [3/4] Finetuning on ATG_ERE_CIS using GIN_GCN...
@@ -18,57 +6,8 @@ Saved finetune CSV for NVS_NR_hER: data/sample/NVS_NR_hER.csv
 === Fine-tuned TEST performance ===
 Test F1: 0.5217, ROC-AUC: 0.7705, PR-AUC: 0.5217
 [3.1/4] Target-only training on ATG_ERE_CIS using GIN_GCN...
-=== Target-only training ===
-[Target-only] Epoch 1/50 – Loss: 0.6282  Val F1: 0.5000  ROC-AUC: 0.6996  PR-AUC: 0.4556
-[Target-only] Epoch 2/50 – Loss: 0.6117  Val F1: 0.4192  ROC-AUC: 0.6780  PR-AUC: 0.4020
-[Target-only] Epoch 3/50 – Loss: 0.5985  Val F1: 0.4094  ROC-AUC: 0.6889  PR-AUC: 0.4052
-[Target-only] Epoch 4/50 – Loss: 0.5810  Val F1: 0.4248  ROC-AUC: 0.6990  PR-AUC: 0.4395
-[Target-only] Epoch 5/50 – Loss: 0.5984  Val F1: 0.4188  ROC-AUC: 0.7034  PR-AUC: 0.4608
-[Target-only] Epoch 6/50 – Loss: 0.5627  Val F1: 0.4651  ROC-AUC: 0.7295  PR-AUC: 0.5176
-[Target-only] Epoch 7/50 – Loss: 0.5816  Val F1: 0.4774  ROC-AUC: 0.7071  PR-AUC: 0.4891
-[Target-only] Epoch 8/50 – Loss: 0.5562  Val F1: 0.4772  ROC-AUC: 0.7265  PR-AUC: 0.5142
-[Target-only] Epoch 9/50 – Loss: 0.5525  Val F1: 0.4819  ROC-AUC: 0.7235  PR-AUC: 0.5137
-[Target-only] Epoch 10/50 – Loss: 0.5576  Val F1: 0.4286  ROC-AUC: 0.7056  PR-AUC: 0.4679
-[Target-only] Epoch 11/50 – Loss: 0.5215  Val F1: 0.4327  ROC-AUC: 0.7210  PR-AUC: 0.5050
-[Target-only] Epoch 12/50 – Loss: 0.5245  Val F1: 0.4870  ROC-AUC: 0.7292  PR-AUC: 0.5337
-[Target-only] Epoch 13/50 – Loss: 0.5195  Val F1: 0.4639  ROC-AUC: 0.7343  PR-AUC: 0.5226
-[Target-only] Epoch 14/50 – Loss: 0.4953  Val F1: 0.4398  ROC-AUC: 0.7421  PR-AUC: 0.5514
-[Target-only] Epoch 15/50 – Loss: 0.5273  Val F1: 0.4817  ROC-AUC: 0.7277  PR-AUC: 0.4762
-[Target-only] Epoch 16/50 – Loss: 0.5241  Val F1: 0.4701  ROC-AUC: 0.7298  PR-AUC: 0.5120
-[Target-only] Epoch 17/50 – Loss: 0.5130  Val F1: 0.4414  ROC-AUC: 0.7192  PR-AUC: 0.4521
-[Target-only] Epoch 18/50 – Loss: 0.5113  Val F1: 0.4938  ROC-AUC: 0.7277  PR-AUC: 0.5086
-[Target-only] Epoch 19/50 – Loss: 0.5128  Val F1: 0.5402  ROC-AUC: 0.7291  PR-AUC: 0.5348
-[Target-only] Epoch 20/50 – Loss: 0.4837  Val F1: 0.4926  ROC-AUC: 0.7248  PR-AUC: 0.4973
-[Target-only] Epoch 21/50 – Loss: 0.4792  Val F1: 0.4948  ROC-AUC: 0.7222  PR-AUC: 0.4917
-[Target-only] Epoch 22/50 – Loss: 0.4738  Val F1: 0.4766  ROC-AUC: 0.7378  PR-AUC: 0.5332
-[Target-only] Epoch 23/50 – Loss: 0.4764  Val F1: 0.4667  ROC-AUC: 0.7120  PR-AUC: 0.4681
-[Target-only] Epoch 24/50 – Loss: 0.4775  Val F1: 0.4322  ROC-AUC: 0.7363  PR-AUC: 0.5307
-[Target-only] Epoch 25/50 – Loss: 0.4836  Val F1: 0.4569  ROC-AUC: 0.7228  PR-AUC: 0.4726
-[Target-only] Epoch 26/50 – Loss: 0.4436  Val F1: 0.4333  ROC-AUC: 0.7249  PR-AUC: 0.5009
-[Target-only] Epoch 27/50 – Loss: 0.4558  Val F1: 0.4975  ROC-AUC: 0.7341  PR-AUC: 0.5125
-[Target-only] Epoch 28/50 – Loss: 0.4661  Val F1: 0.4813  ROC-AUC: 0.7223  PR-AUC: 0.4702
-[Target-only] Epoch 29/50 – Loss: 0.4534  Val F1: 0.4653  ROC-AUC: 0.7221  PR-AUC: 0.4886
-[Target-only] Epoch 30/50 – Loss: 0.4652  Val F1: 0.4475  ROC-AUC: 0.7216  PR-AUC: 0.4828
-[Target-only] Epoch 31/50 – Loss: 0.4449  Val F1: 0.4900  ROC-AUC: 0.7375  PR-AUC: 0.5139
-[Target-only] Epoch 32/50 – Loss: 0.4452  Val F1: 0.4722  ROC-AUC: 0.7307  PR-AUC: 0.5156
-[Target-only] Epoch 33/50 – Loss: 0.4179  Val F1: 0.4532  ROC-AUC: 0.7119  PR-AUC: 0.4762
-[Target-only] Epoch 34/50 – Loss: 0.4224  Val F1: 0.4706  ROC-AUC: 0.7243  PR-AUC: 0.4965
-[Target-only] Epoch 35/50 – Loss: 0.4061  Val F1: 0.4677  ROC-AUC: 0.7149  PR-AUC: 0.4796
-[Target-only] Epoch 36/50 – Loss: 0.4234  Val F1: 0.4537  ROC-AUC: 0.7225  PR-AUC: 0.5018
-[Target-only] Epoch 37/50 – Loss: 0.4188  Val F1: 0.4532  ROC-AUC: 0.7139  PR-AUC: 0.4692
-[Target-only] Epoch 38/50 – Loss: 0.4148  Val F1: 0.4444  ROC-AUC: 0.7176  PR-AUC: 0.4793
-[Target-only] Epoch 39/50 – Loss: 0.4179  Val F1: 0.4631  ROC-AUC: 0.7139  PR-AUC: 0.5054
-[Target-only] Epoch 40/50 – Loss: 0.4119  Val F1: 0.5000  ROC-AUC: 0.7256  PR-AUC: 0.5277
-[Target-only] Epoch 41/50 – Loss: 0.4095  Val F1: 0.4860  ROC-AUC: 0.7179  PR-AUC: 0.5043
-[Target-only] Epoch 42/50 – Loss: 0.4089  Val F1: 0.4700  ROC-AUC: 0.7223  PR-AUC: 0.5225
-[Target-only] Epoch 43/50 – Loss: 0.3992  Val F1: 0.4592  ROC-AUC: 0.7123  PR-AUC: 0.4875
-[Target-only] Epoch 44/50 – Loss: 0.3778  Val F1: 0.4660  ROC-AUC: 0.7182  PR-AUC: 0.4993
-[Target-only] Epoch 45/50 – Loss: 0.3944  Val F1: 0.4574  ROC-AUC: 0.7205  PR-AUC: 0.4935
-[Target-only] Epoch 46/50 – Loss: 0.3839  Val F1: 0.4848  ROC-AUC: 0.7161  PR-AUC: 0.4837
-[Target-only] Epoch 47/50 – Loss: 0.3961  Val F1: 0.4724  ROC-AUC: 0.7131  PR-AUC: 0.4901
-[Target-only] Epoch 48/50 – Loss: 0.3966  Val F1: 0.4528  ROC-AUC: 0.7095  PR-AUC: 0.4869
-[Target-only] Epoch 49/50 – Loss: 0.3874  Val F1: 0.4558  ROC-AUC: 0.7045  PR-AUC: 0.4626
-[Target-only] Epoch 50/50 – Loss: 0.3900  Val F1: 0.4695  ROC-AUC: 0.7073  PR-AUC: 0.4742
+  * Target-only 모델 이미 존재: model_save/targetonly/gin_gcn/TargetOnly_ATG_ERE_CIS_gin_gcn.pth
+  * Target-only 생략, 저장된 모델로 평가만 진행
 === Target-only TEST performance ===
 Test F1: 0.4921, ROC-AUC: 0.7642, PR-AUC: 0.5551
 ✅ 실험 완료: TOX21_ERb_BLA_Agonist_viability -> ATG_ERE_CIS [GIN_GCN]
