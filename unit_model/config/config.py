@@ -16,17 +16,17 @@ import torch
 # TARGET_NAME = os.getenv("TARGET_NAME", "TOX21_ERb_BLA_Antagonist_ratio")
 
 SOURCE_NAMES = [
-     "TOX21_ERa_LUC_VM7_Agonist",                            # nonempty : 8305, zero : 7243, one : 1062
+     #"TOX21_ERa_LUC_VM7_Agonist",                            # nonempty : 8305, zero : 7243, one : 1062
      "TOX21_ERb_BLA_Agonist_viability",                      # nonempty : 7871, zero : 6782, one : 1089
-     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability",   # nonempty : 7871, zero : 7164, one : 707
-     "TOX21_ERR_LUC_viability",                              # nonempty : 7871, zero : 6819, one : 1052
+     #"TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability",   # nonempty : 7871, zero : 7164, one : 707
+     #"TOX21_ERR_LUC_viability",                              # nonempty : 7871, zero : 6819, one : 1052
  ]
 SOURCE_NAME = os.getenv("SOURCE_NAME", "no exist source")
 
 TARGET_NAMES = [
-     "ATG_ERE_CIS",  # nonempty : 4060, zero : 3162, one : 898
-     "ATG_ERa_TRANS",  # nonempty : 4060, zero : 3292, one : 768
-     "ACEA_ER_80hr",  # nonempty : 3183, zero : 2892, one : 291
+     #"ATG_ERE_CIS",  # nonempty : 4060, zero : 3162, one : 898
+     #"ATG_ERa_TRANS",  # nonempty : 4060, zero : 3292, one : 768
+     #"ACEA_ER_80hr",  # nonempty : 3183, zero : 2892, one : 291
      "OT_ER_ERaERa_1440",  # nonempty : 1857, zero : 1700, one : 157
      "OT_ER_ERaERb_1440",  # nonempty : 1857, zero : 1577, one : 280
      "OT_ER_ERbERb_1440",  # nonempty : 1857, zero : 1624, one : 233
@@ -35,7 +35,7 @@ TARGET_NAMES = [
 TARGET_NAME = os.getenv("TARGET_NAME", "no exist target")
 
 
-OPERA = True
+OPERA = False
 # SDF에 들어 있는 모든 클래스 필드 순서
 SDF_LABEL_FIELDS = ["Agonist_Class", "Antagonist_Class", "Binding_Class"]
 ENDPOINTS = ["Binding_Class"]  # 원하는 대로 토글
@@ -88,7 +88,7 @@ DROPOUT = 0.5  # 원래는 0.5
 
 
 # 기존 모델 타입 + 하이브리드 타입 지원
-MODEL_TYPE = os.getenv("MODEL_TYPE", "GIN_GCN")  # 가능 값: GIN, GCN, GAT, GIN_GCN, GIN_GAT, GCN_GAT
+MODEL_TYPE = os.getenv("MODEL_TYPE", "GIN_GAT")  # 가능 값: GIN, GCN, GAT, GIN_GCN, GIN_GAT, GCN_GAT
 # 하이브리드 모델일 경우 파일명 표준화
 MODEL_NAME = MODEL_TYPE.lower().replace("_", "_")
 
