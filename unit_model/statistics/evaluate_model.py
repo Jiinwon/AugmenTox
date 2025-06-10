@@ -41,6 +41,11 @@ def main():
         help='연산 디바이스 (cuda 또는 cpu)'
     )
     parser.add_argument(
+        '--model-path',
+        default=None,
+        help='평가할 모델 파일 경로 (기본: config.FINETUNED_MODEL_PATH)'
+    )
+    parser.add_argument(
         '--out', required=True,
         help='출력 JSON 파일 경로'
     )
@@ -64,7 +69,7 @@ def main():
     loader = DataLoader(val_subset, batch_size=args.batch_size, shuffle=False)
 
     # 모델 로드
-    model_path = cfg.FINETUNED_MODEL_PATH
+    model_path = args.model_path or cfg.FINETUNED_MODEL_PATH
     mt = cfg.MODEL_TYPE.upper()
     input_dim = full_test[0].x.shape[1]
     output_dim = cfg.NUM_CLASSES
