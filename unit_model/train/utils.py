@@ -1,3 +1,4 @@
+import os
 import torch
 import torch.nn.functional as F
 from eval import metrics as metrics
@@ -51,7 +52,9 @@ def evaluate(model, data_loader, device):
     return results
 
 def save_model(model, path):
-    """Save the model weights to the given file path."""
+    """Save the model weights to the given file path.
+    Creates directories if they do not exist."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     torch.save(model.state_dict(), path)
 
 def load_model(model, path, device):

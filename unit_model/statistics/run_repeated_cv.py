@@ -75,7 +75,7 @@ def main():
             # 검증 인덱스 JSON 저장
             val_file = os.path.join(args.val_idx_dir, f'val_idx_rep{rep}_fold{fold}.json')
             with open(val_file, 'w') as vf:
-                json.dump(val_indices, vf)
+                json.dump(val_indices.tolist(), vf)
 
             # evaluate_model.py 호출
             metrics_file = os.path.join(args.val_idx_dir, f'metrics_rep{rep}_fold{fold}.json')
