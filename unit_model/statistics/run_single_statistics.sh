@@ -2,6 +2,8 @@
 
 set -e
 
+export MKL_THREADING_LAYER=GNU
+
 # 작업 루트 디렉토리 (launcher가 실행된 위치)
 REPO_DIR="${REPO_DIR:-${SLURM_SUBMIT_DIR:-$(pwd)}}"
 
