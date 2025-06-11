@@ -13,7 +13,12 @@ Usage:
     - 환경 변수 SOURCE_NAME, TARGET_NAME, MODEL_TYPE이 설정되어 있어야 함
 """
 
-import sys, os
+# Standard library imports
+import sys
+import os
+
+# Avoid Intel/GNU OpenMP conflicts when importing numpy/torch
+os.environ.setdefault("MKL_THREADING_LAYER", "GNU")
 # 상위 디렉토리에서 config, data, train 모듈을 불러오기 위한 경로 추가
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
