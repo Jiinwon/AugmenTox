@@ -5,6 +5,7 @@
 
 set -e
 
+export MKL_THREADING_LAYER=GNU
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 export PYTHONPATH="${SCRIPT_DIR}/.."
 
