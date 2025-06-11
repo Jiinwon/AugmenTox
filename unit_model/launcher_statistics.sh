@@ -19,6 +19,8 @@ fi
 
 set -e
 
+export MKL_THREADING_LAYER=GNU
+
 # 스크립트 실행 위치(프로젝트 루트)
 REPO_DIR="$(pwd)"
 
