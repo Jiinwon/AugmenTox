@@ -55,32 +55,19 @@ function wait_for_slot {
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 export PYTHONPATH="$SCRIPT_DIR"
 
-readarray -t SOURCE_NAMES < <(python3 - <<'PYCODE'
-import config.config as cfg
-for n in cfg.SOURCE_NAMES: print(n)
-PYCODE
-)
-readarray -t TARGET_NAMES < <(python3 - <<'PYCODE'
-import config.config as cfg
-for n in cfg.TARGET_NAMES: print(n)
-PYCODE
-)
-MODEL_TYPE=$(python3 - <<'PYCODE'
-import config.config as cfg
-print(cfg.MODEL_TYPE)
-PYCODE
-)
+# 조합 목록은 visual/performance_summary.xlsx의 'p-value' 시트에서 추출한다.
+readarray -t COMBOS < <(python3 "$SCRIPT_DIR/statistics/get_combinations_from_excel.py")
 
 DATE=$(date +"%Y%m%d")
 TIME=$(date +"%H%M")
 BASE_LOG="./log/${DATE}/${TIME}_stat"
 mkdir -p "$BASE_LOG"
 
-for SRC in "${SOURCE_NAMES[@]}"; do
-    for TGT in "${TARGET_NAMES[@]}"; do
-        PAIR="${SRC}&&${TGT}_${MODEL_TYPE}"
-        OUT="${BASE_LOG}/${PAIR}.out"
-        ERR="${BASE_LOG}/${PAIR}.err"
+for combo in "${COMBOS[@]}"; do
+    IFS=$'\t' read -r SRC TGT MODEL <<< "$combo"
+    PAIR="${SRC}&&${TGT}_${MODEL}"
+    OUT="${BASE_LOG}/${PAIR}.out"
+    ERR="${BASE_LOG}/${PAIR}.err"
 
         wait_for_slot
         SUBMITTED=0
@@ -94,7 +81,7 @@ for SRC in "${SOURCE_NAMES[@]}"; do
                                    --cpus-per-task=8 \
                                    --output="$OUT" \
                                    --error="$ERR" \
-                                   --export=ALL,REPO_DIR="$REPO_DIR",SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL_TYPE",LOG_SUBDIR="$BASE_LOG" \
+                                   --export=ALL,REPO_DIR="$REPO_DIR",SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL",LOG_SUBDIR="$BASE_LOG" \
                                    "${SCRIPT_DIR}/statistics/run_single_statistics.sh")
                     sleep 3
                     STATE=$(squeue -j "$JOBID" -h -o "%T")
@@ -114,14 +101,14 @@ for SRC in "${SOURCE_NAMES[@]}"; do
                        --cpus-per-task=8 \
                        --output="$OUT" \
                        --error="$ERR" \
-                       --export=ALL,REPO_DIR="$REPO_DIR",SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL_TYPE",LOG_SUBDIR="$BASE_LOG" \
+                       --export=ALL,REPO_DIR="$REPO_DIR",SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL",LOG_SUBDIR="$BASE_LOG" \
                        "${SCRIPT_DIR}/statistics/run_single_statistics.sh"
                 SUBMITTED=1
             fi
         fi
 
-    done
 done
 
 
 echo "✅ 모든 통계 검정 실행 명령 전송 완료"
+
