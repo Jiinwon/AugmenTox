@@ -19,6 +19,9 @@ fi
 
 set -e
 
+# 스크립트 실행 위치(프로젝트 루트)
+REPO_DIR="$(pwd)"
+
 # Slurm과 로컬에서 동시에 실행할 최대 작업 수
 MAX_SLURM_JOBS=10
 MAX_LOCAL_JOBS=20
@@ -114,7 +117,7 @@ for SRC in "${SOURCE_NAMES[@]}"; do
                                    --cpus-per-task=8 \
                                    --output="$OUT" \
                                    --error="$ERR" \
-                                   --export=ALL,SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL_TYPE",LOG_SUBDIR="$BASE_LOG" \
+                                   --export=ALL,REPO_DIR="$REPO_DIR",SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL_TYPE",LOG_SUBDIR="$BASE_LOG" \
                                    "${SCRIPT_DIR}/statistics/run_single_statistics.sh")
                     sleep 3
                     STATE=$(squeue -j "$JOBID" -h -o "%T")
@@ -134,7 +137,7 @@ for SRC in "${SOURCE_NAMES[@]}"; do
                        --cpus-per-task=8 \
                        --output="$OUT" \
                        --error="$ERR" \
-                       --export=ALL,SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL_TYPE",LOG_SUBDIR="$BASE_LOG" \
+                       --export=ALL,REPO_DIR="$REPO_DIR",SOURCE_NAME="${SRC}",TARGET_NAME="${TGT}",MODEL_TYPE="$MODEL_TYPE",LOG_SUBDIR="$BASE_LOG" \
                        "${SCRIPT_DIR}/statistics/run_single_statistics.sh"
                 SUBMITTED=1
             fi
@@ -146,7 +149,7 @@ for SRC in "${SOURCE_NAMES[@]}"; do
                 clean_local_pids
             done
 
-            SOURCE_NAME="$SRC" TARGET_NAME="$TGT" MODEL_TYPE="$MODEL_TYPE" LOG_SUBDIR="$BASE_LOG" \
+            SOURCE_NAME="$SRC" TARGET_NAME="$TGT" MODEL_TYPE="$MODEL_TYPE" LOG_SUBDIR="$BASE_LOG" REPO_DIR="$REPO_DIR" \
                 bash "${SCRIPT_DIR}/statistics/run_single_statistics.sh" &
             local_pids+=("$!")
         fi

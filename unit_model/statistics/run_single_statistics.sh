@@ -2,15 +2,18 @@
 
 set -e
 
+# 작업 루트 디렉토리 (launcher가 실행된 위치)
+REPO_DIR="${REPO_DIR:-${SLURM_SUBMIT_DIR:-$(pwd)}}"
+
 # 로그 디렉토리 설정
 mkdir -p "$LOG_SUBDIR"
 LOG_OUT="$LOG_SUBDIR/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}.out"
 LOG_ERR="$LOG_SUBDIR/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}.err"
 exec > "$LOG_OUT" 2> "$LOG_ERR"
 
-# PYTHONPATH 설정
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-export PYTHONPATH="${SCRIPT_DIR}/.."
+# PYTHONPATH 및 스크립트 경로 설정
+SCRIPT_DIR="${REPO_DIR}/statistics"
+export PYTHONPATH="${REPO_DIR}"
 
 # 데이터 경로
 DATA_PATH=$(python3 - <<'PY'
@@ -20,7 +23,7 @@ PY
 )
 
 # 결과 디렉토리
-RES_DIR="${SCRIPT_DIR}/results/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}"
+RES_DIR="${REPO_DIR}/statistics/results/${SOURCE_NAME}&&${TARGET_NAME}_${MODEL_TYPE}"
 mkdir -p "$RES_DIR"
 
 # 모델 경로들
