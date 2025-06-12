@@ -9,3 +9,4 @@ __pycache__/
 ./.gitattributes
 OPERA_data
 unit_model/log
+*.xlsx
