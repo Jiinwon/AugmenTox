@@ -21,4 +21,5 @@ unit_model/statistics/log
 unit_model/*.xlsx
 unit_model/launcher_local_for_pretraining.sh
 unit_model/run_single_pipeline_for_pretraining.sh.sh
-
+.gitignore
+.gitattributes
