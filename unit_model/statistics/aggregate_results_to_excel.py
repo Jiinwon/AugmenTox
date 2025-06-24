@@ -7,7 +7,7 @@ import os
 import csv
 import zipfile
 
-RESULTS_DIR = os.path.join('unit_model', 'statistics', 'results')
+RESULTS_DIR = os.path.join('statistics', 'results')
 
 # Known model type strings
 KNOWN_MODELS = [

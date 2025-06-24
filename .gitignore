@@ -10,3 +10,15 @@ __pycache__/
 OPERA_data
 unit_model/log
 *.xlsx
+unit_model/scripts/score_summary.py
+unit_model/scripts/score_summary2.py
+unit_model/scripts/*.sh
+unit_model/statistics/*.sh
+unit_model/statistics/*.csv
+unit_model/statistics/*.xlsx
+unit_model/statistics/results
+unit_model/statistics/log
+unit_model/*.xlsx
+unit_model/launcher_local_for_pretraining.sh
+unit_model/run_single_pipeline_for_pretraining.sh.sh
+
