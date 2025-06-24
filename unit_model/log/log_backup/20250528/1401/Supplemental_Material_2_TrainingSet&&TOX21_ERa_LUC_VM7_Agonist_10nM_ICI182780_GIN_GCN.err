@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "<stdin>", line 9, in <module>
-  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/train/pretrain.py", line 12, in run_pretraining
-    train_data, val_data, test_data = load_data(cfg.SOURCE_DATA_PATH, 
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/data/load_data.py", line 49, in load_data
-    primary_labels = [int(data.y[2].item()) for data in data_list]  # Binding_Class 기준
-                          ~~~~~~^^^
-IndexError: index 2 is out of bounds for dimension 0 with size 1

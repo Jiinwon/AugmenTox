@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "<stdin>", line 9, in <module>
-  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/train/pretrain.py", line 18, in run_pretraining
-    input_dim = train_data[0].x.shape[1]
-                ~~~~~~~~~~^^^
-IndexError: list index out of range

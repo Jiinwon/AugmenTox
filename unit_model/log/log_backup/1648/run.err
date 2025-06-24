@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/train/pretrain.py", line 7, in <module>
-    import config.config as cfg
-  File "/gpfs/home1/won0316/_Capstone/1_Git/Capstone_uos/unit_model/config/config.py", line 8, in <module>
-    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-                       ^^^^^
-NameError: name 'torch' is not defined
