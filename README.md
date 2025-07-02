@@ -34,7 +34,7 @@ This repository provides a graph neural network–based transfer learning pipeli
     ```bash
    python main.py --model GIN
     ```
-    or (If you use Slurm)
+    or (if you use Slurm)
    ```bash
     bash launcher.sh
    ```
@@ -45,8 +45,9 @@ When finished, the trained model will be saved under model/model_save/.
 ## Examples
 
 ### Running on a Single Combination
+   ```bash
     export SOURCE_NAME=TOX21_ERa_LUC_VM7_Agonist export TARGET_NAME=ATG_ERE_CIS python model/main.py --model GIN
-
+   ```
 
 
 ### Submitting an Array Job with Slurm
