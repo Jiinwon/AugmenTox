@@ -1,0 +1,13 @@
+[2/4] Pretraining on TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability using GCN...
+  * Pretrained model already exists at model_save/pretrained/gcn/Pretrained_TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability_gcn.pth, loading...
+[3/4] Finetuning on ACEA_ER_80hr using GCN...
+  * 파인튜닝된 모델 이미 존재: model_save/gcn/TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability&&ACEA_ER_80hr_gcn.pth
+  * Finetune 생략, 저장된 모델로 평가만 진행
+=== Fine-tuned TEST performance ===
+Test F1: 0.2430, ROC-AUC: 0.7031, PR-AUC: 0.2397
+[3.1/4] Target-only training on ACEA_ER_80hr using GCN...
+  * Target-only 모델 이미 존재: model_save/targetonly/gcn/TargetOnly_ACEA_ER_80hr_gcn.pth
+  * Target-only 생략, 저장된 모델로 평가만 진행
+=== Target-only TEST performance ===
+Test F1: 0.2963, ROC-AUC: 0.7128, PR-AUC: 0.2629
+✅ 실험 완료: TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability -> ACEA_ER_80hr [GCN]

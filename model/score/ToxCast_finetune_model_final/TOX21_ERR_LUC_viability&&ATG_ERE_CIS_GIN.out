@@ -1,0 +1,13 @@
+[2/4] Pretraining on TOX21_ERR_LUC_viability using GIN...
+  * Pretrained model already exists at model_save/pretrained/gin/Pretrained_TOX21_ERR_LUC_viability_gin.pth, loading...
+[3/4] Finetuning on ATG_ERE_CIS using GIN...
+  * 파인튜닝된 모델 이미 존재: model_save/gin/TOX21_ERR_LUC_viability&&ATG_ERE_CIS_gin.pth
+  * Finetune 생략, 저장된 모델로 평가만 진행
+=== Fine-tuned TEST performance ===
+Test F1: 0.5079, ROC-AUC: 0.7497, PR-AUC: 0.5484
+[3.1/4] Target-only training on ATG_ERE_CIS using GIN...
+  * Target-only 모델 이미 존재: model_save/targetonly/gin/TargetOnly_ATG_ERE_CIS_gin.pth
+  * Target-only 생략, 저장된 모델로 평가만 진행
+=== Target-only TEST performance ===
+Test F1: 0.4906, ROC-AUC: 0.7623, PR-AUC: 0.5324
+✅ 실험 완료: TOX21_ERR_LUC_viability -> ATG_ERE_CIS [GIN]

@@ -1,0 +1,13 @@
+[2/4] Pretraining on TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability using GCN...
+  * Pretrained model already exists at model_save/pretrained/gcn/Pretrained_TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability_gcn.pth, loading...
+[3/4] Finetuning on ATG_ERa_TRANS using GCN...
+  * 파인튜닝된 모델 이미 존재: model_save/gcn/TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability&&ATG_ERa_TRANS_gcn.pth
+  * Finetune 생략, 저장된 모델로 평가만 진행
+=== Fine-tuned TEST performance ===
+Test F1: 0.4839, ROC-AUC: 0.7515, PR-AUC: 0.4425
+[3.1/4] Target-only training on ATG_ERa_TRANS using GCN...
+  * Target-only 모델 이미 존재: model_save/targetonly/gcn/TargetOnly_ATG_ERa_TRANS_gcn.pth
+  * Target-only 생략, 저장된 모델로 평가만 진행
+=== Target-only TEST performance ===
+Test F1: 0.4574, ROC-AUC: 0.7279, PR-AUC: 0.4253
+✅ 실험 완료: TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability -> ATG_ERa_TRANS [GCN]

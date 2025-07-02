@@ -1,0 +1,13 @@
+[2/4] Pretraining on TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability using GIN...
+  * Pretrained model already exists at model_save/pretrained/gin/Pretrained_TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability_gin.pth, loading...
+[3/4] Finetuning on ACEA_ER_80hr using GIN...
+  * 파인튜닝된 모델 이미 존재: model_save/gin/TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability&&ACEA_ER_80hr_gin.pth
+  * Finetune 생략, 저장된 모델로 평가만 진행
+=== Fine-tuned TEST performance ===
+Test F1: 0.2785, ROC-AUC: 0.7142, PR-AUC: 0.2017
+[3.1/4] Target-only training on ACEA_ER_80hr using GIN...
+  * Target-only 모델 이미 존재: model_save/targetonly/gin/TargetOnly_ACEA_ER_80hr_gin.pth
+  * Target-only 생략, 저장된 모델로 평가만 진행
+=== Target-only TEST performance ===
+Test F1: 0.2989, ROC-AUC: 0.6634, PR-AUC: 0.3303
+✅ 실험 완료: TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability -> ACEA_ER_80hr [GIN]

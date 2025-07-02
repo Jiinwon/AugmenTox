@@ -1,0 +1,13 @@
+[2/4] Pretraining on TOX21_ERR_LUC_viability using GIN...
+  * Pretrained model already exists at model_save/pretrained/gin/Pretrained_TOX21_ERR_LUC_viability_gin.pth, loading...
+[3/4] Finetuning on NVS_NR_hER using GIN...
+  * 파인튜닝된 모델 이미 존재: model_save/gin/TOX21_ERR_LUC_viability&&NVS_NR_hER_gin.pth
+  * Finetune 생략, 저장된 모델로 평가만 진행
+=== Fine-tuned TEST performance ===
+Test F1: 0.5405, ROC-AUC: 0.7699, PR-AUC: 0.5706
+[3.1/4] Target-only training on NVS_NR_hER using GIN...
+  * Target-only 모델 이미 존재: model_save/targetonly/gin/TargetOnly_NVS_NR_hER_gin.pth
+  * Target-only 생략, 저장된 모델로 평가만 진행
+=== Target-only TEST performance ===
+Test F1: 0.5000, ROC-AUC: 0.7482, PR-AUC: 0.4416
+✅ 실험 완료: TOX21_ERR_LUC_viability -> NVS_NR_hER [GIN]

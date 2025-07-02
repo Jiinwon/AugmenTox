@@ -1,0 +1,13 @@
+[2/4] Pretraining on Supplemental_Material_2_TrainingSet using GIN...
+  * Pretrained model already exists at model_save/pretrained/gin/Pretrained_Supplemental_Material_2_TrainingSet_gin.pth, loading...
+[3/4] Finetuning on OT_ER_ERbERb_1440 using GIN...
+  * 파인튜닝된 모델 이미 존재: model_save/gin/Supplemental_Material_2_TrainingSet&&OT_ER_ERbERb_1440_gin.pth
+  * Finetune 생략, 저장된 모델로 평가만 진행
+=== Fine-tuned TEST performance ===
+Test F1: 0.3750, ROC-AUC: 0.6763, PR-AUC: 0.2985
+[3.1/4] Target-only training on OT_ER_ERbERb_1440 using GIN...
+  * Target-only 모델 이미 존재: model_save/targetonly/gin/TargetOnly_OT_ER_ERbERb_1440_gin.pth
+  * Target-only 생략, 저장된 모델로 평가만 진행
+=== Target-only TEST performance ===
+Test F1: 0.4000, ROC-AUC: 0.6824, PR-AUC: 0.2929
+✅ 실험 완료: Supplemental_Material_2_TrainingSet -> OT_ER_ERbERb_1440 [GIN]

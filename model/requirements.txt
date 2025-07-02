@@ -1,0 +1,13 @@
+torch
+torchvision
+torchaudio
+torch-geometric
+pandas
+scikit-learn
+openpyxl
+matplotlib
+seaborn
+rdkit
+tqdm
+networkx
+
