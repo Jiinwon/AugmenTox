@@ -57,5 +57,5 @@ When finished, the trained model will be saved under model/model_save/.
 
 ## License
 
-This project is licensed under the terms of the [MIT License](model/LICENSE).
+This project is licensed under the terms of the [MIT License](LICENSE).
 
