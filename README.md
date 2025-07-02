@@ -4,18 +4,22 @@
 
 This repository provides a graph neural network–based transfer learning pipeline to predict the activity of compounds on the Estrogen Receptor (ER) using the ToxCast dataset.
 
+## Directory for execution
+ ```bash
+  cd model
+  ```
 ## Requirements
 - Python 3.9 or higher
 - Install dependencies:  
   ```bash
-  pip install -r model/requirements.txt
+  pip install -r requirements.txt
   ```
 
 ## Code Structure
-- `model/data/` – Contains data loaders that convert SMILES strings into graph representations and split them into training and evaluation sets
-- `model/models/` – Implements GIN, GCN, GAT, and their hybrid variants
-- `model/train/` – Training routines such as pretrain.py, finetune.py, and target_only.py
-- `model/config/` – The config.py file where data paths and hyperparameters are defined
+- `data/` – Contains data loaders that convert SMILES strings into graph representations and split them into training and evaluation sets
+- `models/` – Implements GIN, GCN, GAT, and their hybrid variants
+- `train/` – Training routines such as pretrain.py, finetune.py, and target_only.py
+- `config/` – The config.py file where data paths and hyperparameters are defined
 - `run_single_pipeline.sh` – A shell script that runs the full pretraining and fine-tuning pipeline for a single source/target combination
 - `launcher.sh` – A Slurm launcher script to execute multiple combinations in parallel on an HPC cluster
 
