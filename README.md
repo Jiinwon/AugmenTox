@@ -32,8 +32,12 @@ This repository provides a graph neural network–based transfer learning pipeli
 
 2. Choose a model and run the pipeline. Supported models: GIN, GCN, GAT, GIN_GCN, GIN_GAT, GCN_GAT.
     ```bash
-   python model/main.py --model GIN
+   python main.py --model GIN
     ```
+    or (If you use Slurm)
+   ```bash
+    bash launcher.sh
+   ```
 
 
 When finished, the trained model will be saved under model/model_save/.
