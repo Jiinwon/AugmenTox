@@ -1,6 +1,6 @@
 
 # AugmenTox
-## – Transfer Learning Strategy for GNN Fine-Tuning on ToxCast Estrogen Receptor Data
+### Transfer Learning Strategy for GNN Fine-Tuning on ToxCast Estrogen Receptor Data
 
 This repository provides a graph neural network–based transfer learning pipeline to predict the activity of compounds on the Estrogen Receptor (ER) using the ToxCast dataset.
 
