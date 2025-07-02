@@ -54,3 +54,8 @@ When finished, the trained model will be saved under model/model_save/.
 ### Submitting an Array Job with Slurm
     bash launcher.sh
 
+
+## License
+
+This project is licensed under the terms of the [MIT License](model/LICENSE).
+
