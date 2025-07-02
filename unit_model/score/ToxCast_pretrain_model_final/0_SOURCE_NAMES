@@ -1,6 +1,0 @@
-SOURCE_NAMES = [
-     "TOX21_ERa_LUC_VM7_Agonist",                            # nonempty : 8305, zero : 7243, one : 1062
-     "TOX21_ERb_BLA_Agonist_viability",                      # nonempty : 7871, zero : 6782, one : 1089
-     "TOX21_ERa_LUC_VM7_Agonist_10nM_ICI182780_viability",   # nonempty : 7871, zero : 7164, one : 707
-     "TOX21_ERR_LUC_viability",                              # nonempty : 7871, zero : 6819, one : 1052
- ]
