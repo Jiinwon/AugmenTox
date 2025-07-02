@@ -46,7 +46,8 @@ When finished, the trained model will be saved under model/model_save/.
 
 ### Running on a Single Combination
    ```bash
-    export SOURCE_NAME=TOX21_ERa_LUC_VM7_Agonist export TARGET_NAME=ATG_ERE_CIS python model/main.py --model GIN
+    export SOURCE_NAME=TOX21_ERa_LUC_VM7_Agonist export TARGET_NAME=ATG_ERE_CIS
+    python main.py --model GIN
    ```
 
 
